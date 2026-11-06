@@ -1,0 +1,28 @@
+:root {
+
+
+    :root {
+
+        /* colores */
+        --fondo-claro: #ECD0DB;
+        --fondo-oscuro: #2E282A;
+        --primario: #C2185B;
+        --acento: #AD5DD4;
+        --texto-fondo-claro: #290513;
+        --texto-fondo-oscuro: #D4CDD0;
+
+        /*tipografias*/
+        --fuente-expresiva: 'Libre Baskerville';
+        --fuente-funcional: 'Dm Sans';
+
+        /*Tamaño de texto*/
+        --tamano-h1: 48px;
+        --tamano-h2: 32px;
+        --tamano-h3: 24px;
+        --tamano-h4: 16px;
+
+        /*iconos*/
+        --icono-padding: 16px;
+
+    }
+}

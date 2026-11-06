@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Viajes &amp; Wallpapers</title>
+    <link
+      rel="stylesheet"
+      href="css/main.css" />
+  </head>
+
+  <body>
+    <!-- Cabecera común -->
+    <header>
+      <a href="index.html">
+        <img
+          src="img/logo.png"
+          alt="Logo de la página de viajes"
+          width="100"
+          height="100" />
+      </a>
+
+      <h1>Viajes &amp; Wallpapers</h1>
+
+      <!-- Menú de navegación -->
+      <!-- Buenas prácticas son utilizar a y estilizarlo como boton después si lo que queremos es navegación -->
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">Inicio</a>
+          </li>
+          <li>
+            <a href="fotos.html">Fotos</a>
+          </li>
+          <li>
+            <a href="nosotros.html">Nosotros</a>
+          </li>
+          <li>
+            <a href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+      <section>
+        <h2>Contacta con nosotros</h2>
+
+        <p>
+          ¿Te apasionan los viajes y los paisajes del mundo? En Wallpapers
+          queremos compartir contigo lugares únicos a través de imágenes que
+          inspiran. Si tienes alguna pregunta, sugerencia o quieres compartir tu
+          experiencia, estaremos encantados de escucharte.
+        </p>
+
+        <h3>¡Hablemos!</h3>
+
+        <p>
+          Escríbenos a nuestro correo electrónico:
+          <a href="mailto:info@viajeswallpapers.com">
+            info@viajeswallpapers.com
+          </a>
+        </p>
+
+        <p>
+          Gracias por acompañarnos en este viaje por Japón, China y Colombia.
+        </p>
+      </section>
+
+      <!-- Formulario de contacto -->
+      <section>
+        <h2>Envíanos tu mensaje</h2>
+
+        <form
+          action="#"
+          method="post">
+          <!-- Datos personales -->
+          <fieldset>
+            <legend>Datos personales</legend>
+
+            <p>
+              <label for="nombre">Nombre:</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                required
+                minlength="2" />
+            </p>
+
+            <p>
+              <label for="correo">Correo electrónico:</label>
+              <input
+                type="email"
+                id="correo"
+                name="correo"
+                required />
+            </p>
+
+            <p>
+              <label for="telefono">Teléfono:</label>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                required />
+            </p>
+          </fieldset>
+
+          <!-- Información del mensaje -->
+          <fieldset>
+            <legend>Información del mensaje</legend>
+
+            <p>
+              <label for="motivo">Motivo del contacto:</label>
+              <select
+                id="motivo"
+                name="motivo"
+                required>
+                <option value="">Selecciona un motivo</option>
+                <option value="consulta">Consulta</option>
+                <option value="sugerencia">Sugerencia</option>
+                <option value="fotografias">Compartir fotografías</option>
+                <option value="otro">Otro</option>
+              </select>
+            </p>
+
+            <p>¿Qué temática te interesa más?</p>
+
+            <p>
+              <input
+                type="radio"
+                id="japon"
+                name="tematica"
+                value="japon"
+                required />
+              <label for="japon">Japón</label>
+            </p>
+
+            <p>
+              <input
+                type="radio"
+                id="china"
+                name="tematica"
+                value="china" />
+              <label for="china">China</label>
+            </p>
+
+            <p>
+              <input
+                type="radio"
+                id="colombia"
+                name="tematica"
+                value="colombia" />
+              <label for="colombia">Colombia</label>
+            </p>
+
+            <p>
+              <label for="mensaje">Escribe tu mensaje:</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="5"
+                cols="40"
+                required
+                minlength="10"></textarea>
+            </p>
+
+            <p>
+              <input
+                type="checkbox"
+                id="privacidad"
+                name="privacidad"
+                required />
+              <label for="privacidad">
+                Acepto la política de privacidad.
+              </label>
+            </p>
+          </fieldset>
+
+          <p>
+            <button type="submit">Enviar mensaje</button>
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+      <p>&copy; 2026 Viajes &amp; Wallpapers. Todos los derechos reservados.</p>
+      <p>
+        Contacta con nosotros:
+        <a href="mailto:info@viajeswallpapers.com">
+          info@viajeswallpapers.com
+        </a>
+      </p>
+    </footer>
+  </body>
+</html>

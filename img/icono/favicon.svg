@@ -1,1 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><rect width="12" height="12" fill="#C2185B"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+<!-- Modo oscuro: un SVG cargado como imagen no puede leer las variables del CSS, así que repite aquí el color primario del modo oscuro. Si cambia ese color en estilos.css, cambiadlo también aquí y en el resto de iconos. -->
+<style>@media (prefers-color-scheme: dark) { rect { fill: #F9F0F4; } }</style>
+<rect width="12" height="12" fill="#C2185B"/></svg>

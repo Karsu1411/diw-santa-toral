@@ -1,4 +1,10 @@
 <!doctype html>
+<!--
+  Viajes &amp; Wallpapers · Contacto (contacto.html)
+  Práctica UT1 · Diseño de Interfaces Web · 2.º DAW · IES Juan de la Cierva
+  Sin diseño en Figma: contenido y formulario de la UT0 con los estilos comunes.
+  Estructura con Grid en el body y componentes con Flexbox; estilos en css/estilos.css.
+-->
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -8,18 +14,18 @@
 
     <title>Contacto - Viajes &amp; Wallpapers</title>
 
-    <!-- Tipografías: Libre Baskerville y DM Sans -->
+    <!-- Tipografías de la guía de estilo (Google Fonts): Libre Baskerville para títulos y DM Sans para texto. Los preconnect adelantan la conexión para que carguen antes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" />
-    <!-- Importación de la hoja de estilos -->
+    <!-- Una sola hoja de estilos externa para toda la web (nada de CSS en línea) -->
     <link rel="stylesheet" href="css/estilos.css" />
   </head>
 
   <body id="arriba">
-    <!-- CABECERA -->
+    <!-- CABECERA (área «cabecera» del grid del body): marca que enlaza a la portada -->
     <header class="cabecera">
       <a class="marca" href="index.html">
         <span class="marca__simbolo"></span>
@@ -27,7 +33,7 @@
       </a>
     </header>
 
-    <!-- MENÚ -->
+    <!-- MENÚ (área «menu» del grid): nav con ul en Flexbox, paso 2 del enunciado. aria-current="page" indica la página actual a los lectores de pantalla -->
     <nav class="menu" aria-label="Menú principal">
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -37,9 +43,9 @@
       </ul>
     </nav>
 
-    <!-- CONTENIDO PRINCIPAL -->
+    <!-- CONTENIDO PRINCIPAL (área «principal» del grid): un solo main y un solo h1 por página -->
     <main class="principal">
-      <!-- PRESENTACIÓN -->
+      <!-- PRESENTACIÓN: único h1, texto de la UT0 y tarjeta con el correo -->
       <section class="seccion seccion--lectura">
         <p class="antetitulo">Contacto</p>
         <h1>Contacta con nosotros</h1>
@@ -60,7 +66,7 @@
         </article>
       </section>
 
-      <!-- FORMULARIO DE CONTACTO -->
+      <!-- FORMULARIO DE CONTACTO: cada campo tiene su label asociado con for e id; fieldset y legend agrupan los campos relacionados -->
       <section class="seccion">
         <h2>Envíanos tu mensaje</h2>
 
@@ -132,7 +138,7 @@
       </section>
     </main>
 
-    <!-- PIE -->
+    <!-- PIE (área «pie» del grid): igual en todas las páginas, paso 8 del enunciado, con los enlaces legales -->
     <footer class="pie">
       <div class="pie__fila">
         <a class="marca" href="index.html">

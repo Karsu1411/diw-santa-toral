@@ -1,4 +1,10 @@
 <!doctype html>
+<!--
+  Viajes &amp; Wallpapers · Inicio (index.html)
+  Práctica UT1 · Diseño de Interfaces Web · 2.º DAW · IES Juan de la Cierva
+  Diseño: frame «Inicio · Ordenador» de Figma (grupo «Pantallas»).
+  Estructura con Grid en el body y componentes con Flexbox; estilos en css/estilos.css.
+-->
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -7,18 +13,18 @@
       content="width=device-width, initial-scale=1" />
     <title>Viajes &amp; Wallpapers - Inicio</title>
 
-    <!-- Tipografías: Libre Baskerville y DM Sans -->
+    <!-- Tipografías de la guía de estilo (Google Fonts): Libre Baskerville para títulos y DM Sans para texto. Los preconnect adelantan la conexión para que carguen antes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" />
-    <!-- Importación de la hoja de estilos -->
+    <!-- Una sola hoja de estilos externa para toda la web (nada de CSS en línea) -->
     <link rel="stylesheet" href="css/estilos.css" />
   </head>
 
   <body id="arriba">
-    <!-- CABECERA -->
+    <!-- CABECERA (área «cabecera» del grid del body): marca que enlaza a la portada -->
     <header class="cabecera">
       <a class="marca" href="index.html">
         <span class="marca__simbolo"></span>
@@ -26,7 +32,7 @@
       </a>
     </header>
 
-    <!-- MENÚ -->
+    <!-- MENÚ (área «menu» del grid): nav con ul en Flexbox, paso 2 del enunciado. aria-current="page" indica la página actual a los lectores de pantalla -->
     <nav class="menu" aria-label="Menú principal">
       <ul>
         <li><a href="index.html" aria-current="page">Inicio</a></li>
@@ -36,9 +42,9 @@
       </ul>
     </nav>
 
-    <!-- CONTENIDO PRINCIPAL -->
+    <!-- CONTENIDO PRINCIPAL (área «principal» del grid): un solo main y un solo h1 por página -->
     <main class="principal">
-      <!-- PRESENTACIÓN -->
+      <!-- PRESENTACIÓN: antetítulo, único h1 de la página y lista ordenada de destinos -->
       <section class="seccion">
         <p class="antetitulo">Destinos</p>
         <h1>Wallpapers: Japón, China y Colombia</h1>
@@ -49,7 +55,7 @@
         </ol>
       </section>
 
-      <!-- FONDOS DE PANTALLA -->
+      <!-- FONDOS DE PANTALLA: sección con h2 y las tarjetas de cada destino -->
       <section class="seccion">
         <h2>Nuestros mejores fondos de pantalla</h2>
         <p>
@@ -58,7 +64,7 @@
           <em>Asia y Sudamérica</em>.
         </p>
 
-        <!-- TARJETAS -->
+        <!-- TARJETAS (paso 3): div.tarjetas con un article.tarjeta por destino. La de Colombia lleva la etiqueta «Novedad» (paso 4). Cada foto es un figure con figcaption y un alt que describe lo que se ve -->
         <div class="tarjetas">
           <article class="tarjeta">
             <h3>Japón, Nipón</h3>
@@ -101,7 +107,7 @@
         </div>
       </section>
 
-      <!-- SUBE TUS FONDOS (lista anidada) -->
+      <!-- SUBE TUS FONDOS: lista anidada de la UT0 (ul dentro de li) -->
       <section class="seccion">
         <h2>Sube tus mejores fondos de pantalla de Asia</h2>
         <p>Sube tus mejores instantáneas para que podamos disfrutarlas.</p>
@@ -124,7 +130,7 @@
         </ul>
       </section>
 
-      <!-- TABLA DE COLECCIONES -->
+      <!-- TABLA DE COLECCIONES (paso 5): tabla de datos de la UT0 con caption, th con scope, rowspan y colspan; estilo solo desde el CSS -->
       <section class="seccion">
         <h2>Información de nuestras colecciones</h2>
         <table>
@@ -162,7 +168,7 @@
         </table>
       </section>
 
-      <!-- DESCUBRE MÁS -->
+      <!-- DESCUBRE MÁS: enlace externo (rel="noopener" por seguridad al abrir otra pestaña) e iframe de OpenStreetMap con title, paso 6 del enunciado -->
       <section class="seccion seccion--compacta">
         <h2>Descubre más</h2>
         <p>
@@ -181,7 +187,7 @@
       </section>
     </main>
 
-    <!-- PIE -->
+    <!-- PIE (área «pie» del grid): igual en todas las páginas, paso 8 del enunciado, con los enlaces legales -->
     <footer class="pie">
       <div class="pie__fila">
         <a class="marca" href="index.html">

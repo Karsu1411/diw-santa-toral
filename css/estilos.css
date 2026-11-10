@@ -60,7 +60,6 @@
     --tamano-h1: 48px;
     --tamano-h2: 32px;
     --tamano-h3: 24px;
-    --tamano-h4: 16px;                 /* Reservada en la guía; ahora sin uso */
     --tamano-cifra: 40px;              /* Números 01, 02, 03 de las galerías */
     --tamano-marca: 26px;              /* «Viajes & Wallpapers» */
     --tamano-texto: 16px;              /* Texto base */
@@ -109,9 +108,6 @@
     --tamano-icono: 24px;              /* Retícula de los iconos Lucide */
     --tamano-simbolo: 12px;            /* Cuadrado de la marca */
     --ancho-maximo: 1440px;            /* Ancho del diseño de escritorio */
-
-    /* ICONOS */
-    --icono-padding: 16px;             /* Reservada en la guía; ahora sin uso */
 
 }
 

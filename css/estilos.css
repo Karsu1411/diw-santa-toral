@@ -361,3 +361,11 @@ figcaption {
     line-height: 1;
     text-transform: uppercase;
 }
+
+/* MAPA (iframe) */
+.mapa {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    border: var(--borde) solid var(--color-texto);
+    border-radius: var(--radio);
+}

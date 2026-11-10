@@ -465,12 +465,13 @@ figcaption {
     border-radius: var(--radio);
 }
 
-/* PIE */
+/* PIE: medidas de Figma (las filas de 44 px por la zona táctil compensan el relleno) */
 .pie {
     display: flex;
     flex-direction: column;
-    gap: var(--espacio-2);
-    padding-block: var(--espacio-3) var(--espacio-4);
+    gap: var(--espacio-mitad);
+    margin-top: var(--espacio-6);
+    padding-block: var(--espacio-2);
     border-top: var(--borde) solid var(--color-texto);
 }
 
@@ -485,14 +486,9 @@ figcaption {
 .pie__lista {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--espacio-2);
+    gap: var(--espacio-1-5);
     padding: 0;
     list-style: none;
-}
-
-.pie__lista--barras li + li::before {
-    content: "/";
-    margin-right: var(--espacio-2);
 }
 
 .pie__lista a {
@@ -500,6 +496,23 @@ figcaption {
     align-items: center;
     min-height: var(--objetivo-tactil);
     font-size: var(--tamano-pequeno);
+    text-decoration: none;
+}
+
+.pie__lista a:hover {
+    text-decoration: underline;
+}
+
+.pie__lista--barras li + li::before {
+    content: "/";
+    margin-right: var(--espacio-1-5);
+    color: var(--color-acento);
+    font-size: var(--tamano-pequeno);
+}
+
+.pie__lista--barras li {
+    display: flex;
+    align-items: center;
 }
 
 .pie__legal {

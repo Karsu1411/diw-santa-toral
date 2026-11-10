@@ -421,14 +421,19 @@ body {
 
 /* ==========================================================================
    6. TARJETAS Y ETIQUETA «NOVEDAD»
-   Paso 3 del enunciado: div.tarjetas con repeat(auto-fit, minmax(250px, 1fr)).
-   auto-fit crea tantas columnas como quepan (3 en escritorio, 1 en móvil) sin
-   media queries. Dentro de cada tarjeta se usa Flexbox (una dimensión).
+   Paso 3 del enunciado: tarjetas en un div.tarjetas con display: grid.
+   Adaptamos el ejemplo del enunciado a nuestro diseño: en Figma las tarjetas
+   van apiladas a todo el ancho (1280 × 320), así que el mínimo de minmax()
+   pasa de 250px a 100 %. Se mantiene la técnica (Grid con auto-fit y
+   minmax), pero cada tarjeta ocupa una fila, como en el diseño.
+   Dentro de cada tarjeta se usa Flexbox (una dimensión).
    Paso 4: la etiqueta «Novedad» se superpone con position: absolute.
    ========================================================================== */
 .tarjetas {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Ejemplo del enunciado: minmax(250px, 1fr), tres columnas a 1280 px.
+       Figma (nuestro diseño) apila las tarjetas: mínimo del 100 %. */
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
     gap: var(--espacio-3);
 }
 
@@ -456,7 +461,8 @@ body {
 .tarjeta img {
     grid-area: foto;
     width: 100%;
-    aspect-ratio: 9 / 7;
+    /* Proporción de Figma: 1280 × 320 (en móvil, 342 × 220) */
+    aspect-ratio: 4 / 1;
     object-fit: cover;
 }
 

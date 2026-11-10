@@ -41,8 +41,8 @@ La marca de Git `ut0-original` guarda la web tal como quedó al terminar la UT0,
 
 ## 📌 Reglas
 
-1. Los cambios pequeños (un texto, un color, una foto) pueden ir directamente a `main`.
-2. Los cambios grandes, o cuando trabajemos varios a la vez, van en una rama y entran en `main` por pull request aprobado por otro compañero.
+1. Nunca se trabaja directamente en `main`: cada cambio, también los pequeños (un texto, un color, una foto), va en su rama.
+2. Todo entra en `main` por pull request aprobado por otro compañero. GitHub lo exige: `main` está protegida y no acepta pushes directos.
 3. Nunca `git push --force`. Si algo falla, se pregunta al grupo.
 4. Cada uno trabaja en sus archivos. Lo compartido (`:root`, estructura base) lo toca una sola persona.
 5. No se suben imágenes sin optimizar (WebP, menos de 300 KB) ni configuración del editor.
@@ -51,12 +51,7 @@ La marca de Git `ut0-original` guarda la web tal como quedó al terminar la UT0,
 
 ## 🔄 Flujo de cada tarea
 
-**Cambio pequeño, directamente en `main`:** sigue los pasos 1, 3, 4 y 5, y después súbelo:
-```bash
-git push
-```
-
-**Cambio grande, o varios trabajando a la vez:** sigue todos los pasos, con tu rama y tu pull request.
+Todos los cambios, grandes o pequeños, siguen estos pasos: siempre con tu rama y tu pull request.
 
 **1. Ponerse al día.** Antes de empezar nada, trae lo último de `main`:
 ```bash
@@ -128,8 +123,9 @@ git merge main
 
 | Situación | Qué hacer |
 |---|---|
-| He empezado en `main` un cambio que debía ir en una rama (sin commit) | `git switch -c nombre-rama`: los cambios se van a la rama nueva. |
-| He hecho en `main` un commit que debía ir en una rama (sin push) | `git switch -c nombre-rama` para llevarte el commit, y avisa al grupo antes de tocar `main`. |
+| He hecho cambios en `main` sin querer (sin commit) | `git switch -c nombre-rama`: los cambios se van a la rama nueva. |
+| He hecho commit en `main` sin querer | `git switch -c nombre-rama` para llevarte el commit a una rama y abre el pull request desde ahí. Tu `main` local se queda por delante de GitHub: avisa al grupo antes de arreglarlo. |
+| GitHub rechaza mi push a `main` | Es la protección de `main`: sube tu trabajo a una rama y abre un pull request. |
 | El push es rechazado | `git pull` y luego `git push`. |
 | Hay un conflicto | Abre el archivo, decide con tu compañero qué se queda, borra las marcas `<<<<<<<`, `=======` y `>>>>>>>`, y haz `git add` + `git commit`. Para cancelar: `git merge --abort`. |
 
@@ -140,7 +136,7 @@ git merge main
 
 <br>
 
-- **`main` es la versión buena**: la que se entrega. Cambia con los cambios pequeños que se suben directamente y cuando se fusiona un pull request revisado.
+- **`main` es la versión buena**: la que se entrega. Solo cambia cuando se fusiona un pull request revisado.
 - **Una rama es una copia paralela** que nace de `main` en el momento de crearla. Lo que hagas en ella no afecta a `main` ni a los demás.
 - **Por eso se hace `git pull` antes de crearla**: para que nazca de la versión más reciente y no de una antigua.
 - **El pull request es una propuesta**: "quiero meter estos cambios en `main`". Otro compañero lo revisa antes de que entre.

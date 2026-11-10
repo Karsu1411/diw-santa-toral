@@ -2,9 +2,6 @@
 
 Práctica de maquetación web (UT1) de **Diseño de Interfaces Web**: la web **Viajes & Wallpapers**, con fondos de pantalla de Japón, China, Colombia, Perú y España. Grupo: Asier Toral, Santiago Santa y Julinho Ghair.
 
-> [!IMPORTANT]
-> **Entrega: martes 10/11 a las 23:59**
-
 **Contenido:** [Estructura del proyecto](#-estructura-del-proyecto) · [Reglas](#-reglas) · [Flujo de cada tarea](#-flujo-de-cada-tarea) · [Créditos de las imágenes](#-créditos-de-las-imágenes)
 
 ---
@@ -44,8 +41,8 @@ La marca de Git `ut0-original` guarda la web tal como quedó al terminar la UT0,
 
 ## 📌 Reglas
 
-1. Nunca se trabaja en `main`: cada tarea, en su rama.
-2. Todo entra en `main` por pull request aprobado por otro compañero.
+1. Los cambios pequeños (un texto, un color, una foto) pueden ir directamente a `main`.
+2. Los cambios grandes, o cuando trabajemos varios a la vez, van en una rama y entran en `main` por pull request aprobado por otro compañero.
 3. Nunca `git push --force`. Si algo falla, se pregunta al grupo.
 4. Cada uno trabaja en sus archivos. Lo compartido (`:root`, estructura base) lo toca una sola persona.
 5. No se suben imágenes sin optimizar (WebP, menos de 300 KB) ni configuración del editor.
@@ -53,6 +50,13 @@ La marca de Git `ut0-original` guarda la web tal como quedó al terminar la UT0,
 ---
 
 ## 🔄 Flujo de cada tarea
+
+**Cambio pequeño, directamente en `main`:** sigue los pasos 1, 3, 4 y 5, y después súbelo:
+```bash
+git push
+```
+
+**Cambio grande, o varios trabajando a la vez:** sigue todos los pasos, con tu rama y tu pull request.
 
 **1. Ponerse al día.** Antes de empezar nada, trae lo último de `main`:
 ```bash
@@ -124,8 +128,8 @@ git merge main
 
 | Situación | Qué hacer |
 |---|---|
-| He hecho cambios en `main` sin querer (sin commit) | `git switch -c nombre-rama`: los cambios se van a la rama nueva. |
-| He hecho commit en `main` sin querer (sin push) | `git switch -c nombre-rama` para llevarte el commit, y avisa al grupo antes de tocar `main`. |
+| He empezado en `main` un cambio que debía ir en una rama (sin commit) | `git switch -c nombre-rama`: los cambios se van a la rama nueva. |
+| He hecho en `main` un commit que debía ir en una rama (sin push) | `git switch -c nombre-rama` para llevarte el commit, y avisa al grupo antes de tocar `main`. |
 | El push es rechazado | `git pull` y luego `git push`. |
 | Hay un conflicto | Abre el archivo, decide con tu compañero qué se queda, borra las marcas `<<<<<<<`, `=======` y `>>>>>>>`, y haz `git add` + `git commit`. Para cancelar: `git merge --abort`. |
 
@@ -136,7 +140,7 @@ git merge main
 
 <br>
 
-- **`main` es la versión buena**: la que se entrega. Solo cambia cuando se fusiona un pull request revisado.
+- **`main` es la versión buena**: la que se entrega. Cambia con los cambios pequeños que se suben directamente y cuando se fusiona un pull request revisado.
 - **Una rama es una copia paralela** que nace de `main` en el momento de crearla. Lo que hagas en ella no afecta a `main` ni a los demás.
 - **Por eso se hace `git pull` antes de crearla**: para que nazca de la versión más reciente y no de una antigua.
 - **El pull request es una propuesta**: "quiero meter estos cambios en `main`". Otro compañero lo revisa antes de que entre.
@@ -166,7 +170,7 @@ En el diagrama, cada uno trabaja en su rama a la vez. `nav-flexbox` entra primer
 
 ## 📷 Créditos de las imágenes
 
-La web presenta todas las fotografías como nuestras. Estas 45 son de Unsplash y se usan con la [licencia de Unsplash](https://unsplash.com/license), que permite usarlas gratis y sin pedir permiso. El resto de las fotos de `img/` son nuestras. Si añadís una foto que no sea nuestra, apuntad aquí su archivo, su autor y su enlace.
+La web simula una colección propia. Las fotos de Perú, España y parte de las de Japón, China y Colombia son de Unsplash y se usan según su [licencia](https://unsplash.com/license); estos son sus autores. Si añadís una foto que no sea nuestra, apuntad aquí su archivo, su autor y su enlace.
 
 ### Japón
 

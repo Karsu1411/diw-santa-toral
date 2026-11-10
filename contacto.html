@@ -4,57 +4,45 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0" />
+      content="width=device-width, initial-scale=1" />
+
     <title>Contacto - Viajes &amp; Wallpapers</title>
+
     <!-- Tipografías: Libre Baskerville y DM Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" />
-    <link
-      rel="stylesheet"
-      href="css/estilos.css" />
+    <!-- Importación de la hoja de estilos -->
+    <link rel="stylesheet" href="css/estilos.css" />
   </head>
 
-  <body>
-    <!-- Cabecera común -->
-    <header>
-      <a href="index.html">
-        <img
-          src="img/logo.png"
-          alt="Logo de la página de viajes"
-          width="100"
-          height="100" />
+  <body id="arriba">
+    <!-- CABECERA -->
+    <header class="cabecera">
+      <a class="marca" href="index.html">
+        <span class="marca__simbolo"></span>
+        Viajes &amp; Wallpapers
       </a>
-
-      <h1>Viajes &amp; Wallpapers</h1>
-
-      <!-- Menú de navegación -->
-      <!-- Buenas prácticas son utilizar a y estilizarlo como boton después si lo que queremos es navegación -->
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html">Inicio</a>
-          </li>
-          <li>
-            <a href="fotos.html">Fotos</a>
-          </li>
-          <li>
-            <a href="nosotros.html">Nosotros</a>
-          </li>
-          <li>
-            <a href="contacto.html">Contacto</a>
-          </li>
-        </ul>
-      </nav>
     </header>
 
-    <!-- Contenido principal -->
-    <main>
-      <section>
-        <h2>Contacta con nosotros</h2>
+    <!-- MENÚ -->
+    <nav class="menu" aria-label="Menú principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="fotos.html">Fotos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+      </ul>
+    </nav>
 
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="principal">
+      <!-- PRESENTACIÓN -->
+      <section class="seccion">
+        <p class="antetitulo">Contacto</p>
+        <h1>Contacta con nosotros</h1>
         <p>
           ¿Te apasionan los viajes y los paisajes del mundo? En Wallpapers
           queremos compartir contigo lugares únicos a través de imágenes que
@@ -62,57 +50,36 @@
           experiencia, estaremos encantados de escucharte.
         </p>
 
-        <h3>¡Hablemos!</h3>
-
+        <h2>¡Hablemos!</h2>
         <p>
           Escríbenos a nuestro correo electrónico:
-          <a href="mailto:info@viajeswallpapers.com">
-            info@viajeswallpapers.com
-          </a>
+          <a href="mailto:info@viajeswallpapers.com">info@viajeswallpapers.com</a>
         </p>
-
-        <p>
-          Gracias por acompañarnos en este viaje por Japón, China y Colombia.
-        </p>
+        <p>Gracias por acompañarnos en este viaje por Japón, China y Colombia.</p>
       </section>
 
-      <!-- Formulario de contacto -->
-      <section>
+      <!-- FORMULARIO DE CONTACTO -->
+      <section class="seccion">
         <h2>Envíanos tu mensaje</h2>
 
-        <form
-          action="#"
-          method="post">
+        <form class="formulario" action="#" method="post">
           <!-- Datos personales -->
           <fieldset>
             <legend>Datos personales</legend>
 
-            <p>
+            <p class="campo">
               <label for="nombre">Nombre:</label>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                required
-                minlength="2" />
+              <input type="text" id="nombre" name="nombre" required minlength="2" />
             </p>
 
-            <p>
+            <p class="campo">
               <label for="correo">Correo electrónico:</label>
-              <input
-                type="email"
-                id="correo"
-                name="correo"
-                required />
+              <input type="email" id="correo" name="correo" required />
             </p>
 
-            <p>
+            <p class="campo">
               <label for="telefono">Teléfono:</label>
-              <input
-                type="tel"
-                id="telefono"
-                name="telefono"
-                required />
+              <input type="tel" id="telefono" name="telefono" required />
             </p>
           </fieldset>
 
@@ -120,12 +87,9 @@
           <fieldset>
             <legend>Información del mensaje</legend>
 
-            <p>
+            <p class="campo">
               <label for="motivo">Motivo del contacto:</label>
-              <select
-                id="motivo"
-                name="motivo"
-                required>
+              <select id="motivo" name="motivo" required>
                 <option value="">Selecciona un motivo</option>
                 <option value="consulta">Consulta</option>
                 <option value="sugerencia">Sugerencia</option>
@@ -134,75 +98,67 @@
               </select>
             </p>
 
-            <p>¿Qué temática te interesa más?</p>
+            <fieldset class="opciones">
+              <legend>¿Qué temática te interesa más?</legend>
+              <p class="opcion">
+                <input type="radio" id="japon" name="tematica" value="japon" required />
+                <label for="japon">Japón</label>
+              </p>
+              <p class="opcion">
+                <input type="radio" id="china" name="tematica" value="china" />
+                <label for="china">China</label>
+              </p>
+              <p class="opcion">
+                <input type="radio" id="colombia" name="tematica" value="colombia" />
+                <label for="colombia">Colombia</label>
+              </p>
+            </fieldset>
 
-            <p>
-              <input
-                type="radio"
-                id="japon"
-                name="tematica"
-                value="japon"
-                required />
-              <label for="japon">Japón</label>
-            </p>
-
-            <p>
-              <input
-                type="radio"
-                id="china"
-                name="tematica"
-                value="china" />
-              <label for="china">China</label>
-            </p>
-
-            <p>
-              <input
-                type="radio"
-                id="colombia"
-                name="tematica"
-                value="colombia" />
-              <label for="colombia">Colombia</label>
-            </p>
-
-            <p>
+            <p class="campo">
               <label for="mensaje">Escribe tu mensaje:</label>
-              <textarea
-                id="mensaje"
-                name="mensaje"
-                rows="5"
-                cols="40"
-                required
-                minlength="10"></textarea>
+              <textarea id="mensaje" name="mensaje" rows="5" required minlength="10"></textarea>
             </p>
 
-            <p>
-              <input
-                type="checkbox"
-                id="privacidad"
-                name="privacidad"
-                required />
-              <label for="privacidad">
-                Acepto la política de privacidad.
-              </label>
+            <p class="opcion">
+              <input type="checkbox" id="privacidad" name="privacidad" required />
+              <label for="privacidad">Acepto la política de privacidad.</label>
             </p>
           </fieldset>
 
-          <p>
-            <button type="submit">Enviar mensaje</button>
-          </p>
+          <button class="boton" type="submit">Enviar mensaje</button>
         </form>
       </section>
     </main>
 
-    <!-- Pie de página -->
-    <footer>
-      <p>&copy; 2026 Viajes &amp; Wallpapers. Todos los derechos reservados.</p>
-      <p>
-        Contacta con nosotros:
-        <a href="mailto:info@viajeswallpapers.com">
-          info@viajeswallpapers.com
+    <!-- PIE -->
+    <footer class="pie">
+      <div class="pie__fila">
+        <a class="marca" href="index.html">
+          <span class="marca__simbolo"></span>
+          Viajes &amp; Wallpapers
         </a>
-      </p>
+        <nav aria-label="Menú del pie">
+          <ul class="pie__lista pie__lista--barras">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="fotos.html">Fotos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="pie__fila pie__legal">
+        <p>&copy; 2026 Viajes &amp; Wallpapers. Todos los derechos reservados.</p>
+        <ul class="pie__lista">
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+        <p>
+          Contacta con nosotros en:
+          <a href="mailto:info@viajeswallpapers.com">info@viajeswallpapers.com</a>
+        </p>
+      </div>
     </footer>
   </body>
 </html>

@@ -1,4 +1,6 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C2185B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<!-- Modo oscuro: un SVG cargado como imagen no puede leer las variables del CSS, así que repite aquí el color primario del modo oscuro. Si cambia ese color en estilos.css, cambiadlo también aquí y en el resto de iconos. -->
+<style>@media (prefers-color-scheme: dark) { path { stroke: #F9F0F4; } }</style>
 <g id="mountain">
 <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
 </g>

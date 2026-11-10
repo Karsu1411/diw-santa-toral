@@ -13,7 +13,7 @@
    - Si añadís una sección nueva, añadidla también a este índice.
 
    ÍNDICE
-    0. VARIABLES (guía de estilo)
+    0. VARIABLES (guía de estilo y modo oscuro)
     1. BASE
     2. ESTRUCTURA DE LA PÁGINA (Grid)
     3. CABECERA
@@ -34,7 +34,7 @@
    ========================================================================== */
 
 /* ==========================================================================
-   0. VARIABLES (guía de estilo) · paso 2 del enunciado
+   0. VARIABLES (guía de estilo y modo oscuro) · paso 2 del enunciado
    Nuestra guía de estilo de Figma pasada a variables. Las cuatro del
    enunciado (--color-primario, --color-fondo, --color-acento, --color-texto)
    y --espacio, más las que hemos necesitado para tipografía y tamaños.
@@ -120,6 +120,39 @@
     --tamano-simbolo: 12px;            /* Cuadrado de la marca */
     --ancho-maximo: 1440px;            /* Ancho máximo de la página en pantallas grandes */
 
+}
+
+/* MODO OSCURO
+   Si el sistema del usuario está en modo oscuro, el navegador aplica este
+   bloque y redefinimos los colores con los valores del modo oscuro de
+   nuestro Figma. Como todo el CSS usa var(...), no hay que tocar nada más:
+   la web entera cambia de colores. Solo CSS, sin JavaScript.
+   - Si cambiáis o añadís un color arriba, añadid aquí su valor oscuro y
+     comprobad el contraste sobre el fondo oscuro (#2E282A): 4,5:1 en texto
+     normal y 3:1 en texto grande e iconos.
+   - --fondo-oscuro pasa a claro: los degradados de las fotos se vuelven una
+     niebla clara y el texto de la presentación de Fotos pasa a oscuro,
+     según nuestro diseño.
+   - Los iconos de img/icono/ no pueden leer estas variables: cada SVG lleva
+     su propio <style> con el color oscuro. Si cambiáis --color-primario
+     aquí, cambiadlo también en los SVG.
+   - El mapa de OpenStreetMap se queda claro: es contenido de otra web.
+   Para probarlo sin cambiar el sistema: herramientas de desarrollo →
+   Rendering → «Emulate CSS media feature prefers-color-scheme: dark». */
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;                /* Controles del navegador (scroll, select, radios) en oscuro */
+        --color-fondo: #2E282A;            /* Fondo de todas las páginas */
+        --fondo-oscuro: #F9F0F4;           /* Se invierte: degradados claros sobre las fotos */
+        --color-primario: #F9F0F4;         /* 12,9:1 sobre el fondo */
+        --color-acento: #E9D5FF;           /* 10,6:1 sobre el fondo */
+        --color-texto: #D4CDD0;            /* 9,3:1 sobre el fondo */
+        --texto-fondo-oscuro: #290513;     /* Texto oscuro sobre las zonas claras */
+        --color-texto-suave: #A39A9E;      /* Menú inactivo. 5,3:1: no lo oscurezcáis más */
+        --color-texto-secundario: #BFB7BB; /* Pies de foto y antetítulos de tarjeta. 7,4:1 */
+        --color-linea-suave: #6B6266;      /* Líneas divisorias en móvil (decorativas) */
+        /* Botón y etiqueta «Novedad»: --color-fondo sobre --color-primario, 12,9:1 */
+    }
 }
 
 /* ==========================================================================

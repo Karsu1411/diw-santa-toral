@@ -31,7 +31,14 @@
 
     /*interlineado*/
     --interlineado-titulo: 1.25;
-    --interlineado-texto: 1.5;
+    --interlineado-h2: 1.3125;
+    --interlineado-h3: 1.3333;
+    --interlineado-texto: 1.625;
+
+    /*espaciado entre letras*/
+    --letras-h1: -1px;
+    --letras-h2: -0.5px;
+    --letras-etiqueta: 1.4px;
 
     /*espaciado (múltiplos de 8)*/
     --espacio: 8px;
@@ -89,16 +96,19 @@ h2 {
 
 h1 {
     font-size: var(--tamano-h1);
+    letter-spacing: var(--letras-h1);
 }
 
 h2 {
     font-size: var(--tamano-h2);
+    line-height: var(--interlineado-h2);
+    letter-spacing: var(--letras-h2);
 }
 
 h3 {
     font-size: var(--tamano-h3);
     font-weight: var(--peso-seminegrita);
-    line-height: var(--interlineado-titulo);
+    line-height: var(--interlineado-h3);
 }
 
 img {
@@ -287,25 +297,41 @@ tfoot td {
     gap: var(--espacio-3);
 }
 
+.seccion--compacta {
+    gap: var(--espacio-2);
+}
+
 .antetitulo {
     color: var(--color-primario);
     font-size: var(--tamano-mini);
     font-weight: var(--peso-seminegrita);
+    letter-spacing: var(--letras-etiqueta);
     text-transform: uppercase;
 }
 
+/* Lista ordenada con el número alineado al margen, como en Figma */
 .lista-destinos {
     display: flex;
     flex-direction: column;
     gap: var(--espacio);
-    padding-left: var(--espacio-3);
+    padding: 0;
+    list-style: none;
+    counter-reset: destino;
 }
 
-.lista-destinos li::marker {
+.lista-destinos li {
+    display: flex;
+    gap: var(--espacio-2);
+    counter-increment: destino;
+}
+
+.lista-destinos li::before {
+    content: counter(destino) ".";
     color: var(--color-primario);
     font-weight: var(--peso-seminegrita);
 }
 
+/* Lista anidada: subtemas en una línea, unidos con «y» */
 .tematicas {
     display: flex;
     flex-direction: column;
@@ -313,15 +339,30 @@ tfoot td {
     padding: 0;
     list-style: none;
     font-weight: var(--peso-seminegrita);
+    line-height: normal;
+}
+
+.tematicas > li {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--espacio) / 2);
 }
 
 .tematicas ul {
-    padding-left: var(--espacio-3);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
     color: var(--color-acento);
     font-size: var(--tamano-pequeno);
     font-weight: var(--peso-normal);
 }
 
+.tematicas ul li + li::before {
+    content: "\a0y\a0";
+}
+
+/* Enlaces sueltos: sin subrayado (se reconocen por color y peso) */
 .volver-arriba {
     display: inline-flex;
     align-items: center;
@@ -329,6 +370,11 @@ tfoot td {
     min-height: var(--objetivo-tactil);
     color: var(--color-primario);
     font-weight: var(--peso-seminegrita);
+    text-decoration: none;
+}
+
+.volver-arriba:hover {
+    text-decoration: underline;
 }
 
 /* TARJETAS: Grid con auto-fit y Flexbox dentro de cada tarjeta */
@@ -384,7 +430,7 @@ figcaption {
 /* MAPA (iframe) */
 .mapa {
     width: 100%;
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 3 / 1;
     border: var(--borde) solid var(--color-texto);
     border-radius: var(--radio);
 }

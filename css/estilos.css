@@ -29,6 +29,7 @@
     --tamano-texto: 16px;
     --tamano-pequeno: 14px;
     --tamano-mini: 12px;
+    --tamano-cabecera-tabla: 13px;
 
     /*interlineado*/
     --interlineado-titulo: 1.25;
@@ -252,15 +253,16 @@ body {
     background-color: var(--color-acento);
 }
 
-/* TABLA */
+/* TABLA: bordes y thead con --color-primario (enunciado); ancho y columnas de Figma */
 table {
-    width: 100%;
+    width: 66.25%;
     border-collapse: collapse;
 }
 
 caption {
-    padding-bottom: var(--espacio-2);
+    padding-bottom: var(--espacio-3);
     caption-side: top;
+    letter-spacing: var(--letras-h2);
     text-align: left;
 }
 
@@ -268,7 +270,16 @@ th,
 td {
     padding: var(--espacio-2);
     border: var(--borde) solid var(--color-texto);
+    line-height: normal;
     text-align: left;
+}
+
+th:nth-child(1) {
+    width: 26%;
+}
+
+th:nth-child(2) {
+    width: 42.5%;
 }
 
 thead {
@@ -277,7 +288,8 @@ thead {
 }
 
 th {
-    font-size: var(--tamano-pequeno);
+    padding-block: var(--espacio-1-5);
+    font-size: var(--tamano-cabecera-tabla);
     font-weight: var(--peso-negrita);
     text-transform: uppercase;
 }

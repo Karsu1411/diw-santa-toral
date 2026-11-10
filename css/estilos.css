@@ -7,6 +7,7 @@
     --color-acento: #7F3A9B;
     --color-texto: #290513;
     --texto-fondo-oscuro: #D4CDD0;
+    --color-texto-suave: #7C636F;
 
     /*tipografias*/
     --fuente-expresiva: 'Libre Baskerville', serif;
@@ -203,22 +204,39 @@ body {
 
 .menu a {
     display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    gap: var(--espacio);
     min-height: var(--objetivo-tactil);
-    border-bottom: var(--borde-grueso) solid transparent;
-    color: var(--color-texto);
+    color: var(--color-texto-suave);
+    line-height: normal;
     text-decoration: none;
 }
 
+/* Barra de estado activo, como en el componente «Opción de menú» de Figma */
+.menu a::after {
+    content: "";
+    width: 100%;
+    height: var(--borde-grueso);
+    background-color: transparent;
+}
+
 .menu a:hover {
-    border-bottom-color: var(--color-acento);
     color: var(--color-acento);
 }
 
+.menu a:hover::after {
+    background-color: var(--color-acento);
+}
+
 .menu a[aria-current="page"] {
-    border-bottom-color: var(--color-acento);
     color: var(--color-acento);
     font-weight: var(--peso-seminegrita);
+}
+
+.menu a[aria-current="page"]::after {
+    background-color: var(--color-acento);
 }
 
 /* TABLA */

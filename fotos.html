@@ -4,366 +4,362 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0" />
+      content="width=device-width, initial-scale=1" />
+
     <title>Fotos - Viajes &amp; Wallpapers</title>
+
     <!-- Tipografías: Libre Baskerville y DM Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" />
-    <link
-      rel="stylesheet"
-      href="css/estilos.css" />
+    <!-- Importación de la hoja de estilos -->
+    <link rel="stylesheet" href="css/estilos.css" />
   </head>
 
-  <body>
-    <!-- Cabecera común -->
-    <header>
-      <a href="index.html">
-        <img
-          src="img/logo.png"
-          alt="Logo de Viajes & Wallpapers"
-          width="100"
-          height="100" />
+  <body id="arriba">
+    <!-- CABECERA -->
+    <header class="cabecera">
+      <a class="marca" href="index.html">
+        <span class="marca__simbolo"></span>
+        Viajes &amp; Wallpapers
       </a>
-
-      <h1>Wallpapers</h1>
-
-      <!-- Menú de navegación -->
-      <!-- Buenas prácticas son utilizar a y estilizarlo como boton después si lo que queremos es navegación -->
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html">Inicio</a>
-          </li>
-          <li>
-            <a href="fotos.html">Fotos</a>
-          </li>
-          <li>
-            <a href="nosotros.html">Nosotros</a>
-          </li>
-          <li>
-            <a href="contacto.html">Contacto</a>
-          </li>
-        </ul>
-      </nav>
     </header>
 
-    <!-- Contenido principal -->
-    <main>
-      <!-- Colección de Japón -->
-      <section>
-        <h2>Japón en pausa</h2>
+    <!-- MENÚ -->
+    <nav class="menu" aria-label="Menú principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="fotos.html" aria-current="page">Fotos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
 
-        <h3>Un lienzo minimalista donde el color es un susurro</h3>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="principal principal--sin-margen">
+      <!-- PRESENTACIÓN DE LA GALERÍA -->
+      <section class="portada-fotos">
+        <div class="portada-fotos__intro">
+          <nav class="migas" aria-label="Ruta de navegación">
+            <a href="index.html">Inicio</a> / Fotos
+          </nav>
+          <h1>Wallpapers</h1>
+          <p>Colecciones de fotografías de Japón, China y Colombia.</p>
+          <ul class="indice-galerias">
+            <li><a href="#japon">01 / Japón ↓</a></li>
+            <li><a href="#china">02 / China ↓</a></li>
+            <li><a href="#colombia">03 / Colombia ↓</a></li>
+          </ul>
+        </div>
 
-        <p>
-          <strong>Naturaleza:</strong> Verdes de musgo profundo, ocres tenues y
-          el rosa efímero del cerezo.
-        </p>
-
-        <p>
-          <strong>Tradición:</strong> Piedra gris en murallas ancestrales y
-          madera cálida en templos en silencio.
-        </p>
-
-        <p>
-          <strong>Modernidad:</strong> Destellos suaves de neón en la penumbra y
-          la calma cálida de los farolillos en callejones nocturnos.
-        </p>
-
-        <img
-          src="img/1.jpg"
-          alt="Paisaje de Japón"
-          width="400"
-          height="300" />
-        <img
-          src="img/2.jpg"
-          alt="Paisaje de Japón 6"
-          width="400"
-          height="300" />
-        <img
-          src="img/3.jpg"
-          alt="Paisaje de Japón 7"
-          width="400"
-          height="300" />
-        <img
-          src="img/4.jpg"
-          alt="Paisaje de Japón 8"
-          width="400"
-          height="300" />
-        <img
-          src="img/5.jpg"
-          alt="Paisaje de Japón 9"
-          width="400"
-          height="300" />
-        <img
-          src="img/6.jpg"
-          alt="Paisaje de Japón 10"
-          width="400"
-          height="300" />
-        <img
-          src="img/7.jpg"
-          alt="Paisaje de Japón 11"
-          width="400"
-          height="300" />
-        <img
-          src="img/8.jpg"
-          alt="Paisaje de Japón 12"
-          width="400"
-          height="300" />
-        <img
-          src="img/9.jpg"
-          alt="Paisaje de Japón 13"
-          width="400"
-          height="300" />
-        <img
-          src="img/10.jpg"
-          alt="Paisaje de Japón 14"
-          width="400"
-          height="300" />
-        <img
-          src="img/11.jpg"
-          alt="Paisaje de Japón 15"
-          width="400"
-          height="300" />
-        <img
-          src="img/12.jpg"
-          alt="Paisaje de Japón 16"
-          width="400"
-          height="300" />
-        <img
-          src="img/13.jpg"
-          alt="Paisaje de Japón 17"
-          width="400"
-          height="300" />
-        <img
-          src="img/14.jpg"
-          alt="Paisaje de Japón 18"
-          width="400"
-          height="300" />
-        <img
-          src="img/15.jpg"
-          alt="Paisaje de Japón 19"
-          width="400"
-          height="300" />
-        <img
-          src="img/16.jpg"
-          alt="Paisaje de Japón 20"
-          width="400"
-          height="300" />
-        <img
-          src="img/17.jpg"
-          alt="Paisaje de Japón 21"
-          width="400"
-          height="300" />
-        <img
-          src="img/18.jpg"
-          alt="Paisaje de Japón 23"
-          width="400"
-          height="300" />
-        <img
-          src="img/19.jpg"
-          alt="Paisaje de Japón 24"
-          width="400"
-          height="300" />
-        <img
-          src="img/20.jpg"
-          alt="Paisaje de Japón 25"
-          width="400"
-          height="300" />
+        <aside class="portada-fotos__resumen">
+          <div class="resumen">
+            <p class="antetitulo">27 fotografías</p>
+            <p class="resumen__titulo">
+              Japón, China y Colombia. Una galería por país.
+            </p>
+            <p>Fondos de pantalla para ordenador.</p>
+          </div>
+          <a class="boton" href="#japon">Ir a galería de Japón</a>
+        </aside>
       </section>
 
-      <!-- Colección de China -->
-      <section>
-        <h2>China entre contrastes</h2>
+      <!-- GALERÍA DE JAPÓN -->
+      <section class="galeria-detalle" id="japon">
+        <div class="galeria-detalle__cabecera">
+          <div class="galeria-detalle__id">
+            <p class="galeria-detalle__numero">
+              01
+              <img src="img/icono/brujula.svg" alt="" />
+            </p>
+            <p class="galeria-detalle__pais">Japón</p>
+          </div>
 
-        <p>
-          Un viaje donde la historia milenaria se encuentra con la energía de
-          las grandes ciudades.
-        </p>
+          <div class="galeria-detalle__propuesta">
+            <h2>Japón en pausa.</h2>
+            <p>Un lienzo minimalista donde el color es un susurro.</p>
+            <p class="galeria-detalle__recuento">3 fotografías en la galería.</p>
+          </div>
 
-        <p>
-          <strong>Naturaleza:</strong>
-          Montañas envueltas en niebla, bosques de bambú y paisajes que parecen
-          sacados de una pintura tradicional.
-        </p>
+          <div class="galeria-detalle__incluye">
+            <h3 class="antetitulo">Qué incluye</h3>
+            <ul class="lista-check">
+              <li>
+                <p>
+                  <strong>Naturaleza:</strong> Verdes de musgo profundo, ocres
+                  tenues y el rosa efímero del cerezo.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Tradición:</strong> Piedra gris en murallas
+                  ancestrales y madera cálida en templos en silencio.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Modernidad:</strong> Destellos suaves de neón en la
+                  penumbra y la calma cálida de los farolillos en callejones
+                  nocturnos.
+                </p>
+              </li>
+            </ul>
+            <a class="enlace-destacado" href="#galeria-japon">Explora la galería de Japón ↗</a>
+          </div>
+        </div>
 
-        <p>
-          <strong>Tradición:</strong>
-          Templos ancestrales, tejados curvados y farolillos rojos que iluminan
-          calles llenas de historia.
-        </p>
-
-        <p>
-          <strong>Modernidad:</strong>
-          Rascacielos iluminados, calles vibrantes y luces de neón que dibujan
-          una nueva cara de China.
-        </p>
-
-        <img
-          src="img/21.jpg"
-          alt="Paisaje de China 1"
-          width="400"
-          height="300" />
-        <img
-          src="img/22.jpg"
-          alt="Paisaje de China 2"
-          width="400"
-          height="300" />
-        <img
-          src="img/23.jpg"
-          alt="Paisaje de China 3"
-          width="400"
-          height="300" />
-        <img
-          src="img/24.jpg"
-          alt="Paisaje de China 4"
-          width="400"
-          height="300" />
-        <img
-          src="img/25.jpg"
-          alt="Paisaje de China 5"
-          width="400"
-          height="300" />
-        <img
-          src="img/26.jpg"
-          alt="Paisaje de China 6"
-          width="400"
-          height="300" />
-        <img
-          src="img/27.jpg"
-          alt="Paisaje de China 7"
-          width="400"
-          height="300" />
-        <img
-          src="img/26.jpg"
-          alt="Paisaje de China 8"
-          width="400"
-          height="300" />
-        <img
-          src="img/25.jpg"
-          alt="Paisaje de China 9"
-          width="400"
-          height="300" />
-        <img
-          src="img/24.jpg"
-          alt="Paisaje de China 10"
-          width="400"
-          height="300" />
-        <img
-          src="img/23.jpg"
-          alt="Paisaje de China 11"
-          width="400"
-          height="300" />
-        <img
-          src="img/22.jpg"
-          alt="Paisaje de China 12"
-          width="400"
-          height="300" />
+        <div class="galeria" id="galeria-japon">
+          <figure class="foto">
+            <img src="img/25.webp" alt="Templo japonés de madera con un león guardián de piedra en primer plano" />
+            <figcaption>Japón 01</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/26.webp" alt="Estanque de jardín con rocas cubiertas de musgo y reflejo de los árboles" />
+            <figcaption>Japón 02</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/27.webp" alt="Estatua budista de piedra delante de un templo de tejado azul" />
+            <figcaption>Japón 03</figcaption>
+          </figure>
+        </div>
       </section>
 
-      <!-- Colección de Colombia -->
-      <section>
-        <h2>Colombia entre dos océanos</h2>
+      <!-- GALERÍA DE CHINA -->
+      <section class="galeria-detalle" id="china">
+        <div class="galeria-detalle__cabecera">
+          <div class="galeria-detalle__id">
+            <p class="galeria-detalle__numero">
+              02
+              <img src="img/icono/capas.svg" alt="" />
+            </p>
+            <p class="galeria-detalle__pais">China</p>
+          </div>
 
-        <p>
-          Un viaje donde el océano Pacífico y el mar Caribe se encuentran con
-          montañas, selvas tropicales, selvas amazónicas y ciudades llenas de
-          vida.
-        </p>
+          <div class="galeria-detalle__propuesta">
+            <h2>China entre contrastes.</h2>
+            <p>
+              Un viaje donde la historia milenaria se encuentra con la energía
+              de las grandes ciudades.
+            </p>
+            <p class="galeria-detalle__recuento">12 fotografías en la galería.</p>
+          </div>
 
-        <p>
-          <strong>Naturaleza:</strong>
-          Playas de arena dorada, selvas exuberantes y montañas que esconden
-          cascadas y paisajes llenos de biodiversidad.
-        </p>
+          <div class="galeria-detalle__incluye">
+            <h3 class="antetitulo">Qué incluye</h3>
+            <ul class="lista-check">
+              <li>
+                <p>
+                  <strong>Naturaleza:</strong> Montañas envueltas en niebla,
+                  bosques de bambú y paisajes que parecen sacados de una
+                  pintura tradicional.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Tradición:</strong> Templos ancestrales, tejados
+                  curvados y farolillos rojos que iluminan calles llenas de
+                  historia.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Modernidad:</strong> Rascacielos iluminados, calles
+                  vibrantes y luces de neón que dibujan una nueva cara de China.
+                </p>
+              </li>
+            </ul>
+            <a class="enlace-destacado" href="#galeria-china">Explora la galería de China ↗</a>
+          </div>
+        </div>
 
-        <p>
-          <strong>Tradición:</strong>
-          Ritmos de cumbia y vallenato, pueblos llenos de color y celebraciones
-          que mantienen vivas las costumbres y la esencia de Colombia.
-        </p>
-
-        <p>
-          <strong>Cultura:</strong>
-          Sabores únicos, mercados llenos de vida y ciudades donde se mezclan
-          las raíces indígenas, africanas y españolas.
-        </p>
-
-        <img
-          src="img/23.jpg"
-          alt="Paisaje de Colombia 1"
-          width="400"
-          height="300" />
-        <img
-          src="img/24.jpg"
-          alt="Paisaje de Colombia 2"
-          width="400"
-          height="300" />
-        <img
-          src="img/25.jpg"
-          alt="Paisaje de Colombia 3"
-          width="400"
-          height="300" />
-        <img
-          src="img/26.jpg"
-          alt="Paisaje de Colombia 4"
-          width="400"
-          height="300" />
-        <img
-          src="img/27.jpg"
-          alt="Paisaje de Colombia 5"
-          width="400"
-          height="300" />
-        <img
-          src="img/26.jpg"
-          alt="Paisaje de Colombia 6"
-          width="400"
-          height="300" />
-        <img
-          src="img/25.jpg"
-          alt="Paisaje de Colombia 7"
-          width="400"
-          height="300" />
-        <img
-          src="img/24.jpg"
-          alt="Paisaje de Colombia 8"
-          width="400"
-          height="300" />
-        <img
-          src="img/23.jpg"
-          alt="Paisaje de Colombia 9"
-          width="400"
-          height="300" />
-        <img
-          src="img/24.jpg"
-          alt="Paisaje de Colombia 10"
-          width="400"
-          height="300" />
-        <img
-          src="img/25.jpg"
-          alt="Paisaje de Colombia 11"
-          width="400"
-          height="300" />
-        <img
-          src="img/26.jpg"
-          alt="Paisaje de Colombia 12"
-          width="400"
-          height="300" />
+        <div class="galeria" id="galeria-china">
+          <figure class="foto">
+            <img src="img/1.webp" alt="Calle de estilo tradicional chino de noche, con figuras luminosas de peces colgadas" />
+            <figcaption>China 01</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/2.webp" alt="Calle peatonal con edificios de tejados curvos iluminados de noche" />
+            <figcaption>China 02</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/3.webp" alt="Fachada tradicional china iluminada con farolillos y adornos de flores de luz" />
+            <figcaption>China 03</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/4.webp" alt="Edificio tradicional de varios pisos iluminado en dorado por la noche" />
+            <figcaption>China 04</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/5.webp" alt="Estanque con flores de loto luminosas frente a edificios tradicionales de noche" />
+            <figcaption>China 05</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/6.webp" alt="Tejados curvos de un pabellón tradicional chino contra el cielo" />
+            <figcaption>China 06</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/7.webp" alt="Edificios residenciales con cúpulas doradas y una grúa en primer plano" />
+            <figcaption>China 07</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/8.webp" alt="Vista aérea del río y los rascacielos de Shanghái" />
+            <figcaption>China 08</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/9.webp" alt="Rascacielos de Pudong vistos desde abajo contra un cielo azul" />
+            <figcaption>China 09</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/10.webp" alt="Rascacielos y edificios antiguos de Shanghái al atardecer" />
+            <figcaption>China 10</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/11.webp" alt="Avenida comercial con letreros luminosos al anochecer" />
+            <figcaption>China 11</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/12.webp" alt="Edificio tradicional chino iluminado en una esquina de noche" />
+            <figcaption>China 12</figcaption>
+          </figure>
+        </div>
       </section>
+
+      <!-- GALERÍA DE COLOMBIA -->
+      <section class="galeria-detalle" id="colombia">
+        <div class="galeria-detalle__cabecera">
+          <div class="galeria-detalle__id">
+            <p class="galeria-detalle__numero">
+              03
+              <img src="img/icono/paneles.svg" alt="" />
+            </p>
+            <p class="galeria-detalle__pais">Colombia</p>
+          </div>
+
+          <div class="galeria-detalle__propuesta">
+            <h2>Colombia entre dos océanos.</h2>
+            <p>
+              Un viaje donde el océano Pacífico y el mar Caribe se encuentran
+              con montañas, selvas tropicales, selvas amazónicas y ciudades
+              llenas de vida.
+            </p>
+            <p class="galeria-detalle__recuento">12 fotografías en la galería.</p>
+          </div>
+
+          <div class="galeria-detalle__incluye">
+            <h3 class="antetitulo">Qué incluye</h3>
+            <ul class="lista-check">
+              <li>
+                <p>
+                  <strong>Naturaleza:</strong> Playas de arena dorada, selvas
+                  exuberantes y montañas que esconden cascadas y paisajes
+                  llenos de biodiversidad.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Tradición:</strong> Ritmos de cumbia y vallenato,
+                  pueblos llenos de color y celebraciones que mantienen vivas
+                  las costumbres y la esencia de Colombia.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <strong>Cultura:</strong> Sabores únicos, mercados llenos de
+                  vida y ciudades donde se mezclan las raíces indígenas,
+                  africanas y españolas.
+                </p>
+              </li>
+            </ul>
+            <a class="enlace-destacado" href="#galeria-colombia">Explora la galería de Colombia ↗</a>
+          </div>
+        </div>
+
+        <div class="galeria" id="galeria-colombia">
+          <figure class="foto">
+            <img src="img/13.webp" alt="Luces de una ciudad en el valle bajo un cielo nublado al anochecer" />
+            <figcaption>Colombia 01</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/14.webp" alt="Mono ardilla sentado en una rama entre hojas verdes de la selva" />
+            <figcaption>Colombia 02</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/15.webp" alt="Atardecer naranja sobre el mar con nubes oscuras" />
+            <figcaption>Colombia 03</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/16.webp" alt="Tarántula peluda sobre una hoja de palma" />
+            <figcaption>Colombia 04</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/17.webp" alt="Sendero de tierra entre árboles de troncos retorcidos" />
+            <figcaption>Colombia 05</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/18.webp" alt="Playa de arena en una bahía de agua turquesa rodeada de vegetación" />
+            <figcaption>Colombia 06</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/19.webp" alt="Pájaro negro de pico anaranjado junto a hortensias azules" />
+            <figcaption>Colombia 07</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/20.webp" alt="Río de montaña entre rocas y vegetación tropical" />
+            <figcaption>Colombia 08</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/21.webp" alt="Gran árbol con una caseta de puertas naranjas y azules debajo" />
+            <figcaption>Colombia 09</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/22.webp" alt="Palmas de cera altísimas en un valle verde bajo un cielo azul" />
+            <figcaption>Colombia 10</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/23.webp" alt="Palmas de cera en una ladera con nubes blancas y un jeep rojo" />
+            <figcaption>Colombia 11</figcaption>
+          </figure>
+          <figure class="foto">
+            <img src="img/24.webp" alt="Rana verde sobre la rama de un árbol de noche" />
+            <figcaption>Colombia 12</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <a class="volver-arriba" href="#arriba">Volver arriba</a>
     </main>
 
-    <!-- Pie de página común -->
-    <footer>
-      <p>&copy; 2026 Viajes &amp; Wallpapers. Todos los derechos reservados.</p>
-      <p>
-        Contacta con nosotros:
-        <a href="mailto:info@viajeswallpapers.com">
-          info@viajeswallpapers.com
+    <!-- PIE -->
+    <footer class="pie">
+      <div class="pie__fila">
+        <a class="marca" href="index.html">
+          <span class="marca__simbolo"></span>
+          Viajes &amp; Wallpapers
         </a>
-      </p>
+        <nav aria-label="Menú del pie">
+          <ul class="pie__lista pie__lista--barras">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="fotos.html">Fotos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="pie__fila pie__legal">
+        <p>&copy; 2026 Viajes &amp; Wallpapers. Todos los derechos reservados.</p>
+        <ul class="pie__lista">
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+        <p>
+          Contacta con nosotros en:
+          <a href="mailto:info@viajeswallpapers.com">info@viajeswallpapers.com</a>
+        </p>
+      </div>
     </footer>
   </body>
 </html>

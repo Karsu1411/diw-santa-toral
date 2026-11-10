@@ -738,3 +738,41 @@ figcaption {
     margin: 0;
     accent-color: var(--color-primario);
 }
+
+/* RESPONSIVE (opcional): móvil según el frame «Inicio · Móvil» */
+@media (max-width: 768px) {
+    :root {
+        --margen-lateral: var(--espacio-3);
+    }
+
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "cabecera"
+            "menu"
+            "principal"
+            "pie";
+    }
+
+    .menu {
+        justify-content: flex-start;
+    }
+
+    .menu ul {
+        gap: var(--espacio-3);
+    }
+
+    h1 {
+        font-size: var(--tamano-h2);
+    }
+
+    .galeria-detalle__cabecera {
+        grid-template-columns: 1fr;
+        gap: var(--espacio-3);
+    }
+
+    .pie__fila {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

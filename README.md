@@ -2,7 +2,7 @@
 
 Práctica de maquetación web (UT1) de **Diseño de Interfaces Web**: la web **Viajes & Wallpapers**, con fondos de pantalla de Japón, China, Colombia, Perú y España. Grupo: Asier Toral, Santiago Santa y Julinho Ghair.
 
-**Contenido:** [Estructura del proyecto](#-estructura-del-proyecto) · [Reglas](#-reglas) · [Flujo de cada tarea](#-flujo-de-cada-tarea) · [Créditos de las imágenes](#-créditos-de-las-imágenes)
+**Contenido:** [Estructura del proyecto](#-estructura-del-proyecto) · [Empezar desde cero (VS Code)](#-empezar-desde-cero-vs-code) · [Reglas](#-reglas) · [Flujo de cada tarea](#-flujo-de-cada-tarea) · [Créditos de las imágenes](#-créditos-de-las-imágenes)
 
 ---
 
@@ -36,6 +36,92 @@ Es una web estática en HTML y CSS, sin nada que instalar: basta con abrir `inde
 | `.gitignore` | Lo que Git no debe subir: la configuración de los editores (`.vscode/`, `.idea/`, `*.iml`), archivos del sistema (`.DS_Store`) y carpetas de herramientas (`node_modules/`, `dist/`). | Si alguien usa una herramienta que genera archivos que no deben subirse. |
 
 La marca de Git `ut0-original` guarda la web tal como quedó al terminar la UT0, antes de aplicar el diseño de la UT1.
+
+---
+
+## 🚀 Empezar desde cero (VS Code)
+
+Si nunca has usado Git ni GitHub en equipo, empieza aquí. Los pasos 1 a 5 se hacen **una sola vez**; el paso 6 es lo que harás en cada tarea.
+
+Los nombres de botones y menús van en inglés, que es como viene VS Code; entre paréntesis, cómo se ven si lo tienes en español. Junto a cada paso está el comando de terminal equivalente, por si lo prefieres (en VS Code: menú **Terminal → New Terminal**).
+
+### 1. Qué necesitas
+
+| Qué | Cómo comprobarlo o conseguirlo |
+|---|---|
+| **Git** | Abre una terminal y escribe `git --version`. Si responde algo como `git version 2.47.0`, ya lo tienes. Si no: **Windows**, descárgalo de https://git-scm.com/download/win e instálalo con las opciones por defecto · **macOS**, al escribir `git --version` el sistema ofrece instalar las *Command Line Tools*: acepta (o usa `brew install git`) · **Linux**, con el gestor de paquetes (`sudo apt install git`, `sudo dnf install git` o `sudo pacman -S git`). |
+| **Cuenta de GitHub** | Regístrate en https://github.com/signup si no tienes. |
+| **VS Code** | Descárgalo de https://code.visualstudio.com/. |
+| **Live Server** | En VS Code, abre el panel de extensiones (icono de cuadrados en la barra de la izquierda, o `Ctrl+Shift+X`), busca «Live Server» (de Ritwick Dey) y pulsa **Install** (Instalar). |
+
+Después de instalar Git, cierra y vuelve a abrir VS Code para que lo detecte.
+
+### 2. Aceptar la invitación al repo
+
+Te llegará un correo de GitHub con la invitación. También puedes aceptarla directamente aquí, con tu cuenta iniciada: https://github.com/Karsu1411/diw-santa-toral/invitations → **Accept invitation**. Sin este paso podrás ver el repo, pero no subir cambios.
+
+### 3. Tu nombre y tu correo en Git
+
+Cada commit lleva un nombre y un correo, y en un repo público los ve cualquiera. Usa tu **dirección privada de GitHub** en lugar de tu correo personal:
+
+1. En GitHub: tu foto (arriba a la derecha) → **Settings** → **Emails**.
+2. Marca **Keep my email addresses private**. Debajo aparece tu dirección privada, con esta forma: `12345678+tuusuario@users.noreply.github.com`.
+3. Marca también **Block command line pushes that expose my email**, para que GitHub te avise si se te escapa el personal.
+
+Luego, en la terminal de VS Code (una sola vez en tu ordenador):
+
+```bash
+git config --global user.name "Tu Nombre"
+git config --global user.email "12345678+tuusuario@users.noreply.github.com"
+```
+
+Compruébalo con `git config user.email`.
+
+### 4. Clonar el repo y abrirlo
+
+1. En VS Code pulsa `Ctrl+Shift+P` (en macOS, `Cmd+Shift+P`) y escribe **Git: Clone** (Git: Clonar).
+2. Elige **Clone from GitHub** (Clonar desde GitHub). La primera vez, VS Code te pide permiso para iniciar sesión: pulsa **Allow** (Permitir), se abre el navegador, autoriza a VS Code en GitHub y vuelve.
+3. Escribe `Karsu1411/diw-santa-toral` y elígelo de la lista.
+4. Elige la carpeta donde guardarlo (por ejemplo, `Documentos/daw`). VS Code crea dentro la carpeta `diw-santa-toral`.
+5. Cuando pregunte *Would you like to open the cloned repository?*, pulsa **Open** (Abrir).
+
+Si todo ha ido bien, abajo a la izquierda, en la barra de estado, verás la rama en la que estás:
+
+```text
+ ⎇ main   ↻
+```
+
+En terminal: `git clone https://github.com/Karsu1411/diw-santa-toral.git` y después `code diw-santa-toral`.
+
+### 5. Ver la web
+
+Abre `index.html` y pulsa **Go Live** abajo a la derecha, en la barra de estado (o clic derecho en el archivo → **Open with Live Server**). La web se abre en el navegador y se recarga sola cada vez que guardas (`Ctrl+S`).
+
+### 6. Trabajar en una tarea desde VS Code
+
+Todo cambio va en su rama y entra en `main` por pull request ([Reglas](#-reglas)): GitHub no acepta subir nada directamente a `main`. Estos son los pasos del [Flujo de cada tarea](#-flujo-de-cada-tarea), hechos desde la interfaz de VS Code:
+
+| Paso | En VS Code | En terminal |
+|---|---|---|
+| **Ponerse al día** | Asegúrate de estar en `main` (barra de estado). Abre el panel **Source Control** (Control de código fuente; icono de ramas a la izquierda, o `Ctrl+Shift+G`) → menú `···` → **Pull** (Incorporación de cambios). | `git switch main` y `git pull` |
+| **Crear tu rama** | Clic en `⎇ main` en la barra de estado → **Create new branch...** (Crear nueva rama...) → escribe el nombre (`menu-movil`, `texto-nosotros`…) y pulsa `Enter`. La barra de estado pasa a mostrar `⎇ menu-movil`. | `git switch -c menu-movil` |
+| **Hacer los cambios** | Edita y guarda. En Source Control aparece cada archivo cambiado bajo **Changes** (Cambios); al hacer clic en uno ves qué has cambiado. | `git status` |
+| **Guardar (commit)** | Escribe en la caja **Message** (Mensaje) qué cambia, en presente: «Añade el menú en móvil». Pulsa **Commit** (Confirmar). Si VS Code pregunta si quieres incluir todos los cambios, responde **Yes** (Sí). | `git add .` y `git commit -m "Añade el menú en móvil"` |
+| **Publicar la rama** | Pulsa **Publish Branch** (Publicar rama) en Source Control. Los commits siguientes de esa rama se suben con **Sync Changes** (Sincronizar cambios). | `git push -u origin menu-movil` (después, `git push`) |
+| **Abrir el pull request** | En GitHub, en la página del repo, aparece el aviso **Compare & pull request**: sigue los pasos 7 a 9 del [flujo](#-flujo-de-cada-tarea). | `gh pr create` (si tienes GitHub CLI) |
+
+### 7. Después de que se fusione tu pull request
+
+Vuelve a `main` y trae lo fusionado: clic en `⎇ menu-movil` en la barra de estado → elige `main` → Source Control → `···` → **Pull**. La rama de GitHub se borra sola al fusionar; la tuya local puedes borrarla en Source Control → `···` → **Branch** → **Delete Branch...** (Rama → Eliminar rama...). Es el paso 10 del [flujo](#-flujo-de-cada-tarea).
+
+### 8. Errores típicos del principio
+
+| Qué pasa | Qué hacer |
+|---|---|
+| **No aparece «Git: Clone» o Source Control dice *Download Git*** | VS Code no encuentra Git. Instálalo (paso 1) y cierra y abre VS Code. |
+| **Pide usuario y contraseña** | GitHub ya no acepta la contraseña de tu cuenta. Cancela y deja que VS Code inicie sesión con el navegador (paso 4). Si aun así insiste, en terminal: `gh auth login` (GitHub CLI) o crea un token en GitHub → Settings → Developer settings. |
+| **GitHub rechaza el push a `main`** (*protected branch*) | Es lo esperado: `main` está protegida. Crea una rama desde donde estás (barra de estado → **Create new branch...**), publícala y abre el pull request. Más casos en el desplegable «🆘 Si algo sale mal», más abajo. |
+| **Conflicto al actualizar** | VS Code marca los archivos en conflicto en **Merge Changes** y, dentro del archivo, ofrece **Accept Current Change**, **Accept Incoming Change** o **Accept Both Changes**. Decide con el compañero qué se queda, guarda y haz commit. Más detalle en «🆘 Si algo sale mal», más abajo. |
 
 ---
 

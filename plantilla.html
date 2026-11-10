@@ -2,7 +2,9 @@
 <!--
   Viajes &amp; Wallpapers · Plantilla común (plantilla.html)
   Práctica UT1 · Diseño de Interfaces Web · 2.º DAW · IES Juan de la Cierva
-  Base para crear páginas nuevas: copia este archivo y rellena las zonas variables.
+  Paso 7 del enunciado. Base para crear páginas nuevas: copia este archivo y rellena
+  las zonas variables. Así se crearon aviso-legal.html, privacidad.html y cookies.html.
+  Las partes comunes garantizan el mismo menú y el mismo pie en todas las páginas (paso 8).
   Estructura con Grid en el body y componentes con Flexbox; estilos en css/estilos.css.
 -->
 <html lang="es">
@@ -40,7 +42,7 @@
     </header>
 
     <!-- MENÚ (área «menu» del grid): nav con ul en Flexbox, paso 2 del enunciado. aria-current="page" indica la página actual a los lectores de pantalla -->
-    <!-- Uso: en cada página, añade aria-current="page" al enlace de esa página -->
+    <!-- Uso: en cada página, añade aria-current="page" al enlace de esa página. Si la página no está en el menú (las legales), márcala en el pie -->
     <nav class="menu" aria-label="Menú principal">
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -75,6 +77,7 @@
 
       <div class="pie__fila pie__legal">
         <p>&copy; 2026 Viajes &amp; Wallpapers. Todos los derechos reservados.</p>
+        <!-- Uso: en una página legal, añade aria-current="page" a su enlace de esta lista -->
         <ul class="pie__lista">
           <li><a href="aviso-legal.html">Aviso legal</a></li>
           <li><a href="privacidad.html">Privacidad</a></li>

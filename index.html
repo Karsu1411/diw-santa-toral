@@ -46,7 +46,7 @@
 
     <!-- CONTENIDO PRINCIPAL (área «principal» del grid): un solo main y un solo h1 por página -->
     <main class="principal">
-      <!-- PRESENTACIÓN: antetítulo, único h1 de la página y lista ordenada de destinos -->
+      <!-- PRESENTACIÓN: antetítulo, único h1 de la página y lista ordenada de los cinco destinos. El antetítulo lleva .antetitulo--escritorio porque el frame móvil de Figma no lo tiene (se oculta por debajo de 768 px) -->
       <section class="seccion">
         <p class="antetitulo antetitulo--escritorio">Destinos</p>
         <h1>Wallpapers: Japón, China, Colombia, Perú y España</h1>
@@ -68,7 +68,7 @@
           <em>Asia, Sudamérica y Europa</em>.
         </p>
 
-        <!-- TARJETAS (paso 3): div.tarjetas con un article.tarjeta por destino. La de Perú, galería nueva, lleva la etiqueta «Novedad» (paso 4). Cada foto es un figure con figcaption y un alt que describe lo que se ve -->
+        <!-- TARJETAS (paso 3): div.tarjetas con un article.tarjeta por destino, apiladas a todo el ancho como en Figma. Cada article lleva su h3, que mantiene el orden de títulos (h1 > h2 > h3). La de Perú, galería nueva, lleva la etiqueta «Novedad» (paso 4). Cada foto es un figure con figcaption y un alt que describe lo que se ve; las fotos son las mismas que en las galerías de Fotos -->
         <div class="tarjetas">
           <article class="tarjeta">
             <h3>Japón, Kanazawa</h3>
@@ -139,7 +139,7 @@
         </div>
       </section>
 
-      <!-- SUBE TUS FONDOS: lista anidada de la UT0 (ul dentro de li) -->
+      <!-- SUBE TUS FONDOS: lista anidada de la UT0 (ul dentro de li): continentes y, dentro, sus países -->
       <section class="seccion">
         <h2>Sube tus mejores fondos de pantalla de viaje</h2>
         <p>Sube tus mejores instantáneas para que podamos disfrutarlas.</p>
@@ -169,7 +169,7 @@
         </ul>
       </section>
 
-      <!-- TABLA DE COLECCIONES (paso 5): tabla de datos de la UT0 con caption, th con scope y colspan; estilo solo desde el CSS -->
+      <!-- TABLA DE COLECCIONES (paso 5): tabla de datos de la UT0, que el enunciado obliga a conservar, con caption, th con scope y colspan en el tfoot; estilo solo desde el CSS. Una fila por país; la colección se repite en cada fila (sin rowspan) para que las líneas crucen la tabla, como en Figma -->
       <section class="seccion">
         <h2>Información de nuestras colecciones</h2>
         <table>
@@ -218,7 +218,7 @@
         </table>
       </section>
 
-      <!-- DESCUBRE MÁS: enlace externo (rel="noopener" por seguridad al abrir otra pestaña) e iframe de OpenStreetMap con title, paso 6 del enunciado -->
+      <!-- DESCUBRE MÁS: enlace externo (rel="noopener" por seguridad al abrir otra pestaña; el propio texto avisa de que se abre en una pestaña nueva, para no sorprender al usuario) e iframe de OpenStreetMap con title, paso 6 del enunciado. loading="lazy" retrasa la carga del mapa hasta que se acerca a la pantalla. «Volver arriba» enlaza al id="arriba" del body -->
       <section class="seccion seccion--compacta">
         <h2>Descubre más</h2>
         <p>

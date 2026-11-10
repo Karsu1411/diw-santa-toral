@@ -7,7 +7,7 @@
    (la guía de estilo de Figma), así que se cambian en un único sitio.
 
    ÍNDICE
-    0. Variables (guía de estilo)
+    0. VARIABLES (guía de estilo)
     1. BASE
     2. ESTRUCTURA DE LA PÁGINA (Grid)
     3. CABECERA
@@ -374,7 +374,8 @@ body {
     font-weight: var(--peso-seminegrita);
 }
 
-/* Lista anidada: subtemas en una línea, unidos con «y» */
+/* Lista anidada de la UT0 (continente > países): los países de cada
+   continente van en una línea, unidos con «y» desde el CSS (::before) */
 .tematicas {
     display: flex;
     flex-direction: column;
@@ -405,7 +406,8 @@ body {
     content: "\a0y\a0";
 }
 
-/* Enlaces sueltos: sin subrayado (se reconocen por color y peso) */
+/* «Volver arriba»: enlace al id="arriba" del body. Sin subrayado (se
+   reconoce por color y peso, no solo por color); 44 px de alto táctil */
 .volver-arriba {
     display: inline-flex;
     align-items: center;
@@ -429,6 +431,8 @@ body {
    minmax), pero cada tarjeta ocupa una fila, como en el diseño.
    Dentro de cada tarjeta se usa Flexbox (una dimensión).
    Paso 4: la etiqueta «Novedad» se superpone con position: absolute.
+   La portada tiene cinco tarjetas, una por galería; la de Perú lleva la
+   etiqueta porque es una de las galerías nuevas.
    ========================================================================== */
 .tarjetas {
     display: grid;
@@ -467,6 +471,7 @@ body {
     object-fit: cover;
 }
 
+/* Degradado oscuro de Figma: un ::after en la misma celda que la foto */
 .tarjeta figure::after {
     content: "";
     grid-area: foto;
@@ -477,6 +482,7 @@ body {
     grid-area: pie;
 }
 
+/* Pie de foto común (tarjetas y galerías); 12,5:1 sobre el fondo */
 figcaption {
     color: var(--color-texto-secundario);
     font-size: var(--tamano-pequeno);
@@ -488,7 +494,10 @@ figcaption {
    maqueta nada: solo superpone una etiqueta pequeña sobre la foto.
    absolute saca el elemento del flujo y lo coloca respecto al ancestro
    posicionado más cercano: la .tarjeta, que por eso lleva position: relative.
-   Toda la maquetación de la web se hace con Grid y Flexbox. */
+   Toda la maquetación de la web se hace con Grid y Flexbox.
+   top se calcula con las variables, sin px copiados de Figma: alto del h3
+   (tamaño × interlineado) + separación de la tarjeta (16 px) + 8 px. Así la
+   etiqueta queda 8 px dentro de la esquina superior derecha de la foto. */
 .etiqueta {
     position: absolute;
     top: calc(var(--tamano-h3) * var(--interlineado-h3) + var(--espacio-3));
@@ -512,7 +521,8 @@ figcaption {
    Columnas de 220 / 360 / 220 px con 24 px de separación; las líneas ocupan
    todo el ancho (1280 px), como en Figma.
    Es una tabla de datos (no de maquetación), con caption y scope en los th;
-   colspan viene de la tabla de la UT0. «Asia» va en cada fila (sin rowspan)
+   colspan viene de la tabla de la UT0. Cinco filas, una por país; la
+   colección (Asia, Sudamérica, Europa) se repite en cada fila, sin rowspan,
    para que todas las líneas crucen la tabla, como en Figma.
    ========================================================================== */
 table {
@@ -527,7 +537,8 @@ caption {
     text-align: left;
 }
 
-/* La separación de 24 px entre columnas es el padding derecho de cada celda */
+/* La separación de 24 px entre columnas es el padding derecho de cada celda.
+   Solo border-bottom: las líneas horizontales del diseño, sin verticales */
 th,
 td {
     padding: var(--espacio-2) var(--espacio-3) var(--espacio-2) 0;
@@ -576,6 +587,7 @@ tfoot td {
    8. MAPA (iframe)
    Paso 6 del enunciado: iframe de OpenStreetMap con title (lo lee el lector
    de pantalla). Ancho fluido con width: 100% y aspect-ratio, sin medidas fijas.
+   Muestra Japón, el destino del enlace externo que tiene encima.
    ========================================================================== */
 .mapa {
     width: 100%;
@@ -606,6 +618,7 @@ tfoot td {
     gap: var(--espacio-2);
 }
 
+/* Listas de enlaces del pie (menú y legales) en fila con Flexbox */
 .pie__lista {
     display: flex;
     flex-wrap: wrap;
@@ -631,6 +644,8 @@ tfoot td {
     font-weight: var(--peso-seminegrita);
 }
 
+/* Menú del pie: barras «/» entre opciones, como en Figma. Van en el CSS
+   (::before) porque son decoración: el lector de pantalla no las anuncia */
 .pie__lista--barras li + li::before {
     content: "/";
     margin-right: var(--espacio-1-5);
@@ -643,6 +658,7 @@ tfoot td {
     align-items: center;
 }
 
+/* Fila legal: copyright, aviso legal, privacidad, cookies y correo */
 .pie__legal {
     font-size: var(--tamano-mini);
 }
@@ -655,6 +671,7 @@ tfoot td {
    10. BOTÓN PRINCIPAL
    Componente de Figma convertido en clase reutilizable (.boton) con sus
    4 estados: normal, hover, foco y deshabilitado. Mide 48 px de alto.
+   Se usa en «Ir a galería de Japón» (Fotos) y en «Enviar mensaje» (Contacto).
    ========================================================================== */
 .boton {
     display: inline-flex;
@@ -702,10 +719,13 @@ tfoot td {
    con dos capas encima: el degradado de Figma y una capa oscura del 25 % para
    que el texto claro cumpla el contraste (5,4:1 en el punto más claro).
    ========================================================================== */
+/* La presentación empieza pegada al menú, sin el margen superior del main */
 .principal--sin-margen {
     padding-top: 0;
 }
 
+/* Margen lateral negativo: la foto ocupa todo el ancho de la página y el
+   padding devuelve el texto a su sitio (sin position ni anchos fijos) */
 .portada-fotos {
     display: flex;
     flex-direction: column;
@@ -731,10 +751,12 @@ tfoot td {
     text-decoration: underline;
 }
 
+/* Sobre la foto oscura, el anillo de foco pasa a claro para que se vea */
 .portada-fotos a:focus-visible {
     outline-color: var(--color-fondo);
 }
 
+/* Migas de navegación e índice de galerías: texto claro sobre la foto */
 .migas,
 .indice-galerias {
     color: var(--texto-fondo-oscuro);
@@ -759,6 +781,7 @@ tfoot td {
     min-height: var(--objetivo-tactil);
 }
 
+/* Título a la izquierda y resumen a la derecha, alineados por abajo (Flexbox) */
 .portada-fotos__propuesta {
     display: flex;
     justify-content: space-between;
@@ -774,6 +797,7 @@ tfoot td {
     min-width: 0;
 }
 
+/* Índice de las cinco galerías: enlaces internos (#japon…) con «↓» */
 .indice-galerias {
     display: flex;
     flex-wrap: wrap;
@@ -789,6 +813,8 @@ tfoot td {
     font-size: var(--tamano-pequeno);
 }
 
+/* Columna del resumen: base de 45 × 8 = 360 px, el ancho de Figma, sacada
+   de la escala de espacios; en móvil pasa a auto (sección 17) */
 .portada-fotos__resumen {
     display: flex;
     flex: 0 0 calc(var(--espacio) * 45);
@@ -796,6 +822,8 @@ tfoot td {
     gap: var(--espacio);
 }
 
+/* Caja clara con el recuento de fotos. 20 y 28 px: pasos de 8 con medio
+   paso de 4, como pide la escala */
 .resumen {
     display: flex;
     flex-direction: column;
@@ -826,7 +854,10 @@ tfoot td {
 
 /* ==========================================================================
    12. PÁGINA FOTOS: DETALLE DE CADA GALERÍA
-   Tres columnas en la proporción de Figma (240 / 582 / 330) con fr.
+   Las cinco galerías (Japón, China, Colombia, Perú y España) comparten esta
+   estructura: Perú y España no tienen frame propio en Figma y reutilizan el
+   de las demás. La cabecera usa Grid con tres columnas en la proporción de
+   Figma (240 / 582 / 330) pasada a fr; dentro de cada columna, Flexbox.
    ========================================================================== */
 .galeria-detalle {
     display: flex;
@@ -850,6 +881,7 @@ tfoot td {
     gap: calc(var(--espacio-2) + var(--espacio-mitad));
 }
 
+/* Número de la galería (01 a 05) y su icono a los extremos (space-between) */
 .galeria-detalle__numero {
     display: flex;
     justify-content: space-between;
@@ -860,6 +892,7 @@ tfoot td {
     line-height: normal;
 }
 
+/* Icono decorativo de cada galería (alt vacío en el HTML), 24 px */
 .galeria-detalle__numero img {
     width: var(--tamano-icono);
 }
@@ -876,6 +909,8 @@ tfoot td {
     font-weight: var(--peso-seminegrita);
 }
 
+/* «Qué incluye»: el check va en un ::before con background-image porque es
+   decoración; así no hace falta una img sin texto en cada elemento */
 .lista-check {
     display: flex;
     flex-direction: column;
@@ -915,8 +950,11 @@ tfoot td {
 
 /* ==========================================================================
    13. PÁGINA FOTOS: CUADRÍCULA DE FOTOS
-   Componente «Foto 01» de Figma convertido en la clase .foto. La cuadrícula
-   usa auto-fill para mantener las columnas aunque una galería tenga pocas fotos.
+   Componente «Foto 01» de Figma convertido en la clase .foto, reutilizado en
+   las 60 fotos (12 por galería). La cuadrícula usa repeat(auto-fill,
+   minmax(200px, 1fr)): caben tantas columnas como permite el ancho, sin media
+   queries. auto-fill (y no auto-fit) mantiene el ancho de columna aunque una
+   galería tuviera menos fotos. Mismo ancho máximo que el texto largo (72,5 %).
    ========================================================================== */
 .galeria {
     display: grid;
@@ -936,6 +974,7 @@ tfoot td {
     border-radius: var(--radio);
 }
 
+/* Proporción de la foto del componente de Figma (188 × 88), sin alto fijo */
 .foto img {
     grid-area: foto;
     width: 100%;
@@ -950,7 +989,8 @@ tfoot td {
     font-weight: var(--peso-seminegrita);
 }
 
-/* Hover: degradado sobre la foto con un ::after en la misma celda de Grid */
+/* Hover: degradado sobre la foto con un ::after en la misma celda de Grid.
+   Además del color cambia el borde, así que no depende solo del color */
 .foto::after {
     content: "";
     grid-area: foto;
@@ -971,7 +1011,9 @@ tfoot td {
 
 /* ==========================================================================
    14. TEXTO LARGO
-   Líneas más cortas en los bloques de varios párrafos (legibilidad).
+   Líneas más cortas en los bloques de varios párrafos (legibilidad: una
+   línea demasiado larga cansa la vista). La clase .seccion--lectura se usa
+   en Nosotros, Contacto y las tres páginas legales.
    ========================================================================== */
 .seccion--lectura > p,
 .seccion--lectura > .tarjeta {
@@ -982,6 +1024,8 @@ tfoot td {
    15. PÁGINA NOSOTROS
    Sin diseño en Figma: reutiliza tarjetas, listas y tipografía de la portada.
    ========================================================================== */
+/* Variante de tarjeta sin foto y con borde (patrón BEM: bloque--variante).
+   Se usa en el equipo de Nosotros y en la tarjeta del correo de Contacto */
 .tarjeta--borde {
     padding: var(--espacio-3);
     border: var(--borde) solid var(--color-acento);
@@ -992,6 +1036,7 @@ tfoot td {
     color: var(--color-primario);
 }
 
+/* Glosario: lista de definiciones (dl) con el término en primario */
 .glosario dl {
     display: flex;
     flex-direction: column;
@@ -1067,10 +1112,12 @@ tfoot td {
     border-color: var(--color-acento);
 }
 
+/* Grupo de radios (temática): fieldset anidado con borde discontinuo */
 .opciones {
     border-style: dashed;
 }
 
+/* Radio o casilla con su label en fila; 44 px de alto táctil */
 .opcion {
     display: flex;
     align-items: center;
@@ -1157,7 +1204,8 @@ tfoot td {
         display: none;
     }
 
-    /* Tarjetas: una por fila (auto-fit lo hace solo) y foto de 342 × 220 */
+    /* Tarjetas: ya van una por fila en escritorio (minmax(100%, 1fr)), así
+       que solo cambian la separación y la proporción de la foto (342 × 220) */
     .tarjeta {
         gap: var(--espacio-1-5);
     }
@@ -1166,6 +1214,7 @@ tfoot td {
         aspect-ratio: 342 / 220;
     }
 
+    /* Mismo cálculo que en escritorio, con el h3 y la separación del móvil */
     .etiqueta {
         top: calc(var(--tamano-h3-movil) * var(--interlineado-h3) + var(--espacio-1-5) + var(--espacio));
     }
@@ -1226,6 +1275,7 @@ tfoot td {
         width: 44.5%;
     }
 
+    /* En móvil, tabla, galerías, formulario y texto largo ocupan todo el ancho */
     table,
     .galeria,
     .formulario,
@@ -1235,6 +1285,7 @@ tfoot td {
         max-width: 100%;
     }
 
+    /* Fotos: título y resumen apilados; cabecera de cada galería en una columna */
     .portada-fotos__propuesta {
         flex-direction: column;
         align-items: stretch;

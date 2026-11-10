@@ -2,7 +2,7 @@
 <!--
   Viajes &amp; Wallpapers · Privacidad (privacidad.html)
   Práctica UT1 · Diseño de Interfaces Web · 2.º DAW · IES Juan de la Cierva
-  Página creada a partir de plantilla.html (paso 8 del enunciado): se copia la plantilla,
+  Página creada a partir de plantilla.html (paso 7 del enunciado): se copia la plantilla,
   se cambia el title y se escribe el contenido en la zona variable.
   Estructura con Grid en el body y componentes con Flexbox; estilos en css/estilos.css.
 -->
@@ -41,7 +41,7 @@
     </header>
 
     <!-- MENÚ (área «menu» del grid): nav con ul en Flexbox, paso 2 del enunciado. aria-current="page" indica la página actual a los lectores de pantalla -->
-    <!-- Uso: en cada página, añade aria-current="page" al enlace de esa página -->
+    <!-- Las páginas legales no están en el menú principal: ningún enlace lleva aria-current; la página actual se marca en el pie -->
     <nav class="menu" aria-label="Menú principal">
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -104,6 +104,7 @@
 
       <div class="pie__fila pie__legal">
         <p>&copy; 2026 Viajes &amp; Wallpapers. Todos los derechos reservados.</p>
+        <!-- aria-current="page" en el enlace de esta página legal: se marca con seminegrita, no solo con color -->
         <ul class="pie__lista">
           <li><a href="aviso-legal.html">Aviso legal</a></li>
           <li><a href="privacidad.html" aria-current="page">Privacidad</a></li>

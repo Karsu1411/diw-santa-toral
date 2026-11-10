@@ -6,7 +6,7 @@
     --color-primario: #C2185B;
     --color-acento: #7F3A9B;
     --color-texto: #290513;
-    --texto-fondo-oscuro: #D4CDD0;
+    --texto-fondo-oscuro: #ECE9EA;
     --color-texto-suave: #7C636F;
     --color-texto-secundario: #2C2C2C;
 
@@ -594,6 +594,16 @@ figcaption {
 
 .portada-fotos a:focus-visible {
     outline-color: var(--color-fondo);
+}
+
+.migas,
+.indice-galerias {
+    color: var(--texto-fondo-oscuro);
+}
+
+.migas a,
+.indice-galerias a {
+    color: var(--texto-fondo-oscuro);
 }
 
 .migas {

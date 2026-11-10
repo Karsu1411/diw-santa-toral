@@ -2,8 +2,9 @@
 <!--
   Viajes &amp; Wallpapers · Inicio (index.html)
   Práctica UT1 · Diseño de Interfaces Web · 2.º DAW · IES Juan de la Cierva
-  Diseño: frame «Inicio · Ordenador» de Figma (grupo «Pantallas»).
-  Estructura con Grid en el body y componentes con Flexbox; estilos en css/estilos.css.
+  Portada, según nuestro diseño de Figma (Inicio, en ordenador y en móvil).
+  Aquí están las tarjetas con la etiqueta «Novedad» (pasos 5 y 6) y la tabla y el mapa (paso 7).
+  Cabecera, menú y pie son los mismos que en plantilla.html (paso 8). Estilos en css/estilos.css.
 -->
 <html lang="es">
   <head>
@@ -13,20 +14,20 @@
       content="width=device-width, initial-scale=1" />
     <title>Inicio - Viajes &amp; Wallpapers</title>
 
-    <!-- Tipografías de la guía de estilo (Google Fonts): Libre Baskerville para títulos y DM Sans para texto. Los preconnect adelantan la conexión para que carguen antes -->
+    <!-- Tipografías de nuestra guía de estilo (paso 2): Libre Baskerville para títulos y DM Sans para texto, desde Google Fonts. Este enlace va antes de estilos.css y los preconnect adelantan la conexión. Si cambiáis de fuente, cambiad este enlace en todas las páginas y las variables de fuente del CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" />
-    <!-- Una sola hoja de estilos externa para toda la web (nada de CSS en línea) -->
+    <!-- Hoja de estilos única de la web (paso 1). Todo el estilo va en css/estilos.css: no uséis style= ni bloques style -->
     <link rel="stylesheet" href="css/estilos.css" />
-    <!-- Favicon: el cuadrado primario de la marca (símbolo de Figma) -->
+    <!-- Icono de la pestaña: el cuadrado de nuestra marca -->
     <link rel="icon" href="img/icono/favicon.svg" type="image/svg+xml" />
   </head>
 
   <body id="arriba">
-    <!-- CABECERA (área «cabecera» del grid del body): marca que enlaza a la portada -->
+    <!-- CABECERA: zona «cabecera» del grid del body (paso 3). La marca enlaza siempre a la portada -->
     <header class="cabecera">
       <a class="marca" href="index.html">
         <span class="marca__simbolo"></span>
@@ -34,7 +35,7 @@
       </a>
     </header>
 
-    <!-- MENÚ (área «menu» del grid): nav con ul en Flexbox, paso 2 del enunciado. aria-current="page" indica la página actual a los lectores de pantalla -->
+    <!-- MENÚ (paso 4): zona «menu» del grid, con display: flex en el ul. aria-current="page" va en el enlace de la página en la que estamos y es lo que la marca como activa. Si añadís una página al menú, añadid su li en todas las páginas y en plantilla.html -->
     <nav class="menu" aria-label="Menú principal">
       <ul>
         <li><a href="index.html" aria-current="page">Inicio</a></li>
@@ -44,9 +45,9 @@
       </ul>
     </nav>
 
-    <!-- CONTENIDO PRINCIPAL (área «principal» del grid): un solo main y un solo h1 por página -->
+    <!-- CONTENIDO PRINCIPAL: zona «principal» del grid. Un solo main y un solo h1 por página, con los títulos en orden (h1, h2, h3) sin saltar niveles -->
     <main class="principal">
-      <!-- PRESENTACIÓN: antetítulo, único h1 de la página y lista ordenada de los cinco destinos. El antetítulo lleva .antetitulo--escritorio porque el frame móvil de Figma no lo tiene (se oculta por debajo de 768 px) -->
+      <!-- PRESENTACIÓN: único h1 de la página y lista de los cinco destinos. El antetítulo «Destinos» solo se ve en ordenador: en móvil lo oculta el CSS (sección 17) -->
       <section class="seccion">
         <p class="antetitulo antetitulo--escritorio">Destinos</p>
         <h1>Wallpapers: Japón, China, Colombia, Perú y España</h1>
@@ -59,7 +60,7 @@
         </ol>
       </section>
 
-      <!-- FONDOS DE PANTALLA: sección con h2 y las tarjetas de cada destino -->
+      <!-- FONDOS DE PANTALLA: un h2, una introducción y las tarjetas de los destinos -->
       <section class="seccion">
         <h2>Nuestros mejores fondos de pantalla</h2>
         <p>
@@ -68,7 +69,7 @@
           <em>Asia, Sudamérica y Europa</em>.
         </p>
 
-        <!-- TARJETAS (paso 3): div.tarjetas con un article.tarjeta por destino, apiladas a todo el ancho como en Figma. Cada article lleva su h3, que mantiene el orden de títulos (h1 > h2 > h3). La de Perú, galería nueva, lleva la etiqueta «Novedad» (paso 4). Cada foto es un figure con figcaption y un alt que describe lo que se ve; las fotos son las mismas que en las galerías de Fotos -->
+        <!-- TARJETAS (paso 5): div.tarjetas con un article.tarjeta por destino. Para añadir una, copiad un article entero y cambiad h3, foto, alt, pie de foto y texto (el alt describe lo que se ve en la foto). ETIQUETA «NOVEDAD» (paso 6): es el span.etiqueta de Perú; para ponerla en otra tarjeta, moved el span a esa tarjeta -->
         <div class="tarjetas">
           <article class="tarjeta">
             <h3>Japón, Kanazawa</h3>
@@ -139,7 +140,7 @@
         </div>
       </section>
 
-      <!-- SUBE TUS FONDOS: lista anidada de la UT0 (ul dentro de li): continentes y, dentro, sus países -->
+      <!-- SUBE TUS FONDOS: lista anidada de la UT0 (un ul dentro de cada li). Para un país nuevo, añadid su li dentro de su continente: la «y» entre países la pone el CSS -->
       <section class="seccion">
         <h2>Sube tus mejores fondos de pantalla de viaje</h2>
         <p>Sube tus mejores instantáneas para que podamos disfrutarlas.</p>
@@ -169,7 +170,7 @@
         </ul>
       </section>
 
-      <!-- TABLA DE COLECCIONES (paso 5): tabla de datos de la UT0, que el enunciado obliga a conservar, con caption, th con scope y colspan en el tfoot; estilo solo desde el CSS. Una fila por país; la colección se repite en cada fila (sin rowspan) para que las líneas crucen la tabla, como en Figma -->
+      <!-- TABLA DE COLECCIONES (paso 7): la tabla de la UT0, con caption, th con scope="col" y la nota final con colspan. Todo su estilo está en el CSS. Para un país nuevo, añadid un tr en el tbody con la colección escrita en su fila (sin rowspan) -->
       <section class="seccion">
         <h2>Información de nuestras colecciones</h2>
         <table>
@@ -218,7 +219,7 @@
         </table>
       </section>
 
-      <!-- DESCUBRE MÁS: enlace externo (rel="noopener" por seguridad al abrir otra pestaña; el propio texto avisa de que se abre en una pestaña nueva, para no sorprender al usuario) e iframe de OpenStreetMap con title, paso 6 del enunciado. loading="lazy" retrasa la carga del mapa hasta que se acerca a la pantalla. «Volver arriba» enlaza al id="arriba" del body -->
+      <!-- DESCUBRE MÁS: enlace externo y mapa (paso 7). El enlace abre otra pestaña: lleva rel="noopener" por seguridad y lo avisa en el texto para no sorprender a nadie. El iframe de OpenStreetMap necesita su title, que es lo que lee el lector de pantalla; loading="lazy" retrasa su carga hasta que se acerca a la pantalla. «Volver arriba» lleva al id="arriba" del body -->
       <section class="seccion seccion--compacta">
         <h2>Descubre más</h2>
         <p>
@@ -237,7 +238,7 @@
       </section>
     </main>
 
-    <!-- PIE (área «pie» del grid): igual en todas las páginas, paso 8 del enunciado, con los enlaces legales -->
+    <!-- PIE (paso 8): zona «pie» del grid, igual en todas las páginas, con los enlaces legales. Si cambiáis algo del pie, cambiadlo en todas las páginas y en plantilla.html -->
     <footer class="pie">
       <div class="pie__fila">
         <a class="marca" href="index.html">

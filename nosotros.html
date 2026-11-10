@@ -2,8 +2,8 @@
 <!--
   Viajes &amp; Wallpapers · Nosotros (nosotros.html)
   Práctica UT1 · Diseño de Interfaces Web · 2.º DAW · IES Juan de la Cierva
-  Sin diseño en Figma: contenido de la UT0 con los estilos comunes.
-  Estructura con Grid en el body y componentes con Flexbox; estilos en css/estilos.css.
+  Quiénes somos. No tiene diseño propio en Figma: reutiliza las clases de la portada.
+  Cabecera, menú y pie son los mismos que en plantilla.html (paso 8). Estilos en css/estilos.css.
 -->
 <html lang="es">
   <head>
@@ -14,20 +14,20 @@
 
     <title>Nosotros - Viajes &amp; Wallpapers</title>
 
-    <!-- Tipografías de la guía de estilo (Google Fonts): Libre Baskerville para títulos y DM Sans para texto. Los preconnect adelantan la conexión para que carguen antes -->
+    <!-- Tipografías de nuestra guía de estilo (paso 2): Libre Baskerville para títulos y DM Sans para texto, desde Google Fonts. Este enlace va antes de estilos.css y los preconnect adelantan la conexión. Si cambiáis de fuente, cambiad este enlace en todas las páginas y las variables de fuente del CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" />
-    <!-- Una sola hoja de estilos externa para toda la web (nada de CSS en línea) -->
+    <!-- Hoja de estilos única de la web (paso 1). Todo el estilo va en css/estilos.css: no uséis style= ni bloques style -->
     <link rel="stylesheet" href="css/estilos.css" />
-    <!-- Favicon: el cuadrado primario de la marca (símbolo de Figma) -->
+    <!-- Icono de la pestaña: el cuadrado de nuestra marca -->
     <link rel="icon" href="img/icono/favicon.svg" type="image/svg+xml" />
   </head>
 
   <body id="arriba">
-    <!-- CABECERA (área «cabecera» del grid del body): marca que enlaza a la portada -->
+    <!-- CABECERA: zona «cabecera» del grid del body (paso 3). La marca enlaza siempre a la portada -->
     <header class="cabecera">
       <a class="marca" href="index.html">
         <span class="marca__simbolo"></span>
@@ -35,7 +35,7 @@
       </a>
     </header>
 
-    <!-- MENÚ (área «menu» del grid): nav con ul en Flexbox, paso 2 del enunciado. aria-current="page" indica la página actual a los lectores de pantalla -->
+    <!-- MENÚ (paso 4): zona «menu» del grid, con display: flex en el ul. aria-current="page" va en el enlace de la página en la que estamos y es lo que la marca como activa. Si añadís una página al menú, añadid su li en todas las páginas y en plantilla.html -->
     <nav class="menu" aria-label="Menú principal">
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -45,9 +45,9 @@
       </ul>
     </nav>
 
-    <!-- CONTENIDO PRINCIPAL (área «principal» del grid): un solo main y un solo h1 por página -->
+    <!-- CONTENIDO PRINCIPAL: zona «principal» del grid. Un solo main y un solo h1 por página, con los títulos en orden (h1, h2, h3) sin saltar niveles -->
     <main class="principal">
-      <!-- PRESENTACIÓN: único h1 y texto de la UT0 en párrafos (sin br), actualizado con las fotos de Unsplash y un enlace a sus créditos en el aviso legal -->
+      <!-- PRESENTACIÓN: único h1 y el texto de la UT0 en párrafos (sin br) -->
       <section class="seccion seccion--lectura">
         <p class="antetitulo">Nosotros</p>
         <h1>Quiénes somos</h1>
@@ -75,7 +75,7 @@
         </p>
       </section>
 
-      <!-- NUESTRA HISTORIA: lista ordenada con el mismo estilo que la de la portada -->
+      <!-- NUESTRA HISTORIA: lista ordenada con la misma clase que la de la portada (lista-destinos) -->
       <section class="seccion seccion--lectura">
         <h2>Nuestra historia</h2>
         <p>
@@ -92,7 +92,7 @@
         </ol>
       </section>
 
-      <!-- EQUIPO: reutiliza el componente de tarjetas (div.tarjetas y article.tarjeta) con la variante .tarjeta--borde, sin foto -->
+      <!-- EQUIPO: tarjetas con borde y sin foto dentro de div.tarjetas. Para añadir a alguien, copiad un article entero y cambiad nombre y texto -->
       <section class="seccion">
         <h2>Equipo</h2>
         <div class="tarjetas">
@@ -113,7 +113,7 @@
         </div>
       </section>
 
-      <!-- GLOSARIO: aside con una lista de definiciones (dl, dt y dd) -->
+      <!-- GLOSARIO: va en un aside porque es información complementaria. Lista de definiciones: dt para el término y dd para su definición -->
       <aside class="seccion glosario">
         <h2>Glosario de fotografía y viajes</h2>
         <dl>
@@ -126,11 +126,11 @@
         </dl>
       </aside>
 
-      <!-- VOLVER ARRIBA: enlace al id="arriba" del body -->
+      <!-- VOLVER ARRIBA: lleva al id="arriba" del body -->
       <a class="volver-arriba" href="#arriba">Volver arriba</a>
     </main>
 
-    <!-- PIE (área «pie» del grid): igual en todas las páginas, paso 8 del enunciado, con los enlaces legales -->
+    <!-- PIE (paso 8): zona «pie» del grid, igual en todas las páginas, con los enlaces legales. Si cambiáis algo del pie, cambiadlo en todas las páginas y en plantilla.html -->
     <footer class="pie">
       <div class="pie__fila">
         <a class="marca" href="index.html">

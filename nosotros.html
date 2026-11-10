@@ -1,154 +1,163 @@
 <!doctype html>
+<!--
+  Viajes &amp; Wallpapers · Nosotros (nosotros.html)
+  Práctica UT1 · Diseño de Interfaces Web · 2.º DAW · IES Juan de la Cierva
+  Sin diseño en Figma: contenido de la UT0 con los estilos comunes.
+  Estructura con Grid en el body y componentes con Flexbox; estilos en css/estilos.css.
+-->
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0" />
+      content="width=device-width, initial-scale=1" />
+
     <title>Nosotros - Viajes &amp; Wallpapers</title>
+
+    <!-- Tipografías de la guía de estilo (Google Fonts): Libre Baskerville para títulos y DM Sans para texto. Los preconnect adelantan la conexión para que carguen antes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="css/main.css" />
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" />
+    <!-- Una sola hoja de estilos externa para toda la web (nada de CSS en línea) -->
+    <link rel="stylesheet" href="css/estilos.css" />
+    <!-- Favicon: el cuadrado primario de la marca (símbolo de Figma) -->
+    <link rel="icon" href="img/icono/favicon.svg" type="image/svg+xml" />
   </head>
 
-  <body>
-    <!-- Cabecera común -->
-    <header>
-      <a href="index.html">
-        <img
-          src="img/logo.png"
-          alt="Logo de la página de viajes"
-          width="100"
-          height="100" />
+  <body id="arriba">
+    <!-- CABECERA (área «cabecera» del grid del body): marca que enlaza a la portada -->
+    <header class="cabecera">
+      <a class="marca" href="index.html">
+        <span class="marca__simbolo"></span>
+        Viajes &amp; Wallpapers
       </a>
-
-      <h1>Nosotros</h1>
-
-      <!-- Menú de navegación -->
-      <!-- Buenas prácticas son utilizar a y estilizarlo como boton después si lo que queremos es navegación -->
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html">Inicio</a>
-          </li>
-          <li>
-            <a href="fotos.html">Fotos</a>
-          </li>
-          <li>
-            <a href="nosotros.html">Nosotros</a>
-          </li>
-          <li>
-            <a href="contacto.html">Contacto</a>
-          </li>
-        </ul>
-      </nav>
     </header>
 
-    <!-- Contenido principal -->
-    <main>
-      <!-- Quiénes somos -->
-      <section>
-        <h2>Quiénes somos</h2>
+    <!-- MENÚ (área «menu» del grid): nav con ul en Flexbox, paso 2 del enunciado. aria-current="page" indica la página actual a los lectores de pantalla -->
+    <nav class="menu" aria-label="Menú principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="fotos.html">Fotos</a></li>
+        <li><a href="nosotros.html" aria-current="page">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
 
-        <!-- Texto principal -->
-        <div>
-          <p>
-            Hola, somos <strong>Asier Toral</strong> y
-            <strong>Santiago Santa</strong>, dos estudiantes de segundo año de
-            <strong>Desarrollo de Aplicaciones Web (DAW)</strong>. Vivimos entre
-            etiquetas, estilos y servidores, pero nuestra inspiración no nace
-            únicamente frente a la pantalla.
-
-            <br /><br />
-
-            Fuera de las aulas, nos mueve la curiosidad por descubrir el mundo a
-            través de la <strong>fotografía</strong> y los
-            <strong>viajes</strong>. Cada paisaje lejano, cada juego de luces en
-            una ciudad nueva y cada instante capturado con nuestra cámara son la
-            chispa que da vida a este proyecto: un espacio para compartir los
-            fondos de pantalla que a nosotros mismos nos encantaría llevar en
-            nuestros dispositivos.
-
-            <br /><br />
-
-            Fusionamos la lógica del desarrollo web con la sensibilidad visual
-            de la fotografía para ofrecerte una interfaz limpia, rápida y llena
-            de historias visuales.
-          </p>
-        </div>
+    <!-- CONTENIDO PRINCIPAL (área «principal» del grid): un solo main y un solo h1 por página -->
+    <main class="principal">
+      <!-- PRESENTACIÓN: único h1 y texto de la UT0 en párrafos (sin br) -->
+      <section class="seccion seccion--lectura">
+        <p class="antetitulo">Nosotros</p>
+        <h1>Quiénes somos</h1>
+        <p>
+          Hola, somos <strong>Asier Toral</strong> y
+          <strong>Santiago Santa</strong>, dos estudiantes de segundo año de
+          <strong>Desarrollo de Aplicaciones Web (DAW)</strong>. Vivimos entre
+          etiquetas, estilos y servidores, pero nuestra inspiración no nace
+          únicamente frente a la pantalla.
+        </p>
+        <p>
+          Fuera de las aulas, nos mueve la curiosidad por descubrir el mundo a
+          través de la <strong>fotografía</strong> y los
+          <strong>viajes</strong>. Muchas de estas fotografías son nuestras y
+          otras son de fotógrafos de Unsplash (créditos en el
+          <a href="aviso-legal.html">aviso legal</a>); cada una es la chispa
+          que da vida a este proyecto: un espacio para compartir los fondos de
+          pantalla que a nosotros mismos nos encantaría llevar en nuestros
+          dispositivos.
+        </p>
+        <p>
+          Fusionamos la lógica del desarrollo web con la sensibilidad visual de
+          la fotografía para ofrecerte una interfaz limpia, rápida y llena de
+          historias visuales.
+        </p>
       </section>
 
-      <!-- Nuestra historia -->
-      <section>
+      <!-- NUESTRA HISTORIA: lista ordenada con el mismo estilo que la de la portada -->
+      <section class="seccion seccion--lectura">
         <h2>Nuestra historia</h2>
-
         <p>
           Este proyecto nace de nuestra pasión por descubrir nuevos destinos,
           disfrutar de la fotografía y compartir imágenes de nuestros viajes por
-          Japón, China y Colombia.
+          Japón, China y Colombia. Ahora la colección suma también fotografías
+          de Perú y España, de fotógrafos de Unsplash.
         </p>
-
-        <ol>
+        <ol class="lista-destinos">
           <li>Comenzamos a interesarnos por la fotografía y los viajes.</li>
-          <li>Seleccionamos paisajes de Japón, China y Colombia.</li>
-          <li>
-            Decidimos crear una página para compartir nuestras fotografías.
-          </li>
+          <li>Seleccionamos paisajes de Japón, China, Colombia, Perú y España.</li>
+          <li>Decidimos crear una página para compartir nuestras fotografías.</li>
           <li>Desarrollamos nuestra colección de fondos de pantalla.</li>
         </ol>
       </section>
 
-      <!-- Equipo -->
-      <section>
+      <!-- EQUIPO: reutiliza el componente de tarjetas (div.tarjetas y article.tarjeta) -->
+      <section class="seccion">
         <h2>Equipo</h2>
-
-        <article>
-          <h3>Asier Toral</h3>
-
-          <p>
-            Participa en el desarrollo de Viajes &amp; Wallpapers y comparte el
-            interés por los viajes, los paisajes y la fotografía.
-          </p>
-        </article>
-
-        <article>
-          <h3>Santiago Santa</h3>
-
-          <p>
-            Forma parte del proyecto y colabora en la creación de una colección
-            de imágenes inspirada en diferentes lugares del mundo.
-          </p>
-        </article>
+        <div class="tarjetas">
+          <article class="tarjeta tarjeta--borde">
+            <h3>Asier Toral</h3>
+            <p>
+              Participa en el desarrollo de Viajes &amp; Wallpapers y comparte
+              el interés por los viajes, los paisajes y la fotografía.
+            </p>
+          </article>
+          <article class="tarjeta tarjeta--borde">
+            <h3>Santiago Santa</h3>
+            <p>
+              Forma parte del proyecto y colabora en la creación de una
+              colección de imágenes inspirada en diferentes lugares del mundo.
+            </p>
+          </article>
+        </div>
       </section>
 
-      <!-- Glosario del tema -->
-      <aside>
+      <!-- GLOSARIO: aside con una lista de definiciones (dl, dt y dd) -->
+      <aside class="seccion glosario">
         <h2>Glosario de fotografía y viajes</h2>
-
         <dl>
-          <dt><strong>Wallpaper</strong></dt>
-          <dd>
-            Imagen digital utilizada como fondo de pantalla de un dispositivo.
-          </dd>
-
-          <dt><strong>Fotografía</strong></dt>
+          <dt>Wallpaper</dt>
+          <dd>Imagen digital utilizada como fondo de pantalla de un dispositivo.</dd>
+          <dt>Fotografía</dt>
           <dd>Técnica que permite capturar imágenes mediante la luz.</dd>
-
-          <dt><strong>Resolución</strong></dt>
+          <dt>Resolución</dt>
           <dd>Cantidad de detalle que puede mostrar una imagen digital.</dd>
         </dl>
       </aside>
+
+      <a class="volver-arriba" href="#arriba">Volver arriba</a>
     </main>
 
-    <!-- Pie de página -->
-    <footer>
-      <p>&copy; 2026 Viajes &amp; Wallpapers. Todos los derechos reservados.</p>
-      <p>
-        Contacta con nosotros:
-        <a href="mailto:info@viajeswallpapers.com">
-          info@viajeswallpapers.com
+    <!-- PIE (área «pie» del grid): igual en todas las páginas, paso 8 del enunciado, con los enlaces legales -->
+    <footer class="pie">
+      <div class="pie__fila">
+        <a class="marca" href="index.html">
+          <span class="marca__simbolo"></span>
+          Viajes &amp; Wallpapers
         </a>
-      </p>
+        <nav aria-label="Menú del pie">
+          <ul class="pie__lista pie__lista--barras">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="fotos.html">Fotos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="pie__fila pie__legal">
+        <p>&copy; 2026 Viajes &amp; Wallpapers. Todos los derechos reservados.</p>
+        <ul class="pie__lista">
+          <li><a href="aviso-legal.html">Aviso legal</a></li>
+          <li><a href="privacidad.html">Privacidad</a></li>
+          <li><a href="cookies.html">Cookies</a></li>
+        </ul>
+        <p>
+          Contacta con nosotros en:
+          <a href="mailto:info@viajeswallpapers.com">info@viajeswallpapers.com</a>
+        </p>
+      </div>
     </footer>
   </body>
 </html>

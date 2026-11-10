@@ -1,0 +1,112 @@
+<!doctype html>
+<!--
+  Viajes &amp; Wallpapers · Cookies (cookies.html)
+  Práctica UT1 · Diseño de Interfaces Web · 2.º DAW · IES Juan de la Cierva
+  Página creada a partir de plantilla.html (paso 8 del enunciado): se copia la plantilla,
+  se cambia el title y se escribe el contenido en la zona variable.
+  Estructura con Grid en el body y componentes con Flexbox; estilos en css/estilos.css.
+-->
+<html lang="es">
+  <head>
+    <!-- PARTE COMÚN: no tocar. Es igual en las cinco páginas; si cambia aquí, cámbiala en todas -->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1" />
+
+    <!-- ZONA VARIABLE: título de la página. Cámbialo en cada página con el formato «Nombre - Viajes &amp; Wallpapers» -->
+    <title>Cookies - Viajes &amp; Wallpapers</title>
+
+    <!-- PARTE COMÚN: no tocar. Es igual en las cinco páginas; si cambia aquí, cámbiala en todas -->
+    <!-- Tipografías de la guía de estilo (Google Fonts): Libre Baskerville para títulos y DM Sans para texto. Los preconnect adelantan la conexión para que carguen antes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" />
+    <!-- Una sola hoja de estilos externa para toda la web (nada de CSS en línea) -->
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+
+  <body id="arriba">
+    <!-- PARTE COMÚN: no tocar. Es igual en las cinco páginas; si cambia aquí, cámbiala en todas -->
+    <!-- CABECERA (área «cabecera» del grid del body): marca que enlaza a la portada -->
+    <header class="cabecera">
+      <a class="marca" href="index.html">
+        <span class="marca__simbolo"></span>
+        Viajes &amp; Wallpapers
+      </a>
+    </header>
+
+    <!-- MENÚ (área «menu» del grid): nav con ul en Flexbox, paso 2 del enunciado. aria-current="page" indica la página actual a los lectores de pantalla -->
+    <!-- Uso: en cada página, añade aria-current="page" al enlace de esa página -->
+    <nav class="menu" aria-label="Menú principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="fotos.html">Fotos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL (área «principal» del grid): un solo main y un solo h1 por página -->
+    <main class="principal">
+      <!-- ZONA VARIABLE: contenido propio de cada página. Pon aquí sus secciones, con un solo h1 -->
+      <section class="seccion seccion--lectura">
+        <p class="antetitulo">Información legal</p>
+        <h1>Política de cookies</h1>
+        <p>
+          Las cookies son pequeños archivos que algunas webs guardan en el
+          navegador para recordar información sobre la visita.
+        </p>
+
+        <h2>Cookies de esta web</h2>
+        <p>Viajes &amp; Wallpapers no instala cookies propias.</p>
+
+        <h2>Contenido de terceros</h2>
+        <p>
+          El mapa de la portada se carga desde OpenStreetMap, que puede usar sus
+          propias tecnologías de almacenamiento según su política.
+        </p>
+
+        <h2>Cómo gestionarlas</h2>
+        <p>
+          Puedes ver y borrar las cookies en cualquier momento desde la
+          configuración de tu navegador.
+        </p>
+      </section>
+    </main>
+
+    <!-- PARTE COMÚN: no tocar. Es igual en las cinco páginas; si cambia aquí, cámbiala en todas -->
+    <!-- PIE (área «pie» del grid): igual en todas las páginas, paso 8 del enunciado, con los enlaces legales -->
+    <footer class="pie">
+      <div class="pie__fila">
+        <a class="marca" href="index.html">
+          <span class="marca__simbolo"></span>
+          Viajes &amp; Wallpapers
+        </a>
+        <nav aria-label="Menú del pie">
+          <ul class="pie__lista pie__lista--barras">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="fotos.html">Fotos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="pie__fila pie__legal">
+        <p>&copy; 2026 Viajes &amp; Wallpapers. Todos los derechos reservados.</p>
+        <ul class="pie__lista">
+          <li><a href="aviso-legal.html">Aviso legal</a></li>
+          <li><a href="privacidad.html">Privacidad</a></li>
+          <li><a href="cookies.html" aria-current="page">Cookies</a></li>
+        </ul>
+        <p>
+          Contacta con nosotros en:
+          <a href="mailto:info@viajeswallpapers.com">info@viajeswallpapers.com</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

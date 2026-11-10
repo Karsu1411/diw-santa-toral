@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0" />
+      content="width=device-width, initial-scale=1" />
     <title>Viajes &amp; Wallpapers - Inicio</title>
 
     <!-- Tipografías: Libre Baskerville y DM Sans -->
@@ -15,199 +15,34 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" />
     <!-- Importación de la hoja de estilos -->
     <link rel="stylesheet" href="css/estilos.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   </head>
 
   <body id="arriba">
-    <!-- Cabecera común de la web -->
-    <header>
-      <a href="index.html">
-        <img
-          src="img/logo.png"
-          alt="Logo de la página de viajes"
-          width="100"
-          height="100" />
+    <!-- CABECERA -->
+    <header class="cabecera">
+      <a class="marca" href="index.html">
+        <span class="marca__simbolo"></span>
+        Viajes &amp; Wallpapers
       </a>
-
-      <h1>Wallpapers: Japón, China y Colombia</h1>
-
-      <!-- Menú de navegación -->
-      <!-- Buenas prácticas son utilizar a y estilizarlo como boton después si lo que queremos es navegación -->
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html">Inicio</a>
-          </li>
-          <li>
-            <a href="fotos.html" ><i class="bi bi-camera" alt="foto"></i></a>
-          </li>
-          <li>
-            <a href="nosotros.html">Nosotros</a>
-          </li>
-          <li>
-            <a href="contacto.html">Contacto</a>
-          </li>
-        </ul>
-      </nav>
     </header>
 
-    <!-- Contenido principal -->
-    <main>
-      <ol>
-        <li>Japón</li>
-        <li>China</li>
-        <li>Colombia</li>
-      </ol>
+    <!-- MENÚ -->
+    <nav class="menu" aria-label="Menú principal">
+      <ul>
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="fotos.html">Fotos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
 
-      <section>
-        <h2>Nuestros mejores fondos de pantalla</h2>
-
-        <p>
-          Explora <strong>nuestra colección exclusiva</strong> de alta
-          resolución capturada en nuestros viajes por
-          <em>Asia y Sudamérica</em>.
-        </p>
-
-        <article>
-          <h3>Japón, Nipón</h3>
-          <br />
-          <figure>
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWBuVHsvywpjKTHY33tsHnFBvqk3oujzpAC_RlzAEUbSL_WpIOS_wRrYQ&s=10"
-              alt="Campo de ciruelos en Japón"
-              width="700"
-              height="500" />
-            <br />
-            <figcaption>Campo de ciruelos en Soho, Japón.</figcaption>
-          </figure>
-
-          <p>Descubre la belleza de los paisajes japoneses y sus colores.</p>
-        </article>
-
-        <article>
-          <h3>China, Shanghai</h3>
-          <br />
-          <img
-            src="img/1.jpg"
-            alt="Paisaje urbano de Shanghai, China"
-            width="700"
-            height="500" />
-          <br />
-
-          <p>
-            Shanghai combina la arquitectura moderna con la cultura tradicional
-            china.
-          </p>
-          <br />
-        </article>
-
-        <article>
-          <h3>Colombia, Amazonas</h3>
-          <br />
-
-          <img
-            src="img/23.jpg"
-            alt="Paisaje natural del Amazonas colombiano"
-            width="700"
-            height="500" />
-          <br />
-          <p>
-            Explora la naturaleza y la biodiversidad del Amazonas colombiano.
-          </p>
-          <br />
-        </article>
-      </section>
-
-      <section>
-        <h2>Sube tus mejores fondos de pantalla de Asia</h2>
-
-        <p>Sube tus mejores instantáneas para que podamos disfrutarlas.</p>
-        <br />
-        <!-- Lista anidada -->
-        <h3>Nuestras temáticas</h3>
-
-        <ul>
-          <li>
-            Asia
-            <ul>
-              <li>Japón</li>
-              <li>China</li>
-            </ul>
-          </li>
-          <li>
-            Sudamérica
-            <ul>
-              <li>Colombia</li>
-            </ul>
-          </li>
-        </ul>
-      </section>
-
-      <!-- Tabla de información -->
-      <section>
-        <br />
-        <h2>Información de nuestras colecciones</h2>
-        <br />
-        <table>
-          <caption>
-            Fondos de pantalla disponibles
-          </caption>
-          <thead>
-            <tr>
-              <th scope="col">Destino</th>
-              <th scope="col">Tipo de paisaje</th>
-              <th scope="col">Colección</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>Japón</td>
-              <td>Naturaleza y ciudades</td>
-              <td rowspan="2">Asia</td>
-            </tr>
-            <tr>
-              <td>China</td>
-              <td>Tradición y modernidad</td>
-            </tr>
-            <tr>
-              <td>Colombia</td>
-              <td>Selvas y playas</td>
-              <td>Sudamérica</td>
-            </tr>
-            <tr>
-              <td colspan="3">Colección de fotografías de nuestros viajes</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <!-- Enlace externo -->
-      <section>
-        <h2>Descubre más</h2>
-        <p>
-          Puedes conocer más sobre Japón en
-          <a
-            href="https://es.wikipedia.org/wiki/Jap%C3%B3n"
-            target="_blank"
-            rel="noopener"
-            >este enlace externo</a
-          >.
-        </p>
-      </section>
-
-      <p><a href="#arriba">Volver arriba</a></p>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="principal">
     </main>
 
-    <!-- Pie de página -->
-    <footer>
+    <!-- PIE -->
+    <footer class="pie">
       <p>&copy; 2026 Viajes &amp; Wallpapers. Todos los derechos reservados.</p>
-      <p>
-        Contacta con nosotros en:
-        <a href="mailto:info@viajeswallpapers.com">
-          info@viajeswallpapers.com
-        </a>
-      </p>
     </footer>
   </body>
 </html>

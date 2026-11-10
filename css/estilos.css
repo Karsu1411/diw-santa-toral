@@ -45,6 +45,7 @@
     --texto-fondo-oscuro: #ECE9EA;     /* Texto sobre fondo oscuro (TextoSobreOscuro). 12:1 sobre --fondo-oscuro */
     --color-texto-suave: #7C636F;      /* Opciones inactivas del menú. 4,9:1 (en Figma, opacidad 24 %: solo 1,7:1) */
     --color-texto-secundario: #2C2C2C; /* Pies de foto y antetítulos de tarjeta. 12,5:1 sobre el fondo */
+    --color-linea-suave: #BAC1B5;      /* Líneas divisorias del frame móvil (decorativas, sin texto) */
     /* Texto claro sobre el primario (thead, botón, etiqueta): 5,3:1 */
 
     /* TIPOGRAFÍAS (Google Fonts, enlazadas en el <head>) */
@@ -504,12 +505,17 @@ figcaption {
 
 /* ==========================================================================
    7. TABLA
-   Paso 5 del enunciado: border-collapse, th y td con borde y padding y thead
-   con --color-primario. El ancho y la proporción de columnas salen de Figma.
-   Es una tabla de datos (no de maquetación), con caption y scope en los th.
+   Paso 5 del enunciado: tabla de datos con estilo solo desde el CSS
+   (border-collapse, bordes y padding en th y td, thead con --color-primario).
+   Adaptamos el ejemplo del enunciado a nuestro diseño de Figma: solo líneas
+   horizontales bajo cada fila y cabecera sin fondo, con el texto en primario.
+   Columnas de 220 / 360 / 220 px con 24 px de separación; las líneas ocupan
+   todo el ancho (1280 px), como en Figma.
+   Es una tabla de datos (no de maquetación), con caption y scope en los th;
+   rowspan y colspan vienen de la tabla de la UT0.
    ========================================================================== */
 table {
-    width: 66.25%;
+    width: 100%;
     border-collapse: collapse;
 }
 
@@ -520,35 +526,48 @@ caption {
     text-align: left;
 }
 
+/* La separación de 24 px entre columnas es el padding derecho de cada celda */
 th,
 td {
-    padding: var(--espacio-2);
-    border: var(--borde) solid var(--color-texto);
+    padding: var(--espacio-2) var(--espacio-3) var(--espacio-2) 0;
+    border-bottom: var(--borde) solid var(--color-texto);
     line-height: normal;
     text-align: left;
 }
 
+th:last-child,
+td:last-child {
+    padding-right: 0;
+}
+
+/* Anchos de columna sobre 1280 px: (220 + 24) y (360 + 24); la tercera
+   columna se queda con el resto, y su texto empieza donde en Figma */
 th:nth-child(1) {
-    width: 26%;
+    width: 19%;
 }
 
 th:nth-child(2) {
-    width: 42.5%;
+    width: 30%;
 }
 
+/* Cabecera como en Figma: sin fondo, texto primario en negrita de 13 px */
 thead {
-    background-color: var(--color-primario);
-    color: var(--color-fondo);
+    color: var(--color-primario);
 }
 
 th {
-    padding-block: var(--espacio-1-5);
+    padding-top: 0;
+    padding-bottom: var(--espacio-1-5);
     font-size: var(--tamano-cabecera-tabla);
     font-weight: var(--peso-negrita);
     text-transform: uppercase;
 }
 
+/* Nota final (colspan de la UT0): fuera de las líneas, como el texto de Figma */
 tfoot td {
+    padding-top: var(--espacio-3);
+    padding-bottom: 0;
+    border-bottom: none;
     font-size: var(--tamano-pequeno);
 }
 
@@ -1158,6 +1177,38 @@ tfoot td {
 
     .mapa {
         aspect-ratio: 4 / 3;
+    }
+
+    /* Tabla del frame móvil: columnas de 92 / 140 px con 12 px de separación,
+       cabecera sin mayúsculas y líneas suaves */
+    th,
+    td {
+        padding-right: var(--espacio-1-5);
+        border-bottom-color: var(--color-linea-suave);
+        font-size: var(--tamano-pequeno);
+    }
+
+    th {
+        font-size: var(--tamano-cabecera-tabla);
+        text-transform: none;
+    }
+
+    td:first-child {
+        font-size: var(--tamano-texto);
+        font-weight: var(--peso-seminegrita);
+    }
+
+    tfoot td:first-child {
+        font-size: var(--tamano-pequeno);
+        font-weight: var(--peso-normal);
+    }
+
+    th:nth-child(1) {
+        width: 30.5%;
+    }
+
+    th:nth-child(2) {
+        width: 44.5%;
     }
 
     table,

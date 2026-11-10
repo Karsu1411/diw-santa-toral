@@ -8,6 +8,7 @@
     --color-texto: #290513;
     --texto-fondo-oscuro: #D4CDD0;
     --color-texto-suave: #7C636F;
+    --color-texto-secundario: #2C2C2C;
 
     /*tipografias*/
     --fuente-expresiva: 'Libre Baskerville', serif;
@@ -42,6 +43,8 @@
 
     /*espaciado (múltiplos de 8)*/
     --espacio: 8px;
+    --espacio-mitad: calc(var(--espacio) / 2);
+    --espacio-1-5: calc(var(--espacio) * 1.5);
     --espacio-2: calc(var(--espacio) * 2);
     --espacio-3: calc(var(--espacio) * 3);
     --espacio-4: calc(var(--espacio) * 4);
@@ -313,7 +316,7 @@ tfoot td {
 .lista-destinos {
     display: flex;
     flex-direction: column;
-    gap: var(--espacio);
+    gap: var(--espacio-1-5);
     padding: 0;
     list-style: none;
     counter-reset: destino;
@@ -345,7 +348,7 @@ tfoot td {
 .tematicas > li {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--espacio) / 2);
+    gap: var(--espacio-mitad);
 }
 
 .tematicas ul {
@@ -395,27 +398,42 @@ tfoot td {
     color: var(--color-primario);
 }
 
+/* Foto y degradado apilados en la misma celda de Grid (sin position: absolute) */
 .tarjeta figure {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espacio);
+    display: grid;
+    grid-template-areas:
+        "foto"
+        "pie";
+    row-gap: var(--espacio-1-5);
 }
 
 .tarjeta img {
+    grid-area: foto;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 9 / 7;
     object-fit: cover;
-    border-radius: var(--radio);
+}
+
+.tarjeta figure::after {
+    content: "";
+    grid-area: foto;
+    background-image: linear-gradient(to top, var(--fondo-oscuro), transparent);
+}
+
+.tarjeta figcaption {
+    grid-area: pie;
 }
 
 figcaption {
+    color: var(--color-texto-secundario);
     font-size: var(--tamano-pequeno);
+    line-height: normal;
 }
 
 /* Etiqueta «Novedad»: única excepción permitida de position: absolute */
 .etiqueta {
     position: absolute;
-    top: calc(var(--tamano-h3) * var(--interlineado-titulo) + var(--espacio-3));
+    top: calc(var(--tamano-h3) * var(--interlineado-h3) + var(--espacio-3));
     right: var(--espacio);
     padding: var(--espacio) var(--espacio-2);
     border-radius: var(--radio);

@@ -896,6 +896,10 @@ tfoot td {
     background: url("../img/icono/check.svg") no-repeat center / contain;
 }
 
+/* «Explora la galería de X ↓»: diferencia con Figma, que usa «↗».
+   La flecha diagonal suele indicar un enlace externo y este enlace lleva a
+   la galería de la misma página, así que usamos «↓» como en el índice de
+   galerías (usabilidad: consistencia). */
 .enlace-destacado {
     display: inline-flex;
     align-items: center;

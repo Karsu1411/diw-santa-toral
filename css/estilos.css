@@ -1142,6 +1142,16 @@ tfoot td {
         gap: var(--espacio-1-5);
     }
 
+    /* En el frame móvil la lista de destinos de la portada va en seminegrita
+       y no lleva el antetítulo «Destinos» */
+    .principal > .seccion:first-child .lista-destinos {
+        font-weight: var(--peso-seminegrita);
+    }
+
+    .antetitulo--escritorio {
+        display: none;
+    }
+
     /* Tarjetas: una por fila (auto-fit lo hace solo) y foto de 342 × 220 */
     .tarjeta {
         gap: var(--espacio-1-5);
@@ -1241,6 +1251,7 @@ tfoot td {
     /* Pie en columna; textos legales a 14 px como en Figma */
     .pie {
         padding-top: var(--espacio-3);
+        border-top-color: var(--color-linea-suave);
     }
 
     .pie__fila {

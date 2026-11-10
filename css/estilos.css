@@ -819,11 +819,21 @@ figcaption {
     color: var(--color-primario);
 }
 
+/* TEXTO LARGO: líneas más cortas para leer mejor (mismo ancho que la galería de Fotos) */
+.seccion--lectura > p,
+.seccion--lectura > .tarjeta {
+    max-width: 72.5%;
+}
+
 /* PÁGINA NOSOTROS */
 .tarjeta--borde {
     padding: var(--espacio-3);
     border: var(--borde) solid var(--color-acento);
     border-radius: var(--radio);
+}
+
+.tarjeta--borde h2 {
+    color: var(--color-primario);
 }
 
 .glosario dl {
@@ -847,7 +857,7 @@ figcaption {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--espacio-3);
-    max-width: calc(var(--espacio) * 80);
+    max-width: 72.5%;
 }
 
 .formulario fieldset {
@@ -873,6 +883,10 @@ figcaption {
     gap: var(--espacio);
 }
 
+.campo label {
+    font-weight: var(--peso-seminegrita);
+}
+
 .campo input,
 .campo select,
 .campo textarea {
@@ -885,6 +899,12 @@ figcaption {
     color: var(--color-texto);
     font-family: var(--fuente-funcional);
     font-size: var(--tamano-texto);
+}
+
+.campo input:hover,
+.campo select:hover,
+.campo textarea:hover {
+    border-color: var(--color-acento);
 }
 
 .opciones {
@@ -933,7 +953,10 @@ figcaption {
     }
 
     table,
-    .galeria {
+    .galeria,
+    .formulario,
+    .seccion--lectura > p,
+    .seccion--lectura > .tarjeta {
         width: 100%;
         max-width: 100%;
     }

@@ -604,6 +604,11 @@ tfoot td {
     text-decoration: underline;
 }
 
+/* Página legal actual: se marca con aria-current y peso, no solo con color */
+.pie__lista a[aria-current="page"] {
+    font-weight: var(--peso-seminegrita);
+}
+
 .pie__lista--barras li + li::before {
     content: "/";
     margin-right: var(--espacio-1-5);

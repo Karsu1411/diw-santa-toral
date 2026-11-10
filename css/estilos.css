@@ -512,7 +512,8 @@ figcaption {
    Columnas de 220 / 360 / 220 px con 24 px de separación; las líneas ocupan
    todo el ancho (1280 px), como en Figma.
    Es una tabla de datos (no de maquetación), con caption y scope en los th;
-   rowspan y colspan vienen de la tabla de la UT0.
+   colspan viene de la tabla de la UT0. «Asia» va en cada fila (sin rowspan)
+   para que todas las líneas crucen la tabla, como en Figma.
    ========================================================================== */
 table {
     width: 100%;

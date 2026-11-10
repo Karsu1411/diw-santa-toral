@@ -126,3 +126,79 @@ gitGraph
 En el diagrama, cada uno trabaja en su rama a la vez. `nav-flexbox` entra primero en `main`. Después, `layout-grid` trae esos cambios (`git merge main`) antes de entrar también.
 
 </details>
+
+---
+
+## 📷 Créditos de las imágenes
+
+La web presenta todas las fotografías como nuestras. Estas 45 son de Unsplash y se usan con la [licencia de Unsplash](https://unsplash.com/license), que permite usarlas gratis y sin pedir permiso. El resto de las fotos de `img/` son nuestras. Si añadís una foto que no sea nuestra, apuntad aquí su archivo, su autor y su enlace.
+
+### Japón
+
+| Archivo | Foto | Autor | Enlace |
+|---|---|---|---|
+| `img/55.webp` | Pagoda de Kiyomizu al atardecer, Kioto | [yomogi](https://unsplash.com/@yomogi_86?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-building-fNSmm92MMs4?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/56.webp` | Atardecer rosa y morado en Kioto | [Andre Benz](https://unsplash.com/@trapnation?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/gray-roofed-temple-surrounded-with-trees-axQXVkrUASg?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/57.webp` | Pagoda con cielo rosado, Kiyomizu-dera | [silversea](https://unsplash.com/@silversea?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-tall-building-sitting-on-top-of-a-lush-green-hillside-0_BaOMDIIkI?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/58.webp` | Calle de Kioto al anochecer | [Zhuojun Yu](https://unsplash.com/@heebase?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-car-driving-down-a-street-next-to-tall-buildings-slh5jopdM4g?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/59.webp` | Sensō-ji con cerezos, Tokio | [Ramon Buçard](https://unsplash.com/@ramonbucard?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-japanese-temple-bustling-with-activity-and-cherry-blossoms-4Sr74udypAY?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/60.webp` | Puente rojo del río Meguro de noche, Tokio | [MacroLingo LLC](https://unsplash.com/@macrolingo?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/people-on-a-red-bridge-under-cherry-blossoms-at-night-iSC-TMwElw8?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/61.webp` | Farolillos de Omoide Yokochō, Shinjuku | [Pema G. Lama](https://unsplash.com/@peemaglama?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/red-lanterns-in-shinjuku-city-alley-6cfK0SEtpbY?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/62.webp` | Templo iluminado, Tokio | [Jakub Tomasik](https://unsplash.com/@jakubeq?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/japanese-temple-illuminated-with-lanterns-at-night-GRJ4CUSNhR4?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/63.webp` | Callejón con farolillos, Shibuya | [mos design](https://unsplash.com/@mosdesign?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-narrow-alley-with-lanterns-hanging-from-the-ceiling-wGoO-KqFmDM?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/64.webp` | Pagoda Chureito y el monte Fuji | [Spenser Sembrat](https://unsplash.com/@spensersembrat?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-pagoda-with-a-mountain-in-the-background-vlUceP_3T6I?utm_source=viajes_wallpapers&utm_medium=referral) |
+
+### China
+
+| Archivo | Foto | Autor | Enlace |
+|---|---|---|---|
+| `img/52.webp` | Skyline de Shanghái al atardecer | [zhang kaiyv](https://unsplash.com/@zhangkaiyv?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/cn-tower-toronto-canada-PoV-nZLoupM?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/53.webp` | Río Li en Yangshuo, Guilin | [YMA](https://unsplash.com/@anhsy?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-bunch-of-boats-that-are-sitting-in-the-water-m1l8kJOVYoo?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/54.webp` | Montañas kársticas de Guilin | [Yifan Cong](https://unsplash.com/@congyf?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/karst-mountains-in-golden-hour-light-PR8kWkmqpOo?utm_source=viajes_wallpapers&utm_medium=referral) |
+
+### Colombia
+
+| Archivo | Foto | Autor | Enlace |
+|---|---|---|---|
+| `img/65.webp` | Calle de Cartagena con buganvillas | [Ricardo Gomez Angel](https://unsplash.com/@rgaleriacom?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/multicolored-houses-L6T_6Rp2iEk?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/66.webp` | Balcones con flores, Cartagena | [Jimmy Hu](https://unsplash.com/@woomantsing?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-row-of-colorful-buildings-with-flowers-growing-on-the-balconies-u1KDpj425VM?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/67.webp` | Palenqueras, Cartagena | [Tannia Aviles](https://unsplash.com/@tanniaaviles?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-group-of-women-in-colorful-dresses-standing-next-to-each-other-W4_dXeeNAXw?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/68.webp` | Calle con sombrillas de colores, Cartagena | [Luis Desiro](https://unsplash.com/@luisdesiro?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-group-of-colorful-umbrellas-swing-from-a-building-rRHD5-FXt9g?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/69.webp` | Muralla de Cartagena al atardecer | [Luis Desiro](https://unsplash.com/@luisdesiro?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-stone-wall-with-a-city-in-the-background-sVui3lJZCJE?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/70.webp` | Pereira al atardecer | [Cristhian Valencia](https://unsplash.com/@vlycser?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/white-and-brown-concrete-building-during-daytime-bF5Lj0xB6D4?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/71.webp` | Medellín de noche | [Joel Duncan](https://unsplash.com/@joelduncan?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/city-buildings-during-sunset-Iqa-WlbNjqs?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/72.webp` | Parque Tayrona al atardecer | [David Restrepo](https://unsplash.com/@davidremu_?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/silhouette-of-people-standing-near-brown-wooden-gazebo-during-sunset-dMS50KQzFVc?utm_source=viajes_wallpapers&utm_medium=referral) |
+
+### Perú
+
+| Archivo | Foto | Autor | Enlace |
+|---|---|---|---|
+| `img/28.webp` | Machu Picchu al amanecer | [Sebastian Tapia Huerta](https://unsplash.com/@sebastiantapiahuerta?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/maccu-pichu-peru-5qba-p9ahTE?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/29.webp` | Machu Picchu con luz de la mañana | [Xiyuan Du](https://unsplash.com/@alb_7th?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-large-rocky-landscape-bFPwdDIQ0LQ?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/30.webp` | Montaña de Colores | [McKayla Crump](https://unsplash.com/@funkmastacrump?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/mountain-under-gray-clouds-hjanvZlqoB8?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/31.webp` | Mujer y niña con una llama en la Montaña de Colores | [Ioana Mohanu](https://unsplash.com/@iua713?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/woman-in-red-and-blue-dress-riding-brown-horse-during-daytime-VdpChUDXDT8?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/32.webp` | Iglesia de la Compañía, Cusco | [Hongbin](https://unsplash.com/@hbsun2013?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-large-building-with-a-clock-tower-on-top-of-it-lT4PjdUl70U?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/33.webp` | Cúpulas de Cusco al atardecer | [Hongbin](https://unsplash.com/@hbsun2013?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-view-of-a-city-from-the-top-of-a-hill-QDthBGlmeFE?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/34.webp` | Tejados de Cusco | [Mauro Lima](https://unsplash.com/@limamauro23?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-large-city-with-many-buildings-bz4Bu_SAmz0?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/35.webp` | Calle con tejidos en Cusco | [NINA PASCAL](https://unsplash.com/@nina1795?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/people-walking-on-street-during-daytime-G-ZdZQyoeWg?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/36.webp` | Arequipa y el volcán Misti | [Megan Kotlus](https://unsplash.com/@mkotlus07?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/white-and-brown-concrete-building-near-green-trees-and-mountain-during-daytime-XHoVvW8VkzY?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/37.webp` | Nevado al atardecer en Huaraz | [ÁLVARO MENDOZA](https://unsplash.com/@a56?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/snow-capped-mountains-bathed-in-sunset-light-gchDEzu3gxg?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/38.webp` | Atardecer en Miraflores, Lima | [Willian Justen de Vasconcellos](https://unsplash.com/@willianjusten?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/calm-sea-under-clear-blue-sky-during-sunset-YIAvaAlAqWk?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/39.webp` | Llama en el altiplano | [Andy Salazar](https://unsplash.com/@andycusco?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-couple-of-llamas-standing-on-top-of-a-mountain-tnJg18m9mag?utm_source=viajes_wallpapers&utm_medium=referral) |
+
+### España
+
+| Archivo | Foto | Autor | Enlace |
+|---|---|---|---|
+| `img/40.webp` | La Giralda y la catedral de Sevilla | [Henrique Ferreira](https://unsplash.com/@rickpsd?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/seville-cathedral-and-giralda-in-seville-62QRdDoe44M?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/41.webp` | Arcos de la Plaza de España, Sevilla | [Tânia Mousinho](https://unsplash.com/@shotsbytania?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-large-brick-building-with-pillars-dMi3pqiqhsw?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/42.webp` | Cúpula del Real Alcázar de Sevilla | [Akshay Nanavati](https://unsplash.com/@anphotos?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/dome-building-interior-QDrquqtF98k?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/43.webp` | Baños del Real Alcázar de Sevilla | [David Hertle](https://unsplash.com/@usa_reiseblogger_de?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/brown-dome-ceiling-hallway-8HAhmMk9HJI?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/44.webp` | La Alhambra al atardecer | [Jorge Fernández Salas](https://unsplash.com/@jorgefdezsalas?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/brown-concrete-building-near-green-trees-during-daytime-C7MUgJowo8s?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/45.webp` | Arco de la Alhambra | [Austin Gardner](https://unsplash.com/@formativeadventures?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/brown-and-white-building-under-clear-blue-sky-during-daytime-7fElVDKXLoQ?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/46.webp` | Reflejo en la Alhambra | [Hari Nandakumar](https://unsplash.com/@hariprasad000?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/people-standing-beside-closed-french-doors-during-day-YU8B9FA886g?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/47.webp` | El Tibidabo al atardecer, Barcelona | [Ken Cheung](https://unsplash.com/@kencheungphoto?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/cathedral-on-hill-VbLTNceBTFE?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/48.webp` | Barcelona desde el Turó de la Rovira | [MINSUN KIM](https://unsplash.com/@maroonsun?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/aerial-photography-of-buildings-FuaNmJPLAHg?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/49.webp` | Montjuïc al atardecer, Barcelona | [ian kelsall](https://unsplash.com/@iankelsall1?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/people-sitting-on-bench-near-building-during-sunset-dXDHJ1wXEL0?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/50.webp` | Playa de Barcelona al atardecer | [Krisztián Korhetz](https://unsplash.com/@kkorhetz?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/barcelonas-beachfront-at-sunset-is-gorgeous-2U2lIubFs6A?utm_source=viajes_wallpapers&utm_medium=referral) |
+| `img/51.webp` | Columnas de la Plaza de España, Sevilla | [Mr Mulligan](https://unsplash.com/@theonephoto?utm_source=viajes_wallpapers&utm_medium=referral) | [Unsplash](https://unsplash.com/photos/a-large-building-with-columns-and-a-clock-tower-cgkFtkpifrA?utm_source=viajes_wallpapers&utm_medium=referral) |

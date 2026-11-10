@@ -2,7 +2,7 @@
    VIAJES & WALLPAPERS · estilos.css
    Práctica UT1 · Diseño de Interfaces Web · 2.º DAW · IES Juan de la Cierva
 
-   Una sola hoja de estilos para las cinco páginas. Todos los colores,
+   Una sola hoja de estilos para todas las páginas. Todos los colores,
    fuentes, tamaños y espacios salen de las variables del :root
    (la guía de estilo de Figma), así que se cambian en un único sitio.
 
@@ -61,7 +61,7 @@
     --tamano-h1: 48px;
     --tamano-h2: 32px;
     --tamano-h3: 24px;
-    --tamano-cifra: 40px;              /* Números 01, 02, 03 de las galerías */
+    --tamano-cifra: 40px;              /* Números 01 a 05 de las galerías */
     --tamano-marca: 26px;              /* «Viajes & Wallpapers» */
     --tamano-texto: 16px;              /* Texto base */
     --tamano-pequeno: 14px;            /* Pies de foto, pie de página, índice */
@@ -916,7 +916,7 @@ tfoot td {
 /* ==========================================================================
    13. PÁGINA FOTOS: CUADRÍCULA DE FOTOS
    Componente «Foto 01» de Figma convertido en la clase .foto. La cuadrícula
-   usa auto-fill para mantener las columnas aunque haya pocas fotos (Japón).
+   usa auto-fill para mantener las columnas aunque una galería tenga pocas fotos.
    ========================================================================== */
 .galeria {
     display: grid;

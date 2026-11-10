@@ -2,8 +2,9 @@
 <!--
   Viajes &amp; Wallpapers · Fotos (fotos.html)
   Práctica UT1 · Diseño de Interfaces Web · 2.º DAW · IES Juan de la Cierva
-  Diseño: frame «Fotos · Ordenador» de Figma (grupo «Pantallas»).
-  Estructura con Grid en el body y componentes con Flexbox; estilos en css/estilos.css.
+  Galerías de fotos, según nuestro diseño de Figma (Fotos, en ordenador).
+  Las cinco galerías tienen la misma estructura: para añadir otra, leed el comentario de la de Japón.
+  Cabecera, menú y pie son los mismos que en plantilla.html (paso 8). Estilos en css/estilos.css.
 -->
 <html lang="es">
   <head>
@@ -14,20 +15,20 @@
 
     <title>Fotos - Viajes &amp; Wallpapers</title>
 
-    <!-- Tipografías de la guía de estilo (Google Fonts): Libre Baskerville para títulos y DM Sans para texto. Los preconnect adelantan la conexión para que carguen antes -->
+    <!-- Tipografías de nuestra guía de estilo (paso 2): Libre Baskerville para títulos y DM Sans para texto, desde Google Fonts. Este enlace va antes de estilos.css y los preconnect adelantan la conexión. Si cambiáis de fuente, cambiad este enlace en todas las páginas y las variables de fuente del CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" />
-    <!-- Una sola hoja de estilos externa para toda la web (nada de CSS en línea) -->
+    <!-- Hoja de estilos única de la web (paso 1). Todo el estilo va en css/estilos.css: no uséis style= ni bloques style -->
     <link rel="stylesheet" href="css/estilos.css" />
-    <!-- Favicon: el cuadrado primario de la marca (símbolo de Figma) -->
+    <!-- Icono de la pestaña: el cuadrado de nuestra marca -->
     <link rel="icon" href="img/icono/favicon.svg" type="image/svg+xml" />
   </head>
 
   <body id="arriba">
-    <!-- CABECERA (área «cabecera» del grid del body): marca que enlaza a la portada -->
+    <!-- CABECERA: zona «cabecera» del grid del body (paso 3). La marca enlaza siempre a la portada -->
     <header class="cabecera">
       <a class="marca" href="index.html">
         <span class="marca__simbolo"></span>
@@ -35,7 +36,7 @@
       </a>
     </header>
 
-    <!-- MENÚ (área «menu» del grid): nav con ul en Flexbox, paso 2 del enunciado. aria-current="page" indica la página actual a los lectores de pantalla -->
+    <!-- MENÚ (paso 4): zona «menu» del grid, con display: flex en el ul. aria-current="page" va en el enlace de la página en la que estamos y es lo que la marca como activa. Si añadís una página al menú, añadid su li en todas las páginas y en plantilla.html -->
     <nav class="menu" aria-label="Menú principal">
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -45,9 +46,9 @@
       </ul>
     </nav>
 
-    <!-- CONTENIDO PRINCIPAL (área «principal» del grid): un solo main y un solo h1 por página -->
+    <!-- CONTENIDO PRINCIPAL: zona «principal» del grid. Un solo main y un solo h1 por página, con los títulos en orden (h1, h2, h3) sin saltar niveles -->
     <main class="principal principal--sin-margen">
-      <!-- PRESENTACIÓN: migas de navegación (nav con aria-label), h1, resumen con el botón principal e índice de las cinco galerías. El resumen va en un aside porque es información complementaria. La foto de fondo es decorativa y va en el CSS (background-image), no en una img -->
+      <!-- PRESENTACIÓN: migas de navegación, h1, resumen con el botón e índice de galerías. La foto de fondo es decorativa y va en el CSS, no en una img. Si añadís una galería, actualizad el número de fotos y los países del resumen, y añadid su enlace al índice -->
       <section class="portada-fotos">
         <nav class="migas" aria-label="Ruta de navegación">
           <a href="index.html">Inicio</a> / Fotos
@@ -71,7 +72,7 @@
           </aside>
         </div>
 
-        <!-- Índice: enlaces internos al id de cada galería; la flecha «↓» indica que se baja en la misma página -->
+        <!-- Índice: cada enlace lleva al id de su galería (#japon, #china…) -->
         <ul class="indice-galerias">
           <li><a href="#japon">01 / Japón ↓</a></li>
           <li><a href="#china">02 / China ↓</a></li>
@@ -81,7 +82,7 @@
         </ul>
       </section>
 
-      <!-- GALERÍA DE JAPÓN: cabecera en tres columnas (Grid) y cuadrícula de 12 fotos; cada foto es un figure.foto con figcaption (componente «Foto 01» de Figma) y un alt que describe lo que se ve. Los iconos son decorativos (alt vacío). El «Qué incluye» es un h3 bajo el h2 de la galería, aunque se vea como antetítulo -->
+      <!-- GALERÍA DE JAPÓN. Las cinco galerías siguen este esquema: cabecera en tres columnas (número e icono, título y «Qué incluye») y cuadrícula de 12 fotos. Para añadir una galería, copiad una section entera y cambiad el id (y su enlace en el índice y en «Explora»), el número, el icono (alt vacío porque es decorativo), los textos y las fotos. Cada foto es un figure.foto con un alt que describe lo que se ve -->
       <section class="galeria-detalle" id="japon">
         <div class="galeria-detalle__cabecera">
           <div class="galeria-detalle__id">
@@ -177,7 +178,7 @@
         </div>
       </section>
 
-      <!-- GALERÍA DE CHINA: misma estructura que la de Japón -->
+      <!-- GALERÍA DE CHINA: mismo esquema que la de Japón -->
       <section class="galeria-detalle" id="china">
         <div class="galeria-detalle__cabecera">
           <div class="galeria-detalle__id">
@@ -277,7 +278,7 @@
         </div>
       </section>
 
-      <!-- GALERÍA DE COLOMBIA: misma estructura que la de Japón -->
+      <!-- GALERÍA DE COLOMBIA: mismo esquema que la de Japón -->
       <section class="galeria-detalle" id="colombia">
         <div class="galeria-detalle__cabecera">
           <div class="galeria-detalle__id">
@@ -379,7 +380,7 @@
         </div>
       </section>
 
-      <!-- GALERÍA DE PERÚ: misma estructura que la de Japón (nueva, sin diseño propio en Figma) -->
+      <!-- GALERÍA DE PERÚ: mismo esquema que la de Japón (no tiene diseño propio en Figma) -->
       <section class="galeria-detalle" id="peru">
         <div class="galeria-detalle__cabecera">
           <div class="galeria-detalle__id">
@@ -474,7 +475,7 @@
         </div>
       </section>
 
-      <!-- GALERÍA DE ESPAÑA: misma estructura que la de Japón (nueva, sin diseño propio en Figma) -->
+      <!-- GALERÍA DE ESPAÑA: mismo esquema que la de Japón (no tiene diseño propio en Figma) -->
       <section class="galeria-detalle" id="espana">
         <div class="galeria-detalle__cabecera">
           <div class="galeria-detalle__id">
@@ -569,11 +570,11 @@
         </div>
       </section>
 
-      <!-- VOLVER ARRIBA: enlace al id="arriba" del body, útil en una página tan larga -->
+      <!-- VOLVER ARRIBA: lleva al id="arriba" del body -->
       <a class="volver-arriba" href="#arriba">Volver arriba</a>
     </main>
 
-    <!-- PIE (área «pie» del grid): igual en todas las páginas, paso 8 del enunciado, con los enlaces legales -->
+    <!-- PIE (paso 8): zona «pie» del grid, igual en todas las páginas, con los enlaces legales. Si cambiáis algo del pie, cambiadlo en todas las páginas y en plantilla.html -->
     <footer class="pie">
       <div class="pie__fila">
         <a class="marca" href="index.html">

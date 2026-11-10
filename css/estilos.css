@@ -30,11 +30,14 @@
     --tamano-pequeno: 14px;
     --tamano-mini: 12px;
     --tamano-cabecera-tabla: 13px;
+    --tamano-h2-movil: 28px;
+    --tamano-h3-movil: 20px;
 
     /*interlineado*/
     --interlineado-titulo: 1.25;
     --interlineado-h2: 1.3125;
     --interlineado-h3: 1.3333;
+    --interlineado-h2-movil: 1.3571;
     --interlineado-texto: 1.625;
 
     /*espaciado entre letras*/
@@ -334,6 +337,7 @@ tfoot td {
     gap: var(--espacio-1-5);
     padding: 0;
     list-style: none;
+    line-height: normal;
     counter-reset: destino;
 }
 
@@ -931,6 +935,7 @@ figcaption {
         --margen-lateral: var(--espacio-3);
     }
 
+    /* Grid del body a una columna: cabecera, menú, contenido y pie apilados */
     body {
         grid-template-columns: 1fr;
         grid-template-areas:
@@ -940,16 +945,82 @@ figcaption {
             "pie";
     }
 
+    .cabecera {
+        padding-block: var(--espacio-3) 0;
+    }
+
+    /* Menú a lo ancho con space-between, como en Figma */
     .menu {
-        justify-content: flex-start;
+        padding-top: var(--espacio-1-5);
     }
 
     .menu ul {
-        gap: var(--espacio-3);
+        justify-content: space-between;
+        gap: 0;
+        width: 100%;
+    }
+
+    .principal {
+        gap: var(--espacio-6);
+        padding-block: var(--espacio-5) var(--espacio-6);
     }
 
     h1 {
         font-size: var(--tamano-h2);
+    }
+
+    h2 {
+        font-size: var(--tamano-h2-movil);
+        line-height: var(--interlineado-h2-movil);
+    }
+
+    h3 {
+        font-size: var(--tamano-h3-movil);
+    }
+
+    .lista-destinos {
+        gap: var(--espacio-2);
+    }
+
+    .lista-destinos li {
+        gap: var(--espacio-1-5);
+    }
+
+    /* Tarjetas: una por fila (auto-fit lo hace solo) y foto de 342 × 220 */
+    .tarjeta {
+        gap: var(--espacio-1-5);
+    }
+
+    .tarjeta img {
+        aspect-ratio: 342 / 220;
+    }
+
+    .etiqueta {
+        top: calc(var(--tamano-h3-movil) * var(--interlineado-h3) + var(--espacio-1-5) + var(--espacio));
+    }
+
+    /* Temáticas: subtemas en columna con viñeta, como en el frame móvil */
+    .tematicas > li {
+        gap: var(--espacio);
+    }
+
+    .tematicas ul {
+        flex-direction: column;
+        gap: var(--espacio-mitad);
+        padding-left: var(--espacio-2);
+    }
+
+    .tematicas ul li::before,
+    .tematicas ul li + li::before {
+        content: "•\a0";
+    }
+
+    .volver-arriba {
+        color: var(--color-acento);
+    }
+
+    .mapa {
+        aspect-ratio: 4 / 3;
     }
 
     table,
@@ -970,13 +1041,28 @@ figcaption {
         flex-basis: auto;
     }
 
+    .indice-galerias {
+        gap: var(--espacio-3);
+    }
+
     .galeria-detalle__cabecera {
         grid-template-columns: 1fr;
         gap: var(--espacio-3);
     }
 
+    /* Pie en columna; textos legales a 14 px como en Figma */
+    .pie {
+        padding-top: var(--espacio-3);
+    }
+
     .pie__fila {
         flex-direction: column;
         align-items: flex-start;
+        gap: var(--espacio-1-5);
+    }
+
+    .pie__legal,
+    .pie__legal .pie__lista a {
+        font-size: var(--tamano-pequeno);
     }
 }

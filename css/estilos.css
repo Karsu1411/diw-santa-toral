@@ -1,0 +1,1273 @@
+/* ==========================================================================
+   VIAJES & WALLPAPERS · estilos.css
+   Práctica UT1 · Diseño de Interfaces Web · 2.º DAW · IES Juan de la Cierva
+
+   Una sola hoja de estilos para todas las páginas. Todos los colores,
+   fuentes, tamaños y espacios salen de las variables del :root
+   (la guía de estilo de Figma), así que se cambian en un único sitio.
+
+   ÍNDICE
+    0. Variables (guía de estilo)
+    1. BASE
+    2. ESTRUCTURA DE LA PÁGINA (Grid)
+    3. CABECERA
+    4. MENÚ
+    5. CONTENIDO PRINCIPAL
+    6. TARJETAS Y ETIQUETA «NOVEDAD»
+    7. TABLA
+    8. MAPA (iframe)
+    9. PIE
+   10. BOTÓN PRINCIPAL
+   11. PÁGINA FOTOS: PRESENTACIÓN
+   12. PÁGINA FOTOS: DETALLE DE CADA GALERÍA
+   13. PÁGINA FOTOS: CUADRÍCULA DE FOTOS
+   14. TEXTO LARGO
+   15. PÁGINA NOSOTROS
+   16. PÁGINA CONTACTO: FORMULARIO
+   17. RESPONSIVE (opcional en el enunciado)
+   ========================================================================== */
+
+/* ==========================================================================
+   0. VARIABLES (guía de estilo)
+   Valores tomados de Figma (modo claro, grupo «Pantallas»). Usar siempre
+   var(--nombre): nada de colores, fuentes ni medidas escritos a mano.
+   ========================================================================== */
+:root {
+
+    /* COLORES
+       Contraste medido con la fórmula WCAG. Mínimo: 4,5:1 texto normal,
+       3:1 texto grande e iconos. */
+    --color-fondo: #F9F0F4;            /* Fondo de la página (FondoClaro) */
+    --fondo-oscuro: #2E282A;           /* Fondos oscuros y degradados de las fotos (FondoOscuro) */
+    --color-primario: #C2185B;         /* Marca, títulos de tarjeta, botón y foco. 5,3:1 sobre el fondo */
+    --color-acento: #7F3A9B;           /* Enlaces y página activa del menú. 6,3:1 sobre el fondo */
+    --color-texto: #290513;            /* Texto principal (TextoSobreClaro). 16,7:1 sobre el fondo */
+    --texto-fondo-oscuro: #ECE9EA;     /* Texto sobre fondo oscuro (TextoSobreOscuro). 12:1 sobre --fondo-oscuro */
+    --color-texto-suave: #7C636F;      /* Opciones inactivas del menú. 4,9:1 (en Figma, opacidad 24 %: solo 1,7:1) */
+    --color-texto-secundario: #2C2C2C; /* Pies de foto y antetítulos de tarjeta. 12,5:1 sobre el fondo */
+    --color-linea-suave: #BAC1B5;      /* Líneas divisorias del frame móvil (decorativas, sin texto) */
+    /* Texto claro sobre el primario (thead, botón, etiqueta): 5,3:1 */
+
+    /* TIPOGRAFÍAS (Google Fonts, enlazadas en el <head>) */
+    --fuente-expresiva: 'Libre Baskerville', serif; /* Títulos h1 y h2, marca y cifras */
+    --fuente-funcional: 'DM Sans', sans-serif;      /* Texto, menú, botones y h3 */
+
+    /* PESOS */
+    --peso-normal: 400;
+    --peso-seminegrita: 600;           /* Página activa, h3, botón y etiquetas */
+    --peso-negrita: 700;               /* Cabecera de la tabla */
+
+    /* TAMAÑOS DE TEXTO (el texto base es de 16 px) */
+    --tamano-h1: 48px;
+    --tamano-h2: 32px;
+    --tamano-h3: 24px;
+    --tamano-cifra: 40px;              /* Números 01 a 05 de las galerías */
+    --tamano-marca: 26px;              /* «Viajes & Wallpapers» */
+    --tamano-texto: 16px;              /* Texto base */
+    --tamano-pequeno: 14px;            /* Pies de foto, pie de página, índice */
+    --tamano-mini: 12px;               /* Antetítulos, migas y textos legales */
+    --tamano-cabecera-tabla: 13px;     /* th de la tabla */
+    --tamano-h2-movil: 28px;           /* Frame «Inicio · Móvil» */
+    --tamano-h3-movil: 20px;           /* Frame «Inicio · Móvil» */
+
+    /* INTERLINEADOS (alto de línea de Figma / tamaño de letra) */
+    --interlineado-titulo: 1.25;       /* h1: 60 / 48 */
+    --interlineado-h2: 1.3125;         /* h2: 42 / 32 */
+    --interlineado-h3: 1.3333;         /* h3: 32 / 24 */
+    --interlineado-h2-movil: 1.3571;   /* h2 en móvil: 38 / 28 */
+    --interlineado-texto: 1.625;       /* Texto: 26 / 16 (supera el mínimo recomendado de 1,5) */
+
+    /* ESPACIADO ENTRE LETRAS (tracking de Figma) */
+    --letras-h1: -1px;
+    --letras-h2: -0.5px;
+    --letras-etiqueta: 1.4px;          /* Antetítulos en mayúsculas */
+
+    /* ESPACIADOS: escala de 8 px con medios pasos de 4 px para detalles finos.
+       Todos derivan de --espacio, así que la escala se cambia en una línea. */
+    --espacio: 8px;                    /* Unidad base (variable que pide el enunciado) */
+    --espacio-mitad: calc(var(--espacio) / 2);  /*  4 px */
+    --espacio-1-5: calc(var(--espacio) * 1.5);  /* 12 px */
+    --espacio-2: calc(var(--espacio) * 2);      /* 16 px */
+    --espacio-3: calc(var(--espacio) * 3);      /* 24 px */
+    --espacio-4: calc(var(--espacio) * 4);      /* 32 px */
+    --espacio-5: calc(var(--espacio) * 5);      /* 40 px */
+    --espacio-6: calc(var(--espacio) * 6);      /* 48 px */
+    --espacio-8: calc(var(--espacio) * 8);      /* 64 px */
+    --espacio-10: calc(var(--espacio) * 10);    /* 80 px */
+    --espacio-12: calc(var(--espacio) * 12);    /* 96 px */
+    --margen-lateral: var(--espacio-10);        /* Margen de página: 80 px (24 px en móvil) */
+
+    /* BORDES, RADIOS Y FOCO */
+    --borde: 1px;                      /* Líneas divisorias y bordes de tarjeta */
+    --borde-grueso: 2px;               /* Barra del menú y anillo de foco */
+    --radio: 8px;                      /* Esquinas de botón, tarjetas y campos */
+    --separacion-foco: 3px;            /* Hueco entre el control y su anillo de foco (Figma) */
+
+    /* TAMAÑOS DE COMPONENTES */
+    --objetivo-tactil: 44px;           /* Alto mínimo de enlaces y campos (accesibilidad táctil) */
+    --altura-boton: 48px;              /* Botón principal de Figma */
+    --tamano-icono: 24px;              /* Retícula de los iconos Lucide */
+    --tamano-simbolo: 12px;            /* Cuadrado de la marca */
+    --ancho-maximo: 1440px;            /* Ancho del diseño de escritorio */
+
+}
+
+/* ==========================================================================
+   1. BASE
+   Estilos de partida para toda la web: tipografía de los títulos, imágenes
+   fluidas, color de los enlaces y foco visible en todos los controles
+   (accesibilidad: no se quita el contorno del foco, se sustituye por el de Figma).
+   ========================================================================== */
+/* El ancho incluye padding y borde: los cálculos de tamaño son más fáciles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+dl,
+dd,
+figure {
+    margin: 0;
+}
+
+h1,
+h2 {
+    font-family: var(--fuente-expresiva);
+    font-weight: var(--peso-normal);
+    line-height: var(--interlineado-titulo);
+}
+
+h1 {
+    font-size: var(--tamano-h1);
+    letter-spacing: var(--letras-h1);
+}
+
+h2 {
+    font-size: var(--tamano-h2);
+    line-height: var(--interlineado-h2);
+    letter-spacing: var(--letras-h2);
+}
+
+h3 {
+    font-size: var(--tamano-h3);
+    font-weight: var(--peso-seminegrita);
+    line-height: var(--interlineado-h3);
+}
+
+/* Imágenes fluidas: nunca más anchas que su contenedor */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: var(--color-acento);
+}
+
+a:hover {
+    color: var(--color-primario);
+}
+
+/* Foco visible en todo lo interactivo (no se quita el outline, se cambia) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: var(--borde-grueso) solid var(--color-primario);
+    outline-offset: var(--separacion-foco);
+}
+
+/* ==========================================================================
+   2. ESTRUCTURA DE LA PÁGINA (Grid)
+   Paso 1 del enunciado. Grid es un sistema bidimensional (filas y columnas),
+   ideal para la estructura general. Con grid-template-areas cada zona tiene un
+   nombre (cabecera, menu, principal, pie) y se coloca con grid-area.
+   Las columnas van en fr (fracciones del espacio libre), nunca en px fijos.
+   ========================================================================== */
+body {
+    display: grid;
+    /* Dos columnas iguales: marca a la izquierda y menú a la derecha (Figma) */
+    grid-template-columns: 1fr 1fr;
+    /* Mapa visual de la página: cada palabra es una zona con nombre */
+    grid-template-areas:
+        "cabecera menu"
+        "principal principal"
+        "pie pie";
+    column-gap: var(--espacio-4);
+    /* max-width en vez de width: la página se estrecha en pantallas pequeñas */
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+    padding-inline: var(--margen-lateral);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-funcional);
+    font-size: var(--tamano-texto);
+    line-height: var(--interlineado-texto);
+    text-align: left;
+}
+
+/* Cada zona se coloca en su área del grid por nombre */
+.cabecera {
+    grid-area: cabecera;
+}
+
+.menu {
+    grid-area: menu;
+}
+
+.principal {
+    grid-area: principal;
+}
+
+.pie {
+    grid-area: pie;
+}
+
+/* ==========================================================================
+   3. CABECERA
+   Marca de Figma: cuadrado primario + nombre en Libre Baskerville.
+   Flexbox (una dimensión) alinea el símbolo y el texto en fila.
+   ========================================================================== */
+.cabecera {
+    display: flex;
+    align-items: center;
+    padding-block: var(--espacio-3);
+}
+
+.marca {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--espacio);
+    min-height: var(--objetivo-tactil);
+    color: var(--color-texto);
+    font-family: var(--fuente-expresiva);
+    font-size: var(--tamano-marca);
+    text-decoration: none;
+}
+
+.marca__simbolo {
+    width: var(--tamano-simbolo);
+    aspect-ratio: 1;
+    background-color: var(--color-primario);
+}
+
+.marca:hover {
+    color: var(--color-primario);
+}
+
+/* ==========================================================================
+   4. MENÚ
+   Paso 2 del enunciado: display: flex en el ul. Flexbox coloca las opciones
+   en fila con gap. Cada enlace mide al menos 44 px de alto (zona táctil).
+   La página actual se marca con aria-current y se distingue por color, peso
+   y barra inferior: nunca solo por color.
+   ========================================================================== */
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-4);
+    padding: 0;
+    list-style: none;
+}
+
+.menu a {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--espacio);
+    min-height: var(--objetivo-tactil);
+    color: var(--color-texto-suave);
+    line-height: normal;
+    text-decoration: none;
+}
+
+/* Barra de estado activo, como en el componente «Opción de menú» de Figma */
+.menu a::after {
+    content: "";
+    width: 100%;
+    height: var(--borde-grueso);
+    background-color: transparent;
+}
+
+.menu a:hover {
+    color: var(--color-acento);
+}
+
+.menu a:hover::after {
+    background-color: var(--color-acento);
+}
+
+.menu a[aria-current="page"] {
+    color: var(--color-acento);
+    font-weight: var(--peso-seminegrita);
+}
+
+.menu a[aria-current="page"]::after {
+    background-color: var(--color-acento);
+}
+
+/* ==========================================================================
+   5. CONTENIDO PRINCIPAL
+   Las secciones se apilan con Flexbox en columna y se separan con gap
+   (traducción directa del Auto layout de Figma). Sin <br> para separar.
+   ========================================================================== */
+.principal {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-8);
+    padding-block: var(--espacio-8) var(--espacio-10);
+}
+
+.seccion {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-3);
+}
+
+.seccion--compacta {
+    gap: var(--espacio-2);
+}
+
+.antetitulo {
+    color: var(--color-primario);
+    font-size: var(--tamano-mini);
+    font-weight: var(--peso-seminegrita);
+    letter-spacing: var(--letras-etiqueta);
+    text-transform: uppercase;
+}
+
+/* Lista ordenada con el número alineado al margen, como en Figma */
+.lista-destinos {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-1-5);
+    padding: 0;
+    list-style: none;
+    line-height: normal;
+    counter-reset: destino;
+}
+
+.lista-destinos li {
+    display: flex;
+    gap: var(--espacio-2);
+    counter-increment: destino;
+}
+
+.lista-destinos li::before {
+    content: counter(destino) ".";
+    color: var(--color-primario);
+    font-weight: var(--peso-seminegrita);
+}
+
+/* Lista anidada: subtemas en una línea, unidos con «y» */
+.tematicas {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio);
+    padding: 0;
+    list-style: none;
+    font-weight: var(--peso-seminegrita);
+    line-height: normal;
+}
+
+.tematicas > li {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-mitad);
+}
+
+.tematicas ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+    color: var(--color-acento);
+    font-size: var(--tamano-pequeno);
+    font-weight: var(--peso-normal);
+}
+
+.tematicas ul li + li::before {
+    content: "\a0y\a0";
+}
+
+/* Enlaces sueltos: sin subrayado (se reconocen por color y peso) */
+.volver-arriba {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    min-height: var(--objetivo-tactil);
+    color: var(--color-primario);
+    font-weight: var(--peso-seminegrita);
+    text-decoration: none;
+}
+
+.volver-arriba:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   6. TARJETAS Y ETIQUETA «NOVEDAD»
+   Paso 3 del enunciado: tarjetas en un div.tarjetas con display: grid.
+   Adaptamos el ejemplo del enunciado a nuestro diseño: en Figma las tarjetas
+   van apiladas a todo el ancho (1280 × 320), así que el mínimo de minmax()
+   pasa de 250px a 100 %. Se mantiene la técnica (Grid con auto-fit y
+   minmax), pero cada tarjeta ocupa una fila, como en el diseño.
+   Dentro de cada tarjeta se usa Flexbox (una dimensión).
+   Paso 4: la etiqueta «Novedad» se superpone con position: absolute.
+   ========================================================================== */
+.tarjetas {
+    display: grid;
+    /* Ejemplo del enunciado: minmax(250px, 1fr), tres columnas a 1280 px.
+       Figma (nuestro diseño) apila las tarjetas: mínimo del 100 %. */
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    gap: var(--espacio-3);
+}
+
+.tarjeta {
+    /* Referencia para la .etiqueta (position: absolute) */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-2);
+}
+
+.tarjeta h3 {
+    color: var(--color-primario);
+}
+
+/* Foto y degradado apilados en la misma celda de Grid (sin position: absolute) */
+.tarjeta figure {
+    display: grid;
+    grid-template-areas:
+        "foto"
+        "pie";
+    row-gap: var(--espacio-1-5);
+}
+
+.tarjeta img {
+    grid-area: foto;
+    width: 100%;
+    /* Proporción de Figma: 1280 × 320 (en móvil, 342 × 220) */
+    aspect-ratio: 4 / 1;
+    object-fit: cover;
+}
+
+.tarjeta figure::after {
+    content: "";
+    grid-area: foto;
+    background-image: linear-gradient(to top, var(--fondo-oscuro), transparent);
+}
+
+.tarjeta figcaption {
+    grid-area: pie;
+}
+
+figcaption {
+    color: var(--color-texto-secundario);
+    font-size: var(--tamano-pequeno);
+    line-height: normal;
+}
+
+/* Etiqueta «Novedad» (paso 4 del enunciado).
+   Es el ÚNICO position: absolute de la web, y está permitido porque no
+   maqueta nada: solo superpone una etiqueta pequeña sobre la foto.
+   absolute saca el elemento del flujo y lo coloca respecto al ancestro
+   posicionado más cercano: la .tarjeta, que por eso lleva position: relative.
+   Toda la maquetación de la web se hace con Grid y Flexbox. */
+.etiqueta {
+    position: absolute;
+    top: calc(var(--tamano-h3) * var(--interlineado-h3) + var(--espacio-3));
+    right: var(--espacio);
+    padding: var(--espacio) var(--espacio-2);
+    border-radius: var(--radio);
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
+    font-size: var(--tamano-mini);
+    font-weight: var(--peso-seminegrita);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   7. TABLA
+   Paso 5 del enunciado: tabla de datos con estilo solo desde el CSS
+   (border-collapse, bordes y padding en th y td, thead con --color-primario).
+   Adaptamos el ejemplo del enunciado a nuestro diseño de Figma: solo líneas
+   horizontales bajo cada fila y cabecera sin fondo, con el texto en primario.
+   Columnas de 220 / 360 / 220 px con 24 px de separación; las líneas ocupan
+   todo el ancho (1280 px), como en Figma.
+   Es una tabla de datos (no de maquetación), con caption y scope en los th;
+   colspan viene de la tabla de la UT0. «Asia» va en cada fila (sin rowspan)
+   para que todas las líneas crucen la tabla, como en Figma.
+   ========================================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    padding-bottom: var(--espacio-3);
+    caption-side: top;
+    letter-spacing: var(--letras-h2);
+    text-align: left;
+}
+
+/* La separación de 24 px entre columnas es el padding derecho de cada celda */
+th,
+td {
+    padding: var(--espacio-2) var(--espacio-3) var(--espacio-2) 0;
+    border-bottom: var(--borde) solid var(--color-texto);
+    line-height: normal;
+    text-align: left;
+}
+
+th:last-child,
+td:last-child {
+    padding-right: 0;
+}
+
+/* Anchos de columna sobre 1280 px: (220 + 24) y (360 + 24); la tercera
+   columna se queda con el resto, y su texto empieza donde en Figma */
+th:nth-child(1) {
+    width: 19%;
+}
+
+th:nth-child(2) {
+    width: 30%;
+}
+
+/* Cabecera como en Figma: sin fondo, texto primario en negrita de 13 px */
+thead {
+    color: var(--color-primario);
+}
+
+th {
+    padding-top: 0;
+    padding-bottom: var(--espacio-1-5);
+    font-size: var(--tamano-cabecera-tabla);
+    font-weight: var(--peso-negrita);
+    text-transform: uppercase;
+}
+
+/* Nota final (colspan de la UT0): fuera de las líneas, como el texto de Figma */
+tfoot td {
+    padding-top: var(--espacio-3);
+    padding-bottom: 0;
+    border-bottom: none;
+    font-size: var(--tamano-pequeno);
+}
+
+/* ==========================================================================
+   8. MAPA (iframe)
+   Paso 6 del enunciado: iframe de OpenStreetMap con title (lo lee el lector
+   de pantalla). Ancho fluido con width: 100% y aspect-ratio, sin medidas fijas.
+   ========================================================================== */
+.mapa {
+    width: 100%;
+    aspect-ratio: 3 / 1;
+    border: var(--borde) solid var(--color-texto);
+    border-radius: var(--radio);
+}
+
+/* ==========================================================================
+   9. PIE
+   Mismo pie en todas las páginas (paso 8). Filas con Flexbox y
+   space-between (el «Space between» de Figma). Incluye los enlaces legales.
+   ========================================================================== */
+.pie {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-mitad);
+    margin-top: var(--espacio-6);
+    padding-block: var(--espacio-2);
+    border-top: var(--borde) solid var(--color-texto);
+}
+
+.pie__fila {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacio-2);
+}
+
+.pie__lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-1-5);
+    padding: 0;
+    list-style: none;
+}
+
+.pie__lista a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--objetivo-tactil);
+    font-size: var(--tamano-pequeno);
+    text-decoration: none;
+}
+
+.pie__lista a:hover {
+    text-decoration: underline;
+}
+
+/* Página legal actual: se marca con aria-current y peso, no solo con color */
+.pie__lista a[aria-current="page"] {
+    font-weight: var(--peso-seminegrita);
+}
+
+.pie__lista--barras li + li::before {
+    content: "/";
+    margin-right: var(--espacio-1-5);
+    color: var(--color-acento);
+    font-size: var(--tamano-pequeno);
+}
+
+.pie__lista--barras li {
+    display: flex;
+    align-items: center;
+}
+
+.pie__legal {
+    font-size: var(--tamano-mini);
+}
+
+.pie__legal .pie__lista a {
+    font-size: var(--tamano-mini);
+}
+
+/* ==========================================================================
+   10. BOTÓN PRINCIPAL
+   Componente de Figma convertido en clase reutilizable (.boton) con sus
+   4 estados: normal, hover, foco y deshabilitado. Mide 48 px de alto.
+   ========================================================================== */
+.boton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: var(--altura-boton);
+    padding-inline: var(--espacio-4);
+    border: var(--borde) solid var(--color-primario);
+    border-radius: var(--radio);
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
+    font-family: var(--fuente-funcional);
+    font-size: var(--tamano-texto);
+    font-weight: var(--peso-seminegrita);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hover: fondo de texto oscuro (16,7:1 con el texto claro) */
+.boton:hover {
+    border-color: var(--color-texto);
+    background-color: var(--color-texto);
+    color: var(--color-fondo);
+}
+
+/* Foco: anillo primario de 2 px separado 3 px, como en Figma.
+   :focus-visible lo muestra al navegar con teclado. */
+.boton:focus-visible {
+    outline: var(--borde-grueso) solid var(--color-primario);
+    outline-offset: var(--separacion-foco);
+}
+
+/* Deshabilitado: sin relleno y con borde discontinuo; se distingue por la
+   forma del borde, no solo por el color */
+.boton:disabled {
+    border-style: dashed;
+    background-color: var(--color-fondo);
+    color: var(--color-primario);
+    cursor: not-allowed;
+}
+
+/* ==========================================================================
+   11. PÁGINA FOTOS: PRESENTACIÓN
+   Frame «Fotos · Ordenador». La foto va como background-image (es decorativa)
+   con dos capas encima: el degradado de Figma y una capa oscura del 25 % para
+   que el texto claro cumpla el contraste (5,4:1 en el punto más claro).
+   ========================================================================== */
+.principal--sin-margen {
+    padding-top: 0;
+}
+
+.portada-fotos {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-4);
+    margin-inline: calc(var(--margen-lateral) * -1);
+    padding: var(--espacio-6) var(--margen-lateral);
+    background-color: var(--fondo-oscuro);
+    background-image:
+        linear-gradient(to top, var(--fondo-oscuro), transparent),
+        linear-gradient(color-mix(in srgb, var(--fondo-oscuro) 25%, transparent), color-mix(in srgb, var(--fondo-oscuro) 25%, transparent)),
+        url("../img/8.webp");
+    background-position: center;
+    background-size: cover;
+    color: var(--color-fondo);
+}
+
+.portada-fotos a {
+    color: var(--color-fondo);
+    text-decoration: none;
+}
+
+.portada-fotos a:hover {
+    text-decoration: underline;
+}
+
+.portada-fotos a:focus-visible {
+    outline-color: var(--color-fondo);
+}
+
+.migas,
+.indice-galerias {
+    color: var(--texto-fondo-oscuro);
+}
+
+.migas a,
+.indice-galerias a {
+    color: var(--texto-fondo-oscuro);
+}
+
+.migas {
+    font-size: var(--tamano-mini);
+    font-weight: var(--peso-seminegrita);
+    letter-spacing: var(--letras-etiqueta);
+    line-height: var(--interlineado-texto);
+    text-transform: uppercase;
+}
+
+.migas a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--objetivo-tactil);
+}
+
+.portada-fotos__propuesta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--espacio-12);
+}
+
+.portada-fotos__intro {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: var(--espacio-3);
+    min-width: 0;
+}
+
+.indice-galerias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-5);
+    padding: var(--espacio-2) 0 0;
+    list-style: none;
+}
+
+.indice-galerias a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--objetivo-tactil);
+    font-size: var(--tamano-pequeno);
+}
+
+.portada-fotos__resumen {
+    display: flex;
+    flex: 0 0 calc(var(--espacio) * 45);
+    flex-direction: column;
+    gap: var(--espacio);
+}
+
+.resumen {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--espacio-2) + var(--espacio-mitad));
+    padding: calc(var(--espacio-3) + var(--espacio-mitad));
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+.resumen .antetitulo {
+    color: var(--color-texto-secundario);
+}
+
+.resumen__titulo {
+    color: var(--color-primario);
+    font-size: var(--tamano-h3);
+    font-weight: var(--peso-seminegrita);
+    line-height: var(--interlineado-h3);
+}
+
+.portada-fotos .boton {
+    color: var(--color-fondo);
+}
+
+.portada-fotos .boton:hover {
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   12. PÁGINA FOTOS: DETALLE DE CADA GALERÍA
+   Tres columnas en la proporción de Figma (240 / 582 / 330) con fr.
+   ========================================================================== */
+.galeria-detalle {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-4);
+    padding-top: var(--espacio-4);
+    border-top: var(--borde) solid var(--color-texto);
+}
+
+.galeria-detalle__cabecera {
+    display: grid;
+    grid-template-columns: 20fr 48.5fr 27.5fr;
+    gap: var(--espacio-8);
+}
+
+.galeria-detalle__id,
+.galeria-detalle__propuesta,
+.galeria-detalle__incluye {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--espacio-2) + var(--espacio-mitad));
+}
+
+.galeria-detalle__numero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-primario);
+    font-family: var(--fuente-expresiva);
+    font-size: var(--tamano-cifra);
+    line-height: normal;
+}
+
+.galeria-detalle__numero img {
+    width: var(--tamano-icono);
+}
+
+.galeria-detalle__pais {
+    font-size: var(--tamano-h3);
+    font-weight: var(--peso-seminegrita);
+    line-height: var(--interlineado-h3);
+}
+
+.galeria-detalle__recuento {
+    color: var(--color-acento);
+    font-size: var(--tamano-pequeno);
+    font-weight: var(--peso-seminegrita);
+}
+
+.lista-check {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--espacio-2) + var(--espacio-mitad));
+    padding: 0;
+    list-style: none;
+}
+
+.lista-check li {
+    display: flex;
+    gap: var(--espacio-1-5);
+}
+
+.lista-check li::before {
+    content: "";
+    flex: 0 0 var(--tamano-icono);
+    height: var(--tamano-icono);
+    background: url("../img/icono/check.svg") no-repeat center / contain;
+}
+
+/* «Explora la galería de X ↓»: diferencia con Figma, que usa «↗».
+   La flecha diagonal suele indicar un enlace externo y este enlace lleva a
+   la galería de la misma página, así que usamos «↓» como en el índice de
+   galerías (usabilidad: consistencia). */
+.enlace-destacado {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    min-height: var(--objetivo-tactil);
+    font-weight: var(--peso-seminegrita);
+    text-decoration: none;
+}
+
+.enlace-destacado:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   13. PÁGINA FOTOS: CUADRÍCULA DE FOTOS
+   Componente «Foto 01» de Figma convertido en la clase .foto. La cuadrícula
+   usa auto-fill para mantener las columnas aunque una galería tenga pocas fotos.
+   ========================================================================== */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--espacio-2);
+    max-width: 72.5%;
+}
+
+.foto {
+    display: grid;
+    grid-template-areas:
+        "foto"
+        "pie";
+    row-gap: var(--espacio-1-5);
+    padding: var(--espacio-2);
+    border: var(--borde) solid var(--color-acento);
+    border-radius: var(--radio);
+}
+
+.foto img {
+    grid-area: foto;
+    width: 100%;
+    aspect-ratio: 188 / 88;
+    object-fit: cover;
+    border-radius: var(--espacio-mitad);
+}
+
+.foto figcaption {
+    grid-area: pie;
+    color: var(--color-acento);
+    font-weight: var(--peso-seminegrita);
+}
+
+/* Hover: degradado sobre la foto con un ::after en la misma celda de Grid */
+.foto::after {
+    content: "";
+    grid-area: foto;
+    border-radius: var(--espacio-mitad);
+}
+
+.foto:hover {
+    border-color: var(--color-primario);
+}
+
+.foto:hover::after {
+    background-image: linear-gradient(to top, var(--fondo-oscuro), transparent);
+}
+
+.foto:hover figcaption {
+    color: var(--color-primario);
+}
+
+/* ==========================================================================
+   14. TEXTO LARGO
+   Líneas más cortas en los bloques de varios párrafos (legibilidad).
+   ========================================================================== */
+.seccion--lectura > p,
+.seccion--lectura > .tarjeta {
+    max-width: 72.5%;
+}
+
+/* ==========================================================================
+   15. PÁGINA NOSOTROS
+   Sin diseño en Figma: reutiliza tarjetas, listas y tipografía de la portada.
+   ========================================================================== */
+.tarjeta--borde {
+    padding: var(--espacio-3);
+    border: var(--borde) solid var(--color-acento);
+    border-radius: var(--radio);
+}
+
+.tarjeta--borde h2 {
+    color: var(--color-primario);
+}
+
+.glosario dl {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio);
+}
+
+.glosario dt {
+    color: var(--color-primario);
+    font-weight: var(--peso-seminegrita);
+}
+
+.glosario dd + dt {
+    margin-top: var(--espacio);
+}
+
+/* ==========================================================================
+   16. PÁGINA CONTACTO: FORMULARIO
+   Sin diseño en Figma: estilos comunes. Cada campo tiene su label asociado
+   con for/id, 44 px de alto mínimo y foco visible (anillo primario).
+   ========================================================================== */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--espacio-3);
+    max-width: 72.5%;
+}
+
+.formulario fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio-2);
+    width: 100%;
+    margin: 0;
+    padding: var(--espacio-3);
+    border: var(--borde) solid var(--color-acento);
+    border-radius: var(--radio);
+}
+
+.formulario legend {
+    padding-inline: var(--espacio);
+    color: var(--color-primario);
+    font-weight: var(--peso-seminegrita);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacio);
+}
+
+.campo label {
+    font-weight: var(--peso-seminegrita);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    min-height: var(--objetivo-tactil);
+    padding: var(--espacio);
+    border: var(--borde) solid var(--color-texto);
+    border-radius: var(--radio);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-funcional);
+    font-size: var(--tamano-texto);
+}
+
+.campo input:hover,
+.campo select:hover,
+.campo textarea:hover {
+    border-color: var(--color-acento);
+}
+
+.opciones {
+    border-style: dashed;
+}
+
+.opcion {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio);
+    min-height: var(--objetivo-tactil);
+}
+
+.opcion input {
+    width: var(--tamano-icono);
+    height: var(--tamano-icono);
+    margin: 0;
+    accent-color: var(--color-primario);
+}
+
+/* ==========================================================================
+   17. RESPONSIVE (opcional en el enunciado)
+   Por debajo de 768 px se cambia solo lo necesario, según el frame
+   «Inicio · Móvil» de Figma: el grid del body pasa a una columna y se ajustan
+   márgenes, tamaños y separaciones. El escritorio no se toca.
+   ========================================================================== */
+@media (max-width: 768px) {
+    :root {
+        --margen-lateral: var(--espacio-3);
+    }
+
+    /* Grid del body a una columna: cabecera, menú, contenido y pie apilados */
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "cabecera"
+            "menu"
+            "principal"
+            "pie";
+    }
+
+    .cabecera {
+        padding-block: var(--espacio-3) 0;
+    }
+
+    /* Menú a lo ancho con space-between, como en Figma */
+    .menu {
+        padding-top: var(--espacio-1-5);
+    }
+
+    .menu ul {
+        justify-content: space-between;
+        gap: 0;
+        width: 100%;
+    }
+
+    .principal {
+        gap: var(--espacio-6);
+        padding-block: var(--espacio-5) var(--espacio-6);
+    }
+
+    h1 {
+        font-size: var(--tamano-h2);
+    }
+
+    h2 {
+        font-size: var(--tamano-h2-movil);
+        line-height: var(--interlineado-h2-movil);
+    }
+
+    h3 {
+        font-size: var(--tamano-h3-movil);
+    }
+
+    .lista-destinos {
+        gap: var(--espacio-2);
+    }
+
+    .lista-destinos li {
+        gap: var(--espacio-1-5);
+    }
+
+    /* En el frame móvil la lista de destinos de la portada va en seminegrita
+       y no lleva el antetítulo «Destinos» */
+    .principal > .seccion:first-child .lista-destinos {
+        font-weight: var(--peso-seminegrita);
+    }
+
+    .antetitulo--escritorio {
+        display: none;
+    }
+
+    /* Tarjetas: una por fila (auto-fit lo hace solo) y foto de 342 × 220 */
+    .tarjeta {
+        gap: var(--espacio-1-5);
+    }
+
+    .tarjeta img {
+        aspect-ratio: 342 / 220;
+    }
+
+    .etiqueta {
+        top: calc(var(--tamano-h3-movil) * var(--interlineado-h3) + var(--espacio-1-5) + var(--espacio));
+    }
+
+    /* Temáticas: subtemas en columna con viñeta, como en el frame móvil */
+    .tematicas > li {
+        gap: var(--espacio);
+    }
+
+    .tematicas ul {
+        flex-direction: column;
+        gap: var(--espacio-mitad);
+        padding-left: var(--espacio-2);
+    }
+
+    .tematicas ul li::before,
+    .tematicas ul li + li::before {
+        content: "•\a0";
+    }
+
+    .volver-arriba {
+        color: var(--color-acento);
+    }
+
+    .mapa {
+        aspect-ratio: 4 / 3;
+    }
+
+    /* Tabla del frame móvil: columnas de 92 / 140 px con 12 px de separación,
+       cabecera sin mayúsculas y líneas suaves */
+    th,
+    td {
+        padding-right: var(--espacio-1-5);
+        border-bottom-color: var(--color-linea-suave);
+        font-size: var(--tamano-pequeno);
+    }
+
+    th {
+        font-size: var(--tamano-cabecera-tabla);
+        text-transform: none;
+    }
+
+    td:first-child {
+        font-size: var(--tamano-texto);
+        font-weight: var(--peso-seminegrita);
+    }
+
+    tfoot td:first-child {
+        font-size: var(--tamano-pequeno);
+        font-weight: var(--peso-normal);
+    }
+
+    th:nth-child(1) {
+        width: 30.5%;
+    }
+
+    th:nth-child(2) {
+        width: 44.5%;
+    }
+
+    table,
+    .galeria,
+    .formulario,
+    .seccion--lectura > p,
+    .seccion--lectura > .tarjeta {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .portada-fotos__propuesta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .portada-fotos__resumen {
+        flex-basis: auto;
+    }
+
+    .indice-galerias {
+        gap: var(--espacio-3);
+    }
+
+    .galeria-detalle__cabecera {
+        grid-template-columns: 1fr;
+        gap: var(--espacio-3);
+    }
+
+    /* Pie en columna; textos legales a 14 px como en Figma */
+    .pie {
+        padding-top: var(--espacio-3);
+        border-top-color: var(--color-linea-suave);
+    }
+
+    .pie__fila {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--espacio-1-5);
+    }
+
+    .pie__legal,
+    .pie__legal .pie__lista a {
+        font-size: var(--tamano-pequeno);
+    }
+}
+

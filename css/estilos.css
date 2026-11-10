@@ -1,0 +1,45 @@
+:root {
+
+    /* colores */
+    --color-fondo: #ECD0DB;
+    --fondo-oscuro: #2E282A;
+    --color-primario: #C2185B;
+    --color-acento: #AD5DD4;
+    --color-texto: #290513;
+    --texto-fondo-oscuro: #D4CDD0;
+
+    /*tipografias*/
+    --fuente-expresiva: 'Libre Baskerville', serif;
+    --fuente-funcional: 'DM Sans', sans-serif;
+
+    /*Tamaño de texto*/
+    --tamano-h1: 48px;
+    --tamano-h2: 32px;
+    --tamano-h3: 24px;
+    --tamano-h4: 16px;
+
+    /*espaciado*/
+    --espacio: 8px;
+
+    /*iconos*/
+    --icono-padding: 16px;
+
+}
+
+/* TABLA */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid var(--color-texto);
+    padding: var(--espacio) calc(var(--espacio) * 2);
+    text-align: left;
+}
+
+thead {
+    background-color: var(--color-primario);
+    color: var(--color-fondo);
+}

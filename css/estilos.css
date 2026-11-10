@@ -49,9 +49,12 @@
     --espacio-2: calc(var(--espacio) * 2);
     --espacio-3: calc(var(--espacio) * 3);
     --espacio-4: calc(var(--espacio) * 4);
+    --espacio-5: calc(var(--espacio) * 5);
     --espacio-6: calc(var(--espacio) * 6);
     --espacio-8: calc(var(--espacio) * 8);
+    --espacio-9: calc(var(--espacio) * 9);
     --espacio-10: calc(var(--espacio) * 10);
+    --espacio-12: calc(var(--espacio) * 12);
     --margen-lateral: var(--espacio-10);
 
     /*bordes, radios y foco*/
@@ -559,26 +562,59 @@ figcaption {
     cursor: not-allowed;
 }
 
-/* PÁGINA FOTOS: presentación */
+/* PÁGINA FOTOS: presentación (tres filas, como en Figma) */
 .principal--sin-margen {
     padding-top: 0;
 }
 
 .portada-fotos {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: var(--espacio-8);
+    flex-direction: column;
+    gap: var(--espacio-4);
     margin-inline: calc(var(--margen-lateral) * -1);
-    padding: var(--espacio-8) var(--margen-lateral);
+    padding: var(--espacio-6) var(--margen-lateral);
     background-color: var(--fondo-oscuro);
     background-image:
         linear-gradient(to top, var(--fondo-oscuro), transparent),
-        url("../img/13.webp");
+        linear-gradient(color-mix(in srgb, var(--fondo-oscuro) 25%, transparent), color-mix(in srgb, var(--fondo-oscuro) 25%, transparent)),
+        url("../img/8.webp");
     background-position: center;
     background-size: cover;
     color: var(--color-fondo);
+}
+
+.portada-fotos a {
+    color: var(--color-fondo);
+    text-decoration: none;
+}
+
+.portada-fotos a:hover {
+    text-decoration: underline;
+}
+
+.portada-fotos a:focus-visible {
+    outline-color: var(--color-fondo);
+}
+
+.migas {
+    font-size: var(--tamano-mini);
+    font-weight: var(--peso-seminegrita);
+    letter-spacing: var(--letras-etiqueta);
+    line-height: var(--interlineado-texto);
+    text-transform: uppercase;
+}
+
+.migas a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--objetivo-tactil);
+}
+
+.portada-fotos__propuesta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--espacio-12);
 }
 
 .portada-fotos__intro {
@@ -589,31 +625,11 @@ figcaption {
     min-width: 0;
 }
 
-.portada-fotos a {
-    color: var(--color-fondo);
-}
-
-.portada-fotos a:focus-visible {
-    outline-color: var(--color-fondo);
-}
-
-.migas {
-    font-size: var(--tamano-mini);
-    font-weight: var(--peso-seminegrita);
-    text-transform: uppercase;
-}
-
-.migas a {
-    display: inline-flex;
-    align-items: center;
-    min-height: var(--objetivo-tactil);
-}
-
 .indice-galerias {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--espacio-4);
-    padding: 0;
+    gap: var(--espacio-5);
+    padding: var(--espacio-2) 0 0;
     list-style: none;
 }
 
@@ -626,7 +642,7 @@ figcaption {
 
 .portada-fotos__resumen {
     display: flex;
-    flex: 0 1 calc(var(--espacio) * 45);
+    flex: 0 0 calc(var(--espacio) * 45);
     flex-direction: column;
     gap: var(--espacio);
 }
@@ -634,24 +650,32 @@ figcaption {
 .resumen {
     display: flex;
     flex-direction: column;
-    gap: var(--espacio-2);
-    padding: var(--espacio-3);
+    gap: calc(var(--espacio-2) + var(--espacio-mitad));
+    padding: calc(var(--espacio-3) + var(--espacio-mitad));
     background-color: var(--color-fondo);
     color: var(--color-texto);
+}
+
+.resumen .antetitulo {
+    color: var(--color-texto-secundario);
 }
 
 .resumen__titulo {
     color: var(--color-primario);
     font-size: var(--tamano-h3);
     font-weight: var(--peso-seminegrita);
-    line-height: var(--interlineado-titulo);
+    line-height: var(--interlineado-h3);
 }
 
 .portada-fotos .boton {
     color: var(--color-fondo);
 }
 
-/* PÁGINA FOTOS: detalle de cada galería */
+.portada-fotos .boton:hover {
+    text-decoration: none;
+}
+
+/* PÁGINA FOTOS: detalle de cada galería (columnas 240 / flexible / 330 de Figma) */
 .galeria-detalle {
     display: flex;
     flex-direction: column;
@@ -662,7 +686,7 @@ figcaption {
 
 .galeria-detalle__cabecera {
     display: grid;
-    grid-template-columns: 1fr 2fr 1.5fr;
+    grid-template-columns: 20fr 48.5fr 27.5fr;
     gap: var(--espacio-8);
 }
 
@@ -671,7 +695,7 @@ figcaption {
 .galeria-detalle__incluye {
     display: flex;
     flex-direction: column;
-    gap: var(--espacio-2);
+    gap: calc(var(--espacio-2) + var(--espacio-mitad));
 }
 
 .galeria-detalle__numero {
@@ -681,7 +705,7 @@ figcaption {
     color: var(--color-primario);
     font-family: var(--fuente-expresiva);
     font-size: var(--tamano-cifra);
-    line-height: var(--interlineado-titulo);
+    line-height: normal;
 }
 
 .galeria-detalle__numero img {
@@ -691,7 +715,7 @@ figcaption {
 .galeria-detalle__pais {
     font-size: var(--tamano-h3);
     font-weight: var(--peso-seminegrita);
-    line-height: var(--interlineado-titulo);
+    line-height: var(--interlineado-h3);
 }
 
 .galeria-detalle__recuento {
@@ -703,14 +727,14 @@ figcaption {
 .lista-check {
     display: flex;
     flex-direction: column;
-    gap: var(--espacio-2);
+    gap: calc(var(--espacio-2) + var(--espacio-mitad));
     padding: 0;
     list-style: none;
 }
 
 .lista-check li {
     display: flex;
-    gap: var(--espacio-2);
+    gap: var(--espacio-1-5);
 }
 
 .lista-check li::before {
@@ -726,38 +750,63 @@ figcaption {
     align-self: flex-start;
     min-height: var(--objetivo-tactil);
     font-weight: var(--peso-seminegrita);
+    text-decoration: none;
 }
 
-/* PÁGINA FOTOS: cuadrícula de fotos */
+.enlace-destacado:hover {
+    text-decoration: underline;
+}
+
+/* PÁGINA FOTOS: cuadrícula de fotos (componente «Foto 01» de Figma) */
 .galeria {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: var(--espacio-2);
+    max-width: 72.5%;
 }
 
 .foto {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espacio-2);
+    display: grid;
+    grid-template-areas:
+        "foto"
+        "pie";
+    row-gap: var(--espacio-1-5);
     padding: var(--espacio-2);
     border: var(--borde) solid var(--color-acento);
     border-radius: var(--radio);
+}
+
+.foto img {
+    grid-area: foto;
+    width: 100%;
+    aspect-ratio: 188 / 88;
+    object-fit: cover;
+    border-radius: var(--espacio-mitad);
+}
+
+.foto figcaption {
+    grid-area: pie;
+    color: var(--color-acento);
+    font-weight: var(--peso-seminegrita);
+}
+
+/* Hover: degradado sobre la foto con un ::after en la misma celda de Grid */
+.foto::after {
+    content: "";
+    grid-area: foto;
+    border-radius: var(--espacio-mitad);
 }
 
 .foto:hover {
     border-color: var(--color-primario);
 }
 
-.foto img {
-    width: 100%;
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-    border-radius: calc(var(--radio) / 2);
+.foto:hover::after {
+    background-image: linear-gradient(to top, var(--fondo-oscuro), transparent);
 }
 
-.foto figcaption {
-    color: var(--color-acento);
-    font-weight: var(--peso-seminegrita);
+.foto:hover figcaption {
+    color: var(--color-primario);
 }
 
 /* PÁGINA NOSOTROS */
@@ -871,6 +920,21 @@ figcaption {
 
     h1 {
         font-size: var(--tamano-h2);
+    }
+
+    table,
+    .galeria {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .portada-fotos__propuesta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .portada-fotos__resumen {
+        flex-basis: auto;
     }
 
     .galeria-detalle__cabecera {

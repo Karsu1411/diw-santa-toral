@@ -47,7 +47,7 @@
 
     <!-- CONTENIDO PRINCIPAL (área «principal» del grid): un solo main y un solo h1 por página -->
     <main class="principal principal--sin-margen">
-      <!-- PRESENTACIÓN: migas de navegación, h1, resumen con el botón principal e índice de galerías. La foto de fondo es decorativa y va en el CSS -->
+      <!-- PRESENTACIÓN: migas de navegación (nav con aria-label), h1, resumen con el botón principal e índice de las cinco galerías. El resumen va en un aside porque es información complementaria. La foto de fondo es decorativa y va en el CSS (background-image), no en una img -->
       <section class="portada-fotos">
         <nav class="migas" aria-label="Ruta de navegación">
           <a href="index.html">Inicio</a> / Fotos
@@ -71,6 +71,7 @@
           </aside>
         </div>
 
+        <!-- Índice: enlaces internos al id de cada galería; la flecha «↓» indica que se baja en la misma página -->
         <ul class="indice-galerias">
           <li><a href="#japon">01 / Japón ↓</a></li>
           <li><a href="#china">02 / China ↓</a></li>
@@ -80,7 +81,7 @@
         </ul>
       </section>
 
-      <!-- GALERÍA DE JAPÓN: cabecera en tres columnas (Grid) y cuadrícula de fotos; cada foto es un figure con figcaption. Los iconos son decorativos (alt vacío) -->
+      <!-- GALERÍA DE JAPÓN: cabecera en tres columnas (Grid) y cuadrícula de 12 fotos; cada foto es un figure.foto con figcaption (componente «Foto 01» de Figma) y un alt que describe lo que se ve. Los iconos son decorativos (alt vacío). El «Qué incluye» es un h3 bajo el h2 de la galería, aunque se vea como antetítulo -->
       <section class="galeria-detalle" id="japon">
         <div class="galeria-detalle__cabecera">
           <div class="galeria-detalle__id">
@@ -568,6 +569,7 @@
         </div>
       </section>
 
+      <!-- VOLVER ARRIBA: enlace al id="arriba" del body, útil en una página tan larga -->
       <a class="volver-arriba" href="#arriba">Volver arriba</a>
     </main>
 

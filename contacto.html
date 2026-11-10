@@ -47,7 +47,7 @@
 
     <!-- CONTENIDO PRINCIPAL (área «principal» del grid): un solo main y un solo h1 por página -->
     <main class="principal">
-      <!-- PRESENTACIÓN: único h1, texto de la UT0 y tarjeta con el correo -->
+      <!-- PRESENTACIÓN: único h1, texto de la UT0 y tarjeta con el correo (variante .tarjeta--borde). El enlace mailto: abre el programa de correo -->
       <section class="seccion seccion--lectura">
         <p class="antetitulo">Contacto</p>
         <h1>Contacta con nosotros</h1>
@@ -68,7 +68,7 @@
         </article>
       </section>
 
-      <!-- FORMULARIO DE CONTACTO: cada campo tiene su label asociado con for e id; fieldset y legend agrupan los campos relacionados -->
+      <!-- FORMULARIO DE CONTACTO: cada campo tiene su label asociado con for e id; fieldset y legend agrupan los campos relacionados. Es una demostración sin servidor: action="#" y method="get" solo recargan la página (lo explica la política de privacidad). required, minlength y los type email y tel validan en el navegador con HTML5, sin JavaScript -->
       <section class="seccion">
         <h2>Envíanos tu mensaje</h2>
 
@@ -108,6 +108,7 @@
               </select>
             </p>
 
+            <!-- Radios con el mismo name: solo se puede elegir una temática; basta con required en el primero -->
             <fieldset class="opciones">
               <legend>¿Qué temática te interesa más?</legend>
               <p class="opcion">

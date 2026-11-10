@@ -1,10 +1,10 @@
 :root {
 
     /* colores */
-    --color-fondo: #ECD0DB;
+    --color-fondo: #F9F0F4;
     --fondo-oscuro: #2E282A;
     --color-primario: #C2185B;
-    --color-acento: #AD5DD4;
+    --color-acento: #7F3A9B;
     --color-texto: #290513;
     --texto-fondo-oscuro: #D4CDD0;
 
@@ -12,14 +12,47 @@
     --fuente-expresiva: 'Libre Baskerville', serif;
     --fuente-funcional: 'DM Sans', sans-serif;
 
+    /*pesos*/
+    --peso-normal: 400;
+    --peso-seminegrita: 600;
+    --peso-negrita: 700;
+
     /*Tamaño de texto*/
     --tamano-h1: 48px;
     --tamano-h2: 32px;
     --tamano-h3: 24px;
     --tamano-h4: 16px;
+    --tamano-cifra: 40px;
+    --tamano-marca: 26px;
+    --tamano-texto: 16px;
+    --tamano-pequeno: 14px;
+    --tamano-mini: 12px;
 
-    /*espaciado*/
+    /*interlineado*/
+    --interlineado-titulo: 1.25;
+    --interlineado-texto: 1.5;
+
+    /*espaciado (múltiplos de 8)*/
     --espacio: 8px;
+    --espacio-2: calc(var(--espacio) * 2);
+    --espacio-3: calc(var(--espacio) * 3);
+    --espacio-4: calc(var(--espacio) * 4);
+    --espacio-6: calc(var(--espacio) * 6);
+    --espacio-8: calc(var(--espacio) * 8);
+    --espacio-10: calc(var(--espacio) * 10);
+
+    /*bordes, radios y foco*/
+    --borde: 1px;
+    --borde-grueso: 2px;
+    --radio: 8px;
+    --separacion-foco: 3px;
+
+    /*tamaños de componentes*/
+    --objetivo-tactil: 44px;
+    --altura-boton: 48px;
+    --tamano-icono: 24px;
+    --tamano-simbolo: 12px;
+    --ancho-maximo: 1440px;
 
     /*iconos*/
     --icono-padding: 16px;

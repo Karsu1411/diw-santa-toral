@@ -1,28 +1,24 @@
 :root {
 
+    /* colores */
+    --fondo-claro: #ECD0DB;
+    --fondo-oscuro: #2E282A;
+    --primario: #C2185B;
+    --acento: #AD5DD4;
+    --texto-fondo-claro: #290513;
+    --texto-fondo-oscuro: #D4CDD0;
 
-    :root {
+    /*tipografias*/
+    --fuente-expresiva: 'Libre Baskerville', serif;
+    --fuente-funcional: 'DM Sans', sans-serif;
 
-        /* colores */
-        --fondo-claro: #ECD0DB;
-        --fondo-oscuro: #2E282A;
-        --primario: #C2185B;
-        --acento: #AD5DD4;
-        --texto-fondo-claro: #290513;
-        --texto-fondo-oscuro: #D4CDD0;
+    /*Tamaño de texto*/
+    --tamano-h1: 48px;
+    --tamano-h2: 32px;
+    --tamano-h3: 24px;
+    --tamano-h4: 16px;
 
-        /*tipografias*/
-        --fuente-expresiva: 'Libre Baskerville';
-        --fuente-funcional: 'Dm Sans';
+    /*iconos*/
+    --icono-padding: 16px;
 
-        /*Tamaño de texto*/
-        --tamano-h1: 48px;
-        --tamano-h2: 32px;
-        --tamano-h3: 24px;
-        --tamano-h4: 16px;
-
-        /*iconos*/
-        --icono-padding: 16px;
-
-    }
 }

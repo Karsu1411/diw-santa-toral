@@ -1,9 +1,44 @@
 # 🎨 diw-santa-toral
 
-Práctica de maquetación web (UT1) de **Diseño de Interfaces Web**.
+Práctica de maquetación web (UT1) de **Diseño de Interfaces Web**: la web **Viajes & Wallpapers**, con fondos de pantalla de Japón, China, Colombia, Perú y España. Grupo: Asier Toral, Santiago Santa y Julinho Ghair.
 
 > [!IMPORTANT]
 > **Entrega: martes 10/11 a las 23:59**
+
+**Contenido:** [Estructura del proyecto](#-estructura-del-proyecto) · [Reglas](#-reglas) · [Flujo de cada tarea](#-flujo-de-cada-tarea) · [Créditos de las imágenes](#-créditos-de-las-imágenes)
+
+---
+
+## 📁 Estructura del proyecto
+
+Es una web estática en HTML y CSS, sin nada que instalar: basta con abrir `index.html` en el navegador (o con Live Server).
+
+```text
+├── index.html  fotos.html  nosotros.html  contacto.html   páginas del menú
+├── aviso-legal.html  privacidad.html  cookies.html         páginas legales (enlaces del pie)
+├── plantilla.html                                          base para crear páginas nuevas
+├── css/estilos.css                                         la única hoja de estilos
+├── img/                                                    fotos de las galerías (WebP)
+│   └── icono/                                              iconos SVG y favicon
+├── README.md                                               esta guía
+└── .gitignore                                              lo que Git no debe subir
+```
+
+| Archivo o carpeta | Para qué está | Cuándo hay que tocarlo |
+|---|---|---|
+| `index.html` | La portada: presentación, una tarjeta por destino (la de Perú con la etiqueta «Novedad»), temáticas, tabla de colecciones y mapa. | Al añadir o cambiar un destino: su tarjeta, su temática y su fila de la tabla. |
+| `fotos.html` | Las cinco galerías de 12 fotos, con el resumen y el índice de galerías arriba. | Al añadir fotos o una galería nueva: seguid el comentario de la galería de Japón. |
+| `nosotros.html` | Quiénes somos, nuestra historia, el equipo y un glosario. | Si cambia el equipo o el texto sobre nosotros. |
+| `contacto.html` | Correo y formulario de contacto. Es una demostración: no envía nada. | Para cambiar los campos del formulario. |
+| `aviso-legal.html`, `privacidad.html`, `cookies.html` | Las páginas legales que enlaza el pie, creadas a partir de la plantilla. | Si la web empieza a usar un servicio externo nuevo (otra fuente, otro mapa, cookies) o cambia algo de lo que cuentan. |
+| `plantilla.html` | La plantilla común (paso 8 del enunciado): cabecera, menú y pie, con el contenido vacío. | Para crear una página, copiadla. Si cambia el menú o el pie, cambiadlo aquí y en todas las páginas. |
+| `css/estilos.css` | Todos los estilos, con un índice al principio. Colores, fuentes, tamaños y espacios salen de las variables del `:root`. | Para cualquier cambio visual. Cambiad la variable antes que un valor suelto, y nada de CSS dentro del HTML. |
+| `img/` | Las fotos, en WebP y numeradas. Por galería: **Japón** 25, 27 y 55–64 · **China** 1–6, 9, 10, 12 y 52–54 · **Colombia** 13–15, 22 y 65–72 · **Perú** 28–39 · **España** 40–51. La `8.webp` es el fondo de la presentación de Fotos (se pone desde el CSS). Las tarjetas de la portada reutilizan una foto de cada galería. | Al añadir fotos: en WebP, de menos de 300 KB y con un número nuevo (del 73 en adelante). No renombréis las que hay, porque las páginas las enlazan por su nombre. |
+| `img/icono/` | Iconos SVG del mismo estilo: uno por galería (`brujula`, `capas`, `paneles`, `montana`, `castillo`), el check de «Qué incluye» (`check.svg`, desde el CSS) y el icono de la pestaña (`favicon.svg`). | Al añadir una galería, añadid su icono con el mismo estilo. |
+| `README.md` | Esta guía: estructura, reglas, flujo de trabajo con Git y créditos de las imágenes. | Si cambia la estructura o las reglas, o si añadís una foto que no es nuestra. |
+| `.gitignore` | Lo que Git no debe subir: la configuración de los editores (`.vscode/`, `.idea/`, `*.iml`), archivos del sistema (`.DS_Store`) y carpetas de herramientas (`node_modules/`, `dist/`). | Si alguien usa una herramienta que genera archivos que no deben subirse. |
+
+La marca de Git `ut0-original` guarda la web tal como quedó al terminar la UT0, antes de aplicar el diseño de la UT1.
 
 ---
 
